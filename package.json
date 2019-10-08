@@ -1,0 +1,19 @@
+{
+  "name": "fwr-scss",
+  "version": "4.0.0",
+  "description": "FWR (Fewer) SCSS Library, compatible CSS4",
+  "main": "main.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/779g/fwr-scss.git"
+  },
+  "author": "779g",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/779g/fwr-scss/issues"
+  },
+  "homepage": "https://github.com/779g/fwr-scss#readme"
+}

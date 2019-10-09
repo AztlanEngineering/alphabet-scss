@@ -1,0 +1,32 @@
+// Classes :
+//
+// .c-color
+// .b-color
+
+
+
+@each $n, $c in $cColors
+{
+  &.c-#{$n}
+  {
+    color:var(--#{$n});
+  }
+}
+
+
+
+@each $n, $c in $cColors
+{
+  &.b-#{$n}
+  {
+    background-color:var(--#{$n});
+  }
+}
+
+@each $n, $c in $cBrandColors
+{
+  &.c-#{$n}
+  {
+    color:$c;
+  }
+}

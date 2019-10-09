@@ -1,0 +1,134 @@
+
+/*---  Monochrome  ---*/
+$white:#fff!default;
+$offWhite:#eee!default;
+$lightGrey:#ccc!default;
+$grey:#757677!default;
+$darkGrey:#323232!default;
+$offBlack:#1b1c1d!default;
+$black:#1b1c1d!default;
+
+/*---  Colors  ---*/
+$red:#aa4465!default; //A
+$orange:#fd5200!default;
+$yellow:#ecc30b!default;
+$olive:#ade25d!default;
+$green:#52b788!default;
+$teal:#00c4b3!default;
+$blue:#213a8f!default;
+$violet:#4b3f72!default;
+$purple:#715aff!default;
+$pink:#ee4266!default;
+$brown:#a5673f!default;
+$indigo:#223843!default;
+
+/*---  Light Colors  ---*/
+$lightRed:#ff695e!default;
+$lightOrange:#ffa16b!default;
+$lightYellow:#f4d35e!default;
+$lightOlive:#d9e778!default;
+$lightGreen:#2ecc40!default;
+$lightTeal:#74e0d7!default;
+$lightBlue:#22aed1!default;
+$lightViolet:#a291fb!default;
+$lightPurple:#a682ff!default;
+$lightPink:#ff8edf!default;
+$lightBrown:#d67c1c!default;
+
+/*---  Dark Colors  ---*/
+$darkRed:#ff695e!default;
+$darkOrange:#ffa16b!default;
+$darkYellow:#f4d35e!default;
+$darkOlive:#d9e778!default;
+$darkGreen:#2ecc40!default;
+$darkTeal:#74e0d7!default;
+$darkBlue:#22aed1!default;
+$darkViolet:#a291fb!default;
+$darkPurple:#a682ff!default;
+$darkPink:#ff8edf!default;
+$darkBrown:#d67c1c!default;
+
+/*--- Brand colors ---*/
+$facebookColor:#3b5998!default;
+$twitterColor:#55acee!default;
+$googlePlusColor:#dd4b39!default;
+$linkedInColor:#1f88be!default;
+$youtubeColor:#f00!default;
+$pinterestColor:#bd081c!default;
+$vkColor:#4d7198!default;
+$instagramColor:#49769c!default;
+
+/*--- Link ---*/
+$linkColor:$lightBlue!default;
+$linkHoverColor:$green!default;
+
+/*--- Page colors ---*/
+$pageBackground:$white!default;
+$textColor:$blue!default;
+$headersColor:$blue!default;
+$invertedColor:$white!default;
+
+
+/*--- Monochrome iterator ---*/
+$cMonochrome:(
+  'white':$white,
+  'offWhite':$offWhite,
+	'lightGrey':$lightGrey,
+	'grey':$grey,
+  'darkGrey':$darkGrey,
+  'offBlack':$offBlack,
+  'black':$black,
+)!default;
+
+/*--- Colors iterator ---*/
+$cColors:(
+  'red':$red,
+  'orange':$orange,
+	'yellow':$yellow,
+	'olive':$olive,
+  'green':$green,
+  'teal':$teal,
+  'blue':$blue,
+	'violet':$violet,
+  'purple':$purple,
+  'pink':$pink,
+	'brown':$brown,
+)!default;
+
+/*--- Light colors iterator ---*/
+$cLightColors:(
+  'red':$lightRed,
+  'orange':$lightOrange,
+  'yellow':$lightYellow,
+	'olive':$lightOlive,
+  'green':$lightGreen,
+  'teal':$lightTeal,
+	'blue':$lightBlue,
+	'violet':$lightViolet,
+  'purple':$lightPurple,
+  'pink':$lightPink,
+	'brown':$lightBrown,
+)!default;
+
+/*---Dark colors iterator ---*/
+$cDarkColors:(
+  'red':$darkRed,
+  'orange':$darkOrange,
+  'yellow':$darkYellow,
+	'olive':$darkOlive,
+  'green':$darkGreen,
+  'teal':$darkTeal,
+	'blue':$darkBlue,
+	'violet':$darkViolet,
+  'purple':$darkPurple,
+  'pink':$darkPink,
+	'brown':$darkBrown,
+)!default;
+
+/*--- Brand colors iterator ---*/
+$cBrandColors:(
+	'facebook':$facebookColor,
+	'twitter':$twitterColor,
+	'youtube':$youtubeColor,
+	'instagram':$instagramColor,
+)!default;

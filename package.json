@@ -4,7 +4,8 @@
   "description": "FWR (Fewer) SCSS Library, compatible CSS4",
   "main": "main.scss",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+		"pretty":"csscomb -v ./scss"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/779g/fwr-scss/issues"
   },
-  "homepage": "https://github.com/779g/fwr-scss#readme"
+  "homepage": "https://github.com/779g/fwr-scss#readme",
+  "devDependencies": {
+    "csscomb": "^4.3.0"
+  }
 }

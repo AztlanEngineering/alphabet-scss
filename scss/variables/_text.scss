@@ -1,0 +1,72 @@
+
+/*--- Sizes ---*/
+$defaultFontMultipler:16!default;
+$defaultFontSize:16*1px!default;
+$sizeXSMultiplier:12!default;
+$sizeSMMultiplier:14!default;
+$sizeMDMultiplier:16!default;
+$sizeLGMultiplier:24!default;
+$sizeXLMultiplier:32!default;
+$sizeXXLMultiplier:48!default;
+$sizeXS:($sizeXSMultiplier / $defaultFontMultipler) * 1rem;
+$sizeSM:($sizeSMMultiplier / $defaultFontMultipler) * 1rem;
+$sizeMD:($sizeMDMultiplier / $defaultFontMultipler) * 1rem;
+$sizeLG:($sizeLGMultiplier / $defaultFontMultipler) * 1rem;
+$sizeXL:($sizeXLMultiplier / $defaultFontMultipler) * 1rem;
+$sizeXXL:($sizeXXLMultiplier / $defaultFontMultipler) * 1rem;
+
+/*---sizes iterator ---*/
+$cSizes:(
+	'xs':$sizeXS,
+	'sm':$sizeSM,
+	'md':$sizeMD,
+	'lg':$sizeLG,
+	'xl':$sizeXL,
+	'xxl':$sizeXXL,
+)!default;
+
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+
+/*--- border-radius set-up ---*/
+$borderRadius:0;
+
+/*--- Fonts ---*/
+$fontHeaders:'HK Grotesk Pro', 'Helvetica', 'Verdana', 'Arial', sans-serif!default;
+$fontWeightHeaders:normal!default;
+$fontDefault:'HK Grotesk Pro', 'Garamond', 'Baskerville', 'Times', 'Times New Roman', serif!default;
+
+
+/*--- Text Size ---*/
+$smallClassName:'sm'!default;
+$textSizeParagraph:1rem!default;
+$textSizeHeadersMultiplier:1;
+$h1:$sizeXXL * $textSizeHeadersMultiplier!default;
+$h2:$sizeXL * $textSizeHeadersMultiplier!default;
+$h3:$sizeLG * $textSizeHeadersMultiplier!default;
+$h4:$sizeMD * $textSizeHeadersMultiplier!default;
+$h5:$sizeSM * $textSizeHeadersMultiplier!default;
+$small:.81em!default;
+
+/*--- Text Line, Margin ---*/
+$textLineHeightDefault:1.07!default;
+$textLineHeightHeaders:$textLineHeightDefault!default;
+$textLineHeightParagraph:$textLineHeightDefault!default;
+$textMarginParagraph:0 0 1em!default;
+$textMarginHeaders:0 0 .7em!default;
+
+/*--- Text Display ---*/
+$textOrphansDefault:2!default;
+$textWidowsDefault:3!default;
+$textLetterSpacingDefault:initial!default;
+$textOrphansParagraph:$textOrphansDefault!default;
+$textWidowsParagraph:$textWidowsDefault!default;
+$textOrphansHeaders:$textOrphansDefault!default;
+$textWidowsHeaders:$textWidowsDefault!default;
+$textTransformHeaders:none!default;
+
+/*--- Link ---*/
+$linkUnderline:none!default;
+$linkHoverUnderline:none!default;

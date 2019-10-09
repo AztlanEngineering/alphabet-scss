@@ -132,3 +132,31 @@ $cBrandColors:(
 	'youtube':$youtubeColor,
 	'instagram':$instagramColor,
 )!default;
+
+/*--- Content In Colors ---*/
+$darkColor:$black;
+$lightColor:$white;
+$cColorContrasts:(
+  'red':$lightColor,
+  'orange':$lightColor,
+  'yellow':$lightColor,
+	'olive':$lightColor,
+  'green':$lightColor,
+  'teal':$lightColor,
+	'blue':$lightColor,
+	'violet':$lightColor,
+  'purple':$lightColor,
+  'pink':$lightColor,
+	'brown':$lightColor,
+	'black':$lightColor,
+	'white':$darkColor,
+	'grey':$darkColor,
+	'facebook':$lightColor,
+	'twitter':$lightColor,
+	'youtube':$lightColor,
+	'instagram':$lightColor,
+)!default;
+
+@function contrast($color) {
+  @return map-get($cColorContrasts, $color)
+}

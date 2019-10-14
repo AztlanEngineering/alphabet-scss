@@ -72,11 +72,11 @@ $invertedColor:$white!default;
 /*--- Monochrome iterator ---*/
 $cMonochrome:(
   'white':$white,
-  'offWhite':$offWhite,
-	'lightGrey':$lightGrey,
+  'off-white':$offWhite,
+	'light-grey':$lightGrey,
 	'grey':$grey,
-  'darkGrey':$darkGrey,
-  'offBlack':$offBlack,
+  'dark-grey':$darkGrey,
+  'off-black':$offBlack,
   'black':$black,
 )!default;
 

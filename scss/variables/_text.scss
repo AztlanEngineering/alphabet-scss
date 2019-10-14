@@ -25,13 +25,6 @@ $cSizes:(
 	'xxl':$sizeXXL,
 )!default;
 
-/*--- ---*/
-/*--- ---*/
-/*--- ---*/
-/*--- ---*/
-
-/*--- border-radius set-up ---*/
-$borderRadius:0;
 
 /*--- Fonts ---*/
 $fontHeaders:'HK Grotesk Pro', 'Helvetica', 'Verdana', 'Arial', sans-serif!default;
@@ -70,3 +63,10 @@ $textTransformHeaders:none!default;
 /*--- Link ---*/
 $linkUnderline:none!default;
 $linkHoverUnderline:none!default;
+/*--- Lists ---*/
+$ulListStyle:none!default;
+$olListStyle:33333!default;
+
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/

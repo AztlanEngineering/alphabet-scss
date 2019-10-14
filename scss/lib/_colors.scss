@@ -30,3 +30,19 @@
     color:$c;
   }
 }
+
+@each $n, $c in $cMonochrome
+{
+  &.c-#{$n}
+  {
+    color:var(--#{$n});
+  }
+}
+
+@each $n, $c in $cMonochrome
+{
+  &.b-#{$n}
+  {
+    background-color:var(--#{$n});
+  }
+}

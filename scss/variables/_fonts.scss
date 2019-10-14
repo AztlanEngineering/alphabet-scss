@@ -1,0 +1,35 @@
+/*--- Fonts ---*/
+$fontParaName:'Gtcm'!default;
+$fontHeadersName:'Akzg'!default;
+$fontHeaders:$fontHeadersName, 'Courier', 'Helvetica', 'Verdana', 'Arial', sans-serif!default;
+$fontWeightHeaders:normal!default;
+$fontDefault:$fontParaName, 'HK Grotesk Pro', 'Garamond', 'Baskerville', 'Times', 'Times New Roman', serif!default;
+
+@mixin font-smoothing($value: light) {
+  @if $value == dark {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+	font-smooth: always;
+}
+
+@mixin import-font($font-family, $woff2, $woff, $weight:normal, $style:normal){
+  @font-face
+  {
+    font-family: $font-family;
+    font-weight: normal;
+    font-style: normal;
+  
+		@include font-smoothing(dark);
+    font-display: fallback;
+    src: url("/#{$woff2}.woff2") format('woff2'),
+    url("/#{$woff}.woff") format('woff');
+  }
+
+}
+
+

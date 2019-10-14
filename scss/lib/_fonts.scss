@@ -1,8 +1,12 @@
-// Classes :
-//
-// 
-// .fi : font icon
-// data-icon="a"
+/*
+
+Font styles
+
+.fi : icon font
+.fh : title font
+.fp : content font
+
+*/
 
 @charset "UTF-8";
 
@@ -13,7 +17,7 @@
   font-style: normal;
 }
 
-[data-icon]:before, .if, {
+[data-icon]:before, .fi, {
   font-family: "if" !important;
   content: attr(data-icon);
   font-style: normal !important;
@@ -25,3 +29,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@include import-font($fontParaName, "t", "t", normal, normal)
+@include import-font($fontParaName, "tb", "tb", bold, normal)
+@include import-font($fontHeadersName, "h", "h", normal, normal)
+
+.fh {
+	font-family:$fontHeaders;
+}
+
+.fp {
+	font-family:$fontDefault;
+}
+

@@ -2,12 +2,13 @@
 
 @import 'scss/utils/reset';
 
+@import 'scss/theme/default';
+
 @import 'scss/variables/colors';
 @import 'scss/variables/blocks';
+@import 'scss/variables/fonts';
 @import 'scss/variables/grid';
 @import 'scss/variables/text';
-
-@import 'scss/theme/default';
 
 @import 'scss/lib/init';
 @import 'scss/lib/colors';

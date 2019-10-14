@@ -5,7 +5,8 @@
   "main": "main.scss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-		"pretty":"csscomb -v ./scss"
+		"pretty":"csscomb -v ./scss",
+		"pub":"git add . && git commit -m 'Various improvements' && npm version minor && git push"
   },
   "repository": {
     "type": "git",

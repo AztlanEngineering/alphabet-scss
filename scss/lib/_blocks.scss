@@ -1,0 +1,32 @@
+/*
+ 
+.nf : no float
+.l : float left
+.r : float right
+.row : width 100% (see also, grid)
+
+*/
+
+
+%prepare-float {
+  display: block;
+  //position:relative;
+}
+
+.l {
+  @extend %prepare-float;
+  float: left;
+}
+
+.r {
+  @extend %prepare-float;
+  float: right;
+}
+
+.nf {
+  clear:both;
+}
+
+.row {
+	width:100%;
+}

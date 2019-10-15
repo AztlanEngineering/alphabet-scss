@@ -1,0 +1,14 @@
+$svgFill: $orange!default;
+$svgStroke: $red!default;
+$svgStrokeWidth: 0!default;
+$svgStrokeDashoffset: 0!default;
+$svgStrokeDasharray: 0!default;
+
+$cSvg:(
+  'f':$svgFill,
+  'sc':$svgStroke,
+	'sw':$svgStrokeWidth,
+	'sda':$svgStrokeDasharray,
+	'sdo':$svgStrokeDashoffset,
+)!default;
+

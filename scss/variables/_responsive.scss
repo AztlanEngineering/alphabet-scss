@@ -1,0 +1,22 @@
+$xs-sm:650px!default;
+$sm-md:1000px!default;
+$md-lg:1369px!default;
+
+@mixin media($from:null, $to:null){
+  @if $from and $to{
+    @media screen and (min-width:$from) and (max-width:$to - 1px){
+      @content;
+    };
+  }
+  @else if $from {
+    @media screen and (min-width:$from){
+      @content;
+    };
+  }
+  @else if $to {
+    @media screen and (max-width:$to - 1px){
+      @content;
+    };
+  }
+}
+

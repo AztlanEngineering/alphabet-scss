@@ -1,6 +1,11 @@
 $xs-sm:650px!default;
 $sm-md:1000px!default;
 $md-lg:1369px!default;
+$responsiveSizes:(
+	"x":$xs-sm, 
+	"s":$sm-md,
+	"m":$md-lg,
+)!default;
 
 @mixin media($from:null, $to:null){
   @if $from and $to{
@@ -20,3 +25,25 @@ $md-lg:1369px!default;
   }
 }
 
+@mixin responsive($baseName, $suffix:false, $base:true) {
+	@if $base {
+		.#{$baseName} {
+			@content
+		}
+	}
+
+	@each $name, $breakpoint in $responsiveSizes {
+		@include media($to:$breakpoint){
+			@if $suffix {
+				.#{$baseName}-#{$name} {
+					@content
+				}
+			}	
+			@else {
+				.#{$name}-#{$baseName} {
+					@content
+				}
+			}
+		}
+	}
+}

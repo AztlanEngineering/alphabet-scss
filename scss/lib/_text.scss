@@ -175,6 +175,8 @@ p
 {
   margin:$textMarginParagraph ;
   line-height:$textLineHeightParagraph;
+	widows:$paragraphWidows;
+	orphans:$paragraphOrphans;
 }
 
 p:first-child
@@ -200,3 +202,19 @@ a:hover
   color:$linkHoverColor;
   text-decoration:$linkHoverUnderline;
 }
+
+@include responsive(ul) {
+	text-align:left;
+} 
+
+@include responsive(ur) {
+	text-align:right;
+} 
+
+@include responsive(uc) {
+	text-align:center;
+} 
+
+@include responsive(uj) {
+	text-align:justify;
+} 

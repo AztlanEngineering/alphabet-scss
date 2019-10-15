@@ -1,7 +1,8 @@
 // Classes :
 //
-// .c-color
-// .b-color
+// .c-color : stroke, or color
+// .b-color : background
+// .f-color : fill
 
 
 
@@ -10,6 +11,7 @@
   &.c-#{$n}
   {
     color:var(--#{$n});
+		--sc:var(--#{$n});
   }
 }
 
@@ -21,6 +23,31 @@
   {
     background-color:var(--#{$n});
   }
+  &.f-#{$n}
+  {
+		--f:var(--#{$n});
+  }
+}
+
+@each $n, $c in $cMonochrome
+{
+  &.c-#{$n}
+  {
+    color:var(--#{$n});
+		--sc:var(--#{$n});
+  }
+}
+
+@each $n, $c in $cMonochrome
+{
+  &.b-#{$n}
+  {
+    background-color:var(--#{$n});
+  }
+  &.f-#{$n}
+	{
+		--f:var(--#{$n});
+	}
 }
 
 @each $n, $c in $cBrandColors
@@ -28,21 +55,7 @@
   &.c-#{$n}
   {
     color:$c;
+		--sc:$c;
   }
 }
 
-@each $n, $c in $cMonochrome
-{
-  &.c-#{$n}
-  {
-    color:var(--#{$n});
-  }
-}
-
-@each $n, $c in $cMonochrome
-{
-  &.b-#{$n}
-  {
-    background-color:var(--#{$n});
-  }
-}

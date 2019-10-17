@@ -11,6 +11,11 @@
 --lg
 --r-left
 --r
+--font-h
+--font-p
+--xs-sm
+--sm-md
+--md-lg
 
 */
 
@@ -59,6 +64,11 @@
 
 	--font-h:#{$fontHeaders};
 	--font-p:#{$fontDefault};
+
+	--xs-sm:#{$xs-sm};
+	--sm-md:#{$sm-md};
+	--md-lg:#{$md-lg};
+	
 }
 
 /*--- Main  ---*/

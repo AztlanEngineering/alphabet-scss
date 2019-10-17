@@ -106,33 +106,39 @@ Divider :
     padding-bottom:0px!important;
 }
 
+@mixin margin-padding-code($current, $name) {
+		.m#{$name}{
+      margin:#{$current}rem #{$current}rem;
+    }
+    .mh#{$name}{
+      margin-left:#{$current}rem;
+      margin-right:#{$current}rem;
+    }
+    .mv#{$name}{
+      margin-top:#{$current}rem;
+      margin-bottom:#{$current}rem;
+    }
+    .p#{$name}{
+      padding:#{$current}rem #{$current}rem;
+    }
+    .ph#{$name}{
+      padding-left:#{$current}rem;
+      padding-right:#{$current}rem;
+    }
+    .pv#{$name}{
+      padding-top:#{$current}rem;
+      padding-bottom:#{$current}rem;
+    }
+	
+}
+
 @mixin margin-padding{
   @for $i from 1 through $marginPaddingIterations{
 		$current: $i;
 
-		.m#{$current}{
-      margin:#{$current}rem #{$current}rem;
-    }
-    .mh#{$current}{
-      margin-left:#{$current}rem;
-      margin-right:#{$current}rem;
-    }
-    .mv#{$current}{
-      margin-top:#{$current}rem;
-      margin-bottom:#{$current}rem;
-    }
-    .p#{$current}{
-      padding:#{$current}rem #{$current}rem;
-    }
-    .ph#{$current}{
-      padding-left:#{$current}rem;
-      padding-right:#{$current}rem;
-    }
-    .pv#{$current}{
-      padding-top:#{$current}rem;
-      padding-bottom:#{$current}rem;
-    }
+		@include margin-padding-code($current:$current, $name:$current)
   }
+	@include margin-padding-code($current:.5, $name:05 )
 }
 @include margin-padding;
 

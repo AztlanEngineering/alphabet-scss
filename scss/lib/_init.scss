@@ -1,3 +1,20 @@
+/*
+
+--color
+--light-color
+--dark-color
+--sh-sm
+--sh-md
+--xs
+--sm
+--md
+--lg
+--r-left
+--r
+
+*/
+
+
 /*--- Setting up some css4 vars---*/
 :root {
 	@each $n, $c in $cMonochrome
@@ -30,6 +47,18 @@
 		--#{$n}:#{$c};
 	}
 
+	--sh-sm:#{$shadowSmall};
+	--sh-md:#{$shadowMedium};
+	--sh-lg:#{$shadowLarge};
+
+	--r-left:#{$borderRadiusLeft};
+	--r-right:#{$borderRadiusRight};
+	--r-top:#{$borderRadiusTop};
+	--r-bottom:#{$borderRadiusBottom};
+	--r:#{$borderRadiusAll};
+
+	--font-h:#{$fontHeaders};
+	--font-p:#{$fontDefault};
 }
 
 /*--- Main  ---*/

@@ -1,8 +1,8 @@
 
 /*---  Monochrome  ---*/
 $white:#fff!default;
-$offWhite:#eee!default;
-$lightGrey:#ccc!default;
+$offWhite:#f5f5f5!default;
+$lightGrey:#eee!default;
 $grey:#757677!default;
 $darkGrey:#323232!default;
 $offBlack:#1b1c1d!default;
@@ -68,6 +68,15 @@ $textColor:$blue!default;
 $headersColor:$blue!default;
 $invertedColor:$white!default;
 
+/*--- Shadow color ---*/
+$shadowColor:$black!default;
+$shadowAlpha:.22!default;
+$shadowXYBlurSmall: 0 .3rem .6rem!default;
+$shadowXYBlurMedium: 0 .6rem .8rem!default;
+$shadowXYBlurLarge: 0 .9rem 1rem!default;
+$shadowSmall:$shadowXYBlurSmall rgba(red($shadowColor), green($shadowColor), blue($shadowColor), $shadowAlpha)!default;
+$shadowMedium:$shadowXYBlurMedium rgba(red($shadowColor), green($shadowColor), blue($shadowColor), $shadowAlpha)!default;
+$shadowLarge:$shadowXYBlurLarge rgba(red($shadowColor), green($shadowColor), blue($shadowColor), $shadowAlpha)!default;
 
 /*--- Monochrome iterator ---*/
 $cMonochrome:(

@@ -1,13 +1,67 @@
 /*
  
+
+Float 
+
 .nf : no float
 .l : float left
 .r : float right
+
+Sizes (not responsive)
 .row : width 100% (see also, grid)
+
+
+Margin and padding styles
+
+.nm : no margin
+.np : no padding
+.nmh : no margin yrizontal
+.npv : no padding vertical
+.p7 : padding 7 px all sides
+.mh15 : margin horizontal 15 px
+
+Position styles
+
+.xa : absolute
+.xf : fixed
+.xv : relative
+.xt : top zero
+.xb : bottom zero
+.xl : left zero
+.xr : right zero
+
+Display styles
+
+.ny : no display
+.yb : block
+.yi : inline
+.yib : inline-block
+.yf: flex
+.yif: inline-flex
+
+Z-index styles
+
+.z0 : z-index 0
+.z-2 : z-index -2 (min)
+.z2 : z-index 2 (max)
+Don't forget to create a stacking context
+
+Border-Radius :
+
+.bc : complete border-radius;
+.bl : border-radius left side only
+.br : border-radius right side only
+.bt : border-radius top
+.bb : border-radius bottom
+.b : border-radius complete
+
+Divider :
+.d : divider 
 
 */
 
 
+/*--- Float ---*/
 %prepare-float {
   display: block;
   //position:relative;
@@ -27,6 +81,147 @@
   clear:both;
 }
 
-.row {
-	width:100%;
+
+/*--- Margin / padding ---*/
+.nm {
+    margin: 0px 0px 0px 0px!important;
 }
+.np {
+    padding: 0px 0px 0px 0px!important;
+}
+.nmv {
+    margin-top:0px!important;
+    margin-bottom:0px!important;
+}
+.nmh {
+    margin-left:0px!important;
+    margin-right:0px!important;
+}
+.nph {
+    padding-left:0px!important;
+    padding-right:0px!important;
+}
+.npv {
+    padding-top:0px!important;
+    padding-bottom:0px!important;
+}
+
+@mixin margin-padding{
+  @for $i from 1 through $marginPaddingIterations{
+		$current: $i;
+
+		.m#{$current}{
+      margin:#{$current}rem #{$current}rem;
+    }
+    .mh#{$current}{
+      margin-left:#{$current}rem;
+      margin-right:#{$current}rem;
+    }
+    .mv#{$current}{
+      margin-top:#{$current}rem;
+      margin-bottom:#{$current}rem;
+    }
+    .p#{$current}{
+      padding:#{$current}rem #{$current}rem;
+    }
+    .ph#{$current}{
+      padding-left:#{$current}rem;
+      padding-right:#{$current}rem;
+    }
+    .pv#{$current}{
+      padding-top:#{$current}rem;
+      padding-bottom:#{$current}rem;
+    }
+  }
+}
+@include margin-padding;
+
+
+
+/*--- Position ---*/
+.xa {
+  position: absolute;
+}
+.xf {
+  position:fixed;
+}
+.xv {
+  position:relative;
+}
+.xt {
+  top:0;
+}
+.xb {
+  bottom:0;
+}
+.xl {
+  left: 0;
+}
+.xr {
+  right: 0;
+}
+
+
+/*--- display  ---*/
+.yb {
+  display: block;
+}
+.yi {
+  display: inline;
+}
+.yit.yit.yit.yit.yit {
+  display: inline-table;
+}
+.yib.yib.yib.yib.yib {
+  display: inline-block;
+}
+.yf {
+	display: flex;
+}
+.yif {
+	display: inline-flex;
+}
+
+/*--- Z-Index ---*/
+@mixin zindex{
+  @for $i from 0 through $zIndexIterations{
+    $current:$i;
+    .z#{$current}{
+      z-index: $current;
+    }
+    .z-#{$current}{
+      z-index: -$current;
+    }
+  }
+}
+
+@include zindex;
+
+/*--- border-radius ---*/
+.bl {
+	border-radius:$borderRadiusLeft;
+}
+
+.br {
+	border-radius:$borderRadiusRight;
+}
+
+.bt {
+	border-radius:$borderRadiusTop;
+}
+
+.bb {
+	border-radius:$borderRadiusBottom;
+}
+
+.b {
+	border-radius:$borderRadiusAll;
+}
+
+/*--- Divider ---*/
+.d {
+	@extend .row;
+	border-bottom:1px solid $dividerColor;
+}
+/*--- ---*/
+/*--- ---*/

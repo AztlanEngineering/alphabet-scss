@@ -3,4 +3,27 @@ $pageOverflowX:hidden!default;
 
 
 /*--- border-radius set-up ---*/
-$borderRadius:0;
+$borderRadiusGeneral:.25em;
+$borderRadiusTopLeft:$borderRadiusGeneral;
+$borderRadiusTopRight:$borderRadiusGeneral;
+$borderRadiusBottomRight:$borderRadiusGeneral;
+$borderRadiusBottomLeft:$borderRadiusGeneral;
+
+$borderRadiusLeft:$borderRadiusTopLeft*.95 0 0 $borderRadiusBottomLeft*.95!default;
+$borderRadiusRight:0 $borderRadiusTopRight*.95 $borderRadiusBottomRight*.95 0!default;
+$borderRadiusTop:$borderRadiusTopLeft*.95 $borderRadiusTopRight*.95 0 0!default;
+$borderRadiusBottom:0 0 $borderRadiusBottomRight*.95 $borderRadiusBottomLeft*.95!default;
+$borderRadiusAll:$borderRadiusTopLeft $borderRadiusTopRight $borderRadiusBottomRight $borderRadiusBottomLeft!default;
+
+
+/*--- Margin/padding ---*/
+$marginPaddingIterations:8!default;
+$zIndexIterations:2!default;
+
+/*--- Divider ---*/
+$dividerColor:$offWhite;
+
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/

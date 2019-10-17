@@ -3,6 +3,7 @@
 // .c-color : stroke, or color
 // .b-color : background
 // .f-color : fill
+// .s : shadow
 
 
 
@@ -58,4 +59,18 @@
 		--sc:$c;
   }
 }
+
+.sh-sm {
+	box-shadow:var(--sh-sm);
+}
+
+.sh-md {
+	box-shadow:var(--sh-md);
+}
+
+.sh-lg {
+	box-shadow:var(--sh-lg);
+}
+
+
 

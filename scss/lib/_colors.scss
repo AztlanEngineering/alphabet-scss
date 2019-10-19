@@ -1,75 +1,35 @@
 // Classes :
 //
+// .c-initial : initial color
 // .c-color : stroke, or color
-// .b-color : background
+// .b-color : background, with matching color 
 // .f-color : fill
 // .s : shadow
+// .simple : transparent
 
-
-
-@each $n, $c in $cColors
-{
-  &.c-#{$n}
-  {
-    color:var(--#{$n});
-		--sc:var(--#{$n});
-  }
+.c-init.c-init {
+	color:var(--default);
 }
 
+@include setColorClassesFor($cColors);
+@include setColorClassesFor($cMonochrome);
+@include setColorClassesFor($cBrandColors);
 
+@include setBackgroundClassesFor($cColors, 'colors');
+@include setBackgroundClassesFor($cMonochrome, 'monochrome');
+@include setBackgroundClassesFor($cBrandColors, 'brand');
 
-@each $n, $c in $cColors
-{
-  &.b-#{$n}
-  {
-    background-color:var(--#{$n});
-  }
-  &.f-#{$n}
-  {
-		--f:var(--#{$n});
-  }
+@include setShadowClasses();
+
+.simple {
+	background:transparent;
+	color:$linkColor;
 }
-
-@each $n, $c in $cMonochrome
-{
-  &.c-#{$n}
-  {
-    color:var(--#{$n});
-		--sc:var(--#{$n});
-  }
-}
-
-@each $n, $c in $cMonochrome
-{
-  &.b-#{$n}
-  {
-    background-color:var(--#{$n});
-  }
-  &.f-#{$n}
-	{
-		--f:var(--#{$n});
+.simpleh {
+	&:hover,
+	&:focus{
+		color:$linkHoverColor;
 	}
-}
-
-@each $n, $c in $cBrandColors
-{
-  &.c-#{$n}
-  {
-    color:$c;
-		--sc:$c;
-  }
-}
-
-.sh-sm {
-	box-shadow:var(--sh-sm);
-}
-
-.sh-md {
-	box-shadow:var(--sh-md);
-}
-
-.sh-lg {
-	box-shadow:var(--sh-lg);
 }
 
 

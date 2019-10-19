@@ -1,5 +1,8 @@
 /*
 
+--accent1
+--accent2
+--accent3
 --color
 --light-color
 --dark-color
@@ -22,14 +25,23 @@
 
 /*--- Setting up some css4 vars---*/
 :root {
-	@each $n, $c in $cMonochrome
-	{
-		--#{$n}:#{$c};
-	}
-
 	@each $n, $c in $cColors
 	{
 		--#{$n}:#{$c};
+		--on-#{$n}:#{contrastForColor($n)};
+	}
+
+	@each $n, $c in $cMonochrome
+	{
+		--#{$n}:#{$c};
+		--on-#{$n}:#{contrastForColor($n)};
+	}
+	
+
+	@each $n, $c in $cBrandColors
+	{
+		--#{$n}:#{$c};
+		--on-#{$n}:#{contrastForColor($n)};
 	}
 
 	@each $n, $c in $cLightColors
@@ -52,9 +64,18 @@
 		--#{$n}:#{$c};
 	}
 
-	--sh-sm:#{$shadowSmall};
-	--sh-md:#{$shadowMedium};
-	--sh-lg:#{$shadowLarge};
+	--default:#{$default};
+	--accent1:#{$accent1};
+	--accent2:#{$accent2};
+	--accent3:#{$accent3};
+	--on-accent1:#{$colorAccent1};
+	--on-accent2:#{$colorAccent2};
+	--on-accent3:#{$colorAccent3};
+
+	@each $n, $c in $cShadowSizes
+	{
+		--#{$shadowVarPrefix}#{$n}:#{$c};
+	}
 
 	--r-left:#{$borderRadiusLeft};
 	--r-right:#{$borderRadiusRight};

@@ -17,6 +17,11 @@ Font styles
   font-style: normal;
 }
 
+[data-icon]:before {
+	margin-right:.35em;
+
+}
+
 [data-icon]:before, .fi, {
   font-family: "if" !important;
   content: attr(data-icon);
@@ -24,6 +29,7 @@ Font styles
   font-weight: normal !important;
   font-variant: normal !important;
   text-transform: none !important;
+	vertical-align:middle;
   speak: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;

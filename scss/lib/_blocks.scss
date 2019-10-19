@@ -58,6 +58,13 @@ Border-Radius :
 Divider :
 .d : divider 
 
+Circle
+.c : circle
+
+
+Circle
+.wb : vertical-align bottom
+
 */
 
 
@@ -138,7 +145,9 @@ Divider :
 
 		@include margin-padding-code($current:$current, $name:$current)
   }
-	@include margin-padding-code($current:.5, $name:05 )
+	@include margin-padding-code($current:.5, $name:"05")
+	@include margin-padding-code($current:.2, $name:"02")
+	@include margin-padding-code($current:.1, $name:"01")
 }
 @include margin-padding;
 
@@ -229,5 +238,76 @@ Divider :
 	@extend .row;
 	border-bottom:1px solid $dividerColor;
 }
-/*--- ---*/
+
+/*--- Circle---*/
+
+.c {
+	border-radius: 50%;
+}
+
+/*--- Vertical Align ---*/
+.wb {
+	vertical-align:bottom;
+	overflow:hidden;
+}
+
+/*--- Hidden ---*/
+.h {
+	display:none;
+}
+
+@include media($to:$xs-sm){
+	.h-xs {
+		display:none;
+
+	}
+
+}
+
+@include media($from:$xs-sm,$to:$sm-md){
+	.h-sm {
+		display:none;
+
+	}
+
+}
+
+@include media($from:$sm-md,$to:$md-lg){
+	.h-md {
+		display:none;
+
+	}
+
+}
+
+@include media($from:$md-lg){
+	.h-lg {
+		display:none;
+
+	}
+
+}
+
+
+/*--- Default Blocks ---*/
+[class*="block"] {
+	padding:1rem;
+	box-shadow:var(--sh-sm);
+	display:block;
+	border-radius:var(--r);
+
+	&:not(:last-child){
+		margin-bottom:1rem;
+	}
+}
+
+.block{
+	background:var(--white);
+}
+
+.block-alt {
+	background:var(--light-grey);
+}
+
+
 /*--- ---*/

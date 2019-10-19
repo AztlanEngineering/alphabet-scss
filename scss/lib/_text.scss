@@ -10,6 +10,7 @@ Text styles
 .tw : lowercase
 .ts : small caps (only on otf files featuring it)
 .to : most open type features for content (ligatures))
+.tls : high letter spacing
 .nd : no decoration
 .ndh : no decoration (hover)
 
@@ -60,6 +61,10 @@ do not mix with .sm
 
 .ts {
   font-feature-settings:"smcp" 1;
+}
+
+.tls {
+	letter-spacing:$textLetterSpacingHigh;
 }
 
 .to {
@@ -218,3 +223,4 @@ a:hover
 @include responsive(uj) {
 	text-align:justify;
 } 
+

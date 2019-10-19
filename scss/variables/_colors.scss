@@ -4,7 +4,7 @@ $white:#fff!default;
 $offWhite:#f5f5f5!default;
 $lightGrey:#eee!default;
 $grey:#757677!default;
-$darkGrey:#323232!default;
+$darkGrey:#424242!default;
 $offBlack:#1b1c1d!default;
 $black:#1b1c1d!default;
 
@@ -64,7 +64,7 @@ $linkHoverColor:$green!default;
 
 /*--- Page colors ---*/
 $pageBackground:$white!default;
-$textColor:$blue!default;
+$textColor:$black!default;
 $headersColor:$blue!default;
 $invertedColor:$white!default;
 
@@ -89,6 +89,16 @@ $cMonochrome:(
   'black':$black,
 )!default;
 
+$cMonochromeHover:(
+  'white':'light-grey',
+  'off-white':'light-grey',
+	'light-grey':'grey',
+	'grey':'dark-grey',
+  'dark-grey':'grey',
+  'off-black':'grey',
+  'black':'dark-grey',
+)!default;
+
 /*--- Colors iterator ---*/
 $cColors:(
   'red':$red,
@@ -102,6 +112,20 @@ $cColors:(
   'purple':$purple,
   'pink':$pink,
 	'brown':$brown,
+)!default;
+
+$cColorsHover:(
+  'red':'light-red',
+  'orange':'light-orange',
+  'yellow':'light-yellow',
+	'olive':'light-olive',
+  'green':'light-green',
+  'teal':'light-teal',
+	'blue':'light-blue',
+	'violet':'light-violet',
+  'purple':'light-purple',
+  'pink':'light-pink',
+	'brown':'light-brown',
 )!default;
 
 /*--- Light colors iterator ---*/
@@ -142,13 +166,20 @@ $cBrandColors:(
 	'instagram':$instagramColor,
 )!default;
 
+$cBrandHover:(
+	'facebook':'blue',
+	'twitter':'teal',
+	'youtube':'red',
+	'instagram':'blue',
+)!default;
+
 /*--- Content In Colors ---*/
 $darkColor:$black;
 $lightColor:$white;
 $cColorContrasts:(
   'red':$lightColor,
   'orange':$lightColor,
-  'yellow':$lightColor,
+  'yellow':$darkColor,
 	'olive':$lightColor,
   'green':$lightColor,
   'teal':$lightColor,
@@ -159,13 +190,119 @@ $cColorContrasts:(
 	'brown':$lightColor,
 	'black':$lightColor,
 	'white':$darkColor,
-	'grey':$darkColor,
+	'grey':$lightColor,
 	'facebook':$lightColor,
 	'twitter':$lightColor,
 	'youtube':$lightColor,
 	'instagram':$lightColor,
 )!default;
 
-@function contrast($color) {
+@function contrastForColor($color) {
   @return map-get($cColorContrasts, $color)
 }
+
+/*--- Shadow Classes ---*/
+$cShadowSizes:(
+	'sm':$shadowSmall,
+	'md':$shadowMedium,
+	'lg':$shadowLarge,
+
+)!default;
+
+/*--- Shadow Vars  ---*/
+$shadowClassPrefix:"sh-"!default;
+$shadowVarPrefix:$shadowClassPrefix!default;
+$shadowHoverClassPrefix:"shh-"!default;
+
+@mixin setShadowClasses($a:$cShadowSizes){
+  @each $n, $c in $a
+	{
+		&.#{$shadowClassPrefix}#{$n}
+		{
+			box-shadow:var(--#{$shadowVarPrefix}#{$n})
+    }
+		&.#{$shadowHoverClassPrefix}#{$n}
+    {
+			&:hover,
+			&:focus{
+				box-shadow:var(--#{$shadowVarPrefix}#{$n})
+			}
+    }
+  }
+
+}
+
+/*--- Hover Dict ---*/
+$cHover:(
+	'colors':$cColorsHover,
+	'monochrome':$cMonochromeHover,
+	'brand':$cBrandHover,
+)!default;
+
+@function HoverForColor($family, $color) {
+  @return map-get(map-get($cHover, $family),$color)
+}
+
+/*--- Set Color Classes  */
+$colorClassPrefix:'c-'!default;
+$backgroundClassPrefix:'b-'!default;
+$backgroundHoverClassPrefix:'bh-'!default;
+$fillClassPrefix:'f-'!default;
+
+@mixin setColorClassesFor($a){
+  @each $n, $c in $a
+	{
+		&.#{$colorClassPrefix}#{$n}
+    {
+      color:var(--#{$n});
+  		--sc:var(--#{$n});
+    }
+  }
+
+}
+
+@mixin setBackgroundClassesFor($a, $family, $color:true){
+  @each $n, $c in $a
+  {
+    &.#{$backgroundClassPrefix}#{$n}
+    {
+  		@if color {
+  			background-color:var(--#{$n});
+  		}
+  		@else {
+  			background:var(--#{$n});
+  		}
+  		color:var(--on-#{$n});
+    }
+  
+  	&.#{$backgroundHoverClassPrefix}#{$n}
+    {
+  		&:hover,
+  		&:focus {
+				$hoverBack:HoverForColor($family, $n);
+  			@if color {
+  				background-color:var(--#{$hoverBack});
+  			}
+  			@else {
+  				background:var(--light-#{$hoverBack});
+  			}
+  			color:var(--on-#{$n});
+  		}
+    }
+
+    &.#{$fillClassPrefix}#{$n}
+    {
+  		--f:var(--#{$n});
+    }
+  }
+}
+
+
+/*--- Default Theme ---*/
+$default:$black!default;
+$accent1:$teal!default;
+$accent2:$orange!default;
+$accent3:$blue!default;
+$colorAccent1:$white!default;
+$colorAccent2:$black!default;
+$colorAccent3:$white!default;

@@ -4,7 +4,9 @@
 // .c-color : stroke, or color
 // .b-color : background, with matching color 
 // .f-color : fill
-// .s : shadow
+// .sh-sm : shadow
+// .shh-sm : shadow hover
+// .sha : shadow active
 // .simple : transparent
 
 .c-init.c-init {
@@ -20,6 +22,11 @@
 @include setBackgroundClassesFor($cBrandColors, 'brand');
 
 @include setShadowClasses();
+.sha.sha.sha {
+	&:active {
+		box-shadow:var(--ish-sm);
+	}
+}
 
 .simple {
 	background:transparent;

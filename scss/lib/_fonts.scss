@@ -17,12 +17,21 @@ Font styles
   font-style: normal;
 }
 
-[data-icon]:before {
-	margin-right:.35em;
+/*--- 360 Rotate --*/
 
+@keyframes rotate {
+  to {
+		background-color: yellow;
+		-webkit-transform: rotate(360deg);
+		transform:rotate(360deg)
+	}
 }
 
-[data-icon]:before, .fi, {
+[data-icon]:before {
+	margin-right:.35em;
+}
+
+[data-icon]:before, .fi, i.icon {
   font-family: "if" !important;
   content: attr(data-icon);
   font-style: normal !important;
@@ -34,8 +43,22 @@ Font styles
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
+
 }
 
+i.icon,
+.fi,
+[data-icon]:before
+{
+	&.loading,
+	&.loading-icon {
+		display:inline-block;
+		animation:rotate 3s linear infinite;
+	}
+
+}
 @include import-font($fontParaName, "t", "t", normal, normal)
 @include import-font($fontParaName, "tb", "tb", bold, normal)
 @include import-font($fontHeadersName, "h", "h", normal, normal)

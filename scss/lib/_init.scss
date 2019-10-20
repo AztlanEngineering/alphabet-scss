@@ -76,6 +76,7 @@
 	{
 		--#{$shadowVarPrefix}#{$n}:#{$c};
 	}
+	--ish-sm:inset #{$shadowSmall};
 
 	--r-left:#{$borderRadiusLeft};
 	--r-right:#{$borderRadiusRight};

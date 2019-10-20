@@ -206,13 +206,13 @@ $cShadowSizes:(
 	'sm':$shadowSmall,
 	'md':$shadowMedium,
 	'lg':$shadowLarge,
-
 )!default;
 
 /*--- Shadow Vars  ---*/
 $shadowClassPrefix:"sh-"!default;
 $shadowVarPrefix:$shadowClassPrefix!default;
 $shadowHoverClassPrefix:"shh-"!default;
+$shadowActiveClassPrefix:"sha-"!default;
 
 @mixin setShadowClasses($a:$cShadowSizes){
   @each $n, $c in $a
@@ -273,6 +273,8 @@ $fillClassPrefix:'f-'!default;
   			background:var(--#{$n});
   		}
   		color:var(--on-#{$n});
+  		--cb:var(--#{$n});
+  		--cc:var(--on-#{$n});
     }
   
   	&.#{$backgroundHoverClassPrefix}#{$n}
@@ -287,6 +289,8 @@ $fillClassPrefix:'f-'!default;
   				background:var(--light-#{$hoverBack});
   			}
   			color:var(--on-#{$n});
+				--cb:var(--#{$n});
+				--cc:var(--on-#{$n});
   		}
     }
 

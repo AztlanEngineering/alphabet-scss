@@ -4,6 +4,7 @@
 
 @import 'scss/theme/default';
 
+@import 'scss/variables/animation';
 @import 'scss/variables/colors';
 @import 'scss/variables/blocks';
 @import 'scss/variables/fonts';
@@ -14,6 +15,7 @@
 @import 'scss/variables/svg';
 
 @import 'scss/lib/init';
+@import 'scss/lib/animation';
 @import 'scss/lib/colors';
 @import 'scss/lib/blocks';
 @import 'scss/lib/fonts';

@@ -1,0 +1,10 @@
+/*
+Transition
+.t : all
+
+*/
+
+$transitionTime:.4s!default;
+.t {
+	transition:all $transitionTime;
+}

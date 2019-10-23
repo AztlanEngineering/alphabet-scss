@@ -301,6 +301,28 @@ $fillClassPrefix:'f-'!default;
   }
 }
 
+/*--- Collapsible-border / box-shadow ---*/
+$boxShadowWidth:2px!default;
+
+$boxShadowDefaultX: $boxShadowWidth 0 0 0 var(--cc, blue),
+      0 $boxShadowWidth 0 0 var(--cc, blue),
+      $boxShadowWidth $boxShadowWidth 0 0 var(--cc, blue),   /* Just to fix the corner */
+      $boxShadowWidth 0 0 0 var(--cc, blue) inset,
+      0 $boxShadowWidth 0 0 var(--cc, blue) inset!default;
+
+$boxShadowDefault: $boxShadowWidth 0 0 0 var(--c),
+      0 $boxShadowWidth 0 0 var(--c),
+      $boxShadowWidth $boxShadowWidth 0 0 var(--c),   /* Just to fix the corner */
+      $boxShadowWidth 0 0 0 var(--c) inset,
+      0 $boxShadowWidth 0 0 var(--c) inset!default;
+
+@mixin collapsible-border($color, $width:1px) {
+    box-shadow: $width 0 0 0 $color,
+      0 $width 0 0 $color,
+      $width $width 0 0 $color,   /* Just to fix the corner */
+      $width 0 0 0 $color inset,
+      0 $width 0 0 $color inset;
+}
 
 /*--- Default Theme ---*/
 $default:$black!default;
@@ -310,3 +332,4 @@ $accent3:$blue!default;
 $colorAccent1:$white!default;
 $colorAccent2:$black!default;
 $colorAccent3:$white!default;
+

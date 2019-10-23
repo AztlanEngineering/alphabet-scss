@@ -17,6 +17,8 @@ Margin and padding styles
 .np : no padding
 .nmh : no margin yrizontal
 .npv : no padding vertical
+.nsb : no scroll bar
+.nsb-xs : no scroll bar on xs size
 .p7 : padding 7 px all sides
 .mh15 : margin horizontal 15 px
 
@@ -62,10 +64,29 @@ Circle
 .c : circle
 
 
-Circle
+Vertical Align
 .wb : vertical-align bottom
 
 */
+
+/*--- No Scrollbar ---*/
+.nsb::-webkit-scrollbar {
+    display: none;
+	}
+
+.nsb {
+	scrollbar-width: none;
+}
+
+@include media($to:$xs-sm){
+	.nsb-xs::-webkit-scrollbar {
+		  display: none;
+		}
+
+	.nsb-xs {
+		scrollbar-width: none;
+	}
+}
 
 
 /*--- Float ---*/
@@ -310,4 +331,3 @@ Circle
 }
 
 
-/*--- ---*/

@@ -18,15 +18,6 @@ Font styles
 }
 
 /*--- 360 Rotate --*/
-
-@keyframes rotate {
-  to {
-		background-color: yellow;
-		-webkit-transform: rotate(360deg);
-		transform:rotate(360deg)
-	}
-}
-
 [data-icon]:before {
 	margin-right:.35em;
 }
@@ -48,17 +39,6 @@ Font styles
 
 }
 
-i.icon,
-.fi,
-[data-icon]:before
-{
-	&.loading,
-	&.loading-icon {
-		display:inline-block;
-		animation:rotate 3s linear infinite;
-	}
-
-}
 @include import-font($fontParaName, "t", "t", normal, normal)
 @include import-font($fontParaName, "tb", "tb", bold, normal)
 @include import-font($fontHeadersName, "h", "h", normal, normal)

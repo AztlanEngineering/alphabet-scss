@@ -1,8 +1,13 @@
 /*
 
+--default
 --accent1
 --accent2
 --accent3
+--on-accent1
+--on-accent2
+--on-accent3
+--bxc (box shadow)
 --color
 --light-color
 --dark-color
@@ -24,6 +29,7 @@
 
 
 /*--- Setting up some css4 vars---*/
+
 :root {
 	@each $n, $c in $cColors
 	{
@@ -71,6 +77,9 @@
 	--on-accent1:#{$colorAccent1};
 	--on-accent2:#{$colorAccent2};
 	--on-accent3:#{$colorAccent3};
+
+	//--bxc:#{$boxShadowDefaultX};
+
 
 	@each $n, $c in $cShadowSizes
 	{

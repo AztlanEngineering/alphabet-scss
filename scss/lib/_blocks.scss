@@ -70,163 +70,203 @@ Vertical Align
 */
 
 /*--- No Scrollbar ---*/
-.nsb::-webkit-scrollbar {
-    display: none;
-	}
-
-.nsb {
-	scrollbar-width: none;
+.nsb::-webkit-scrollbar
+{
+  display:none;
 }
 
-@include media($to:$xs-sm){
-	.nsb-xs::-webkit-scrollbar {
-		  display: none;
-		}
+.nsb
+{
+  scrollbar-width:none;
+}
 
-	.nsb-xs {
-		scrollbar-width: none;
-	}
+@include media($to:$xs-sm)
+{
+  .nsb-xs::-webkit-scrollbar
+  {
+    display:none;
+  }
+
+  .nsb-xs
+  {
+    scrollbar-width:none;
+  }
 }
 
 
 /*--- Float ---*/
-%prepare-float {
-  display: block;
+%prepare-float
+{
+  display:block;
   //position:relative;
 }
 
-.l {
+.l
+{
   @extend %prepare-float;
-  float: left;
+  float:left;
 }
 
-.r {
+.r
+{
   @extend %prepare-float;
-  float: right;
+  float:right;
 }
 
-.nf {
+.nf
+{
   clear:both;
 }
 
 
 /*--- Margin / padding ---*/
-.nm {
-    margin: 0px 0px 0px 0px!important;
+.nm
+{
+  margin:0 0 0 0!important;
 }
-.np {
-    padding: 0px 0px 0px 0px!important;
+.np
+{
+  padding:0 0 0 0!important;
 }
-.nmv {
-    margin-top:0px!important;
-    margin-bottom:0px!important;
+.nmv
+{
+  margin-top:0!important;
+  margin-bottom:0!important;
 }
-.nmh {
-    margin-left:0px!important;
-    margin-right:0px!important;
+.nmh
+{
+  margin-left:0!important;
+  margin-right:0!important;
 }
-.nph {
-    padding-left:0px!important;
-    padding-right:0px!important;
+.nph
+{
+  padding-left:0!important;
+  padding-right:0!important;
 }
-.npv {
-    padding-top:0px!important;
-    padding-bottom:0px!important;
-}
-
-@mixin margin-padding-code($current, $name) {
-		.m#{$name}{
-      margin:#{$current}rem #{$current}rem;
-    }
-    .mh#{$name}{
-      margin-left:#{$current}rem;
-      margin-right:#{$current}rem;
-    }
-    .mv#{$name}{
-      margin-top:#{$current}rem;
-      margin-bottom:#{$current}rem;
-    }
-    .p#{$name}{
-      padding:#{$current}rem #{$current}rem;
-    }
-    .ph#{$name}{
-      padding-left:#{$current}rem;
-      padding-right:#{$current}rem;
-    }
-    .pv#{$name}{
-      padding-top:#{$current}rem;
-      padding-bottom:#{$current}rem;
-    }
-	
+.npv
+{
+  padding-top:0!important;
+  padding-bottom:0!important;
 }
 
-@mixin margin-padding{
-  @for $i from 1 through $marginPaddingIterations{
-		$current: $i;
-
-		@include margin-padding-code($current:$current, $name:$current)
+@mixin margin-padding-code($current, $name)
+{
+  .m#{$name}
+  {
+    margin:#{$current}rem #{$current}rem;
   }
-	@include margin-padding-code($current:.5, $name:"05")
-	@include margin-padding-code($current:.2, $name:"02")
-	@include margin-padding-code($current:.1, $name:"01")
+  .mh#{$name}
+  {
+    margin-left:#{$current}rem;
+    margin-right:#{$current}rem;
+  }
+  .mv#{$name}
+  {
+    margin-top:#{$current}rem;
+    margin-bottom:#{$current}rem;
+  }
+  .p#{$name}
+  {
+    padding:#{$current}rem #{$current}rem;
+  }
+  .ph#{$name}
+  {
+    padding-left:#{$current}rem;
+    padding-right:#{$current}rem;
+  }
+  .pv#{$name}
+  {
+    padding-top:#{$current}rem;
+    padding-bottom:#{$current}rem;
+  }
+}
+
+@mixin margin-padding
+{
+  @for $i from 1 through $marginPaddingIterations
+  {
+    $current:$i;
+
+    @include margin-padding-code($current:$current, $name:$current);
+  }
+  @include margin-padding-code($current:.5, $name:'05')
+  @include margin-padding-code($current:.2, $name:'02')
+  @include margin-padding-code($current:.1, $name:'01');
 }
 @include margin-padding;
 
 
 
 /*--- Position ---*/
-.xa {
-  position: absolute;
+.xa
+{
+  position:absolute;
 }
-.xf {
+.xf
+{
   position:fixed;
 }
-.xv {
+.xv
+{
   position:relative;
 }
-.xt {
+.xt
+{
   top:0;
 }
-.xb {
+.xb
+{
   bottom:0;
 }
-.xl {
-  left: 0;
+.xl
+{
+  left:0;
 }
-.xr {
-  right: 0;
+.xr
+{
+  right:0;
 }
 
 
 /*--- display  ---*/
-.yb {
-  display: block;
+.yb
+{
+  display:block;
 }
-.yi {
-  display: inline;
+.yi
+{
+  display:inline;
 }
-.yit.yit.yit.yit.yit {
-  display: inline-table;
+.yit.yit.yit.yit.yit
+{
+  display:inline-table;
 }
-.yib.yib.yib.yib.yib {
-  display: inline-block;
+.yib.yib.yib.yib.yib
+{
+  display:inline-block;
 }
-.yf {
-	display: flex;
+.yf
+{
+  display:flex;
 }
-.yif {
-	display: inline-flex;
+.yif
+{
+  display:inline-flex;
 }
 
 /*--- Z-Index ---*/
-@mixin zindex{
-  @for $i from 0 through $zIndexIterations{
+@mixin zindex
+{
+  @for $i from 0 through $zIndexIterations
+  {
     $current:$i;
-    .z#{$current}{
-      z-index: $current;
+    .z#{$current}
+    {
+      z-index:$current;
     }
-    .z-#{$current}{
-      z-index: -$current;
+    .z-#{$current}
+    {
+      z-index:-$current;
     }
   }
 }
@@ -234,100 +274,112 @@ Vertical Align
 @include zindex;
 
 /*--- border-radius ---*/
-.bl {
-	border-radius:$borderRadiusLeft;
+.bl
+{
+  border-radius:$borderRadiusLeft;
 }
 
-.br {
-	border-radius:$borderRadiusRight;
+.br
+{
+  border-radius:$borderRadiusRight;
 }
 
-.bt {
-	border-radius:$borderRadiusTop;
+.bt
+{
+  border-radius:$borderRadiusTop;
 }
 
-.bb {
-	border-radius:$borderRadiusBottom;
+.bb
+{
+  border-radius:$borderRadiusBottom;
 }
 
-.b {
-	border-radius:$borderRadiusAll;
+.b
+{
+  border-radius:$borderRadiusAll;
 }
 
 /*--- Divider ---*/
-.d {
-	@extend .row;
-	border-bottom:1px solid $dividerColor;
+.d
+{
+  @extend .row;
+  border-bottom:1px solid $dividerColor;
 }
 
 /*--- Circle---*/
 
-.c {
-	border-radius: 50%;
+.c
+{
+  border-radius:50%;
 }
 
 /*--- Vertical Align ---*/
-.wb {
-	vertical-align:bottom;
-	overflow:hidden;
+.wb
+{
+  vertical-align:bottom;
+  overflow:hidden;
 }
 
 /*--- Hidden ---*/
-.h {
-	display:none;
+.h
+{
+  display:none;
 }
 
-@include media($to:$xs-sm){
-	.h-xs {
-		display:none;
-
-	}
-
+@include media($to:$xs-sm)
+{
+  .h-xs
+  {
+    display:none;
+  }
 }
 
-@include media($from:$xs-sm,$to:$sm-md){
-	.h-sm {
-		display:none;
-
-	}
-
+@include media($from:$xs-sm,$to:$sm-md)
+{
+  .h-sm
+  {
+    display:none;
+  }
 }
 
-@include media($from:$sm-md,$to:$md-lg){
-	.h-md {
-		display:none;
-
-	}
-
+@include media($from:$sm-md,$to:$md-lg)
+{
+  .h-md
+  {
+    display:none;
+  }
 }
 
-@include media($from:$md-lg){
-	.h-lg {
-		display:none;
-
-	}
-
+@include media($from:$md-lg)
+{
+  .h-lg
+  {
+    display:none;
+  }
 }
 
 
 /*--- Default Blocks ---*/
-[class*="block"] {
-	padding:1rem;
-	box-shadow:var(--sh-sm);
-	display:block;
-	border-radius:var(--r);
+[class*='block']
+{
+  padding:1rem;
+  box-shadow:var(--sh-sm);
+  display:block;
+  border-radius:var(--r);
 
-	&:not(:last-child){
-		margin-bottom:1rem;
-	}
+  &:not(:last-child)
+  {
+    margin-bottom:1rem;
+  }
 }
 
-.block{
-	background:var(--white);
+.block
+{
+  background:var(--white);
 }
 
-.block-alt {
-	background:var(--light-grey);
+.block-alt
+{
+  background:var(--light-grey);
 }
-
 

@@ -9,13 +9,21 @@
 // .sha : shadow active
 // .simple : transparent
 
-@keyframes back-horizontal {
-    0%{background-position:200% 50%}
-    100%{background-position:-100% 50%}
+@keyframes back-horizontal
+{
+  0%
+  {
+    background-position:200% 50%;
+  }
+  100%
+  {
+    background-position:-100% 50%;
+  }
 }
 
-.c-init.c-init {
-	color:var(--default);
+.c-init.c-init
+{
+  color:var(--default);
 }
 
 @include setColorClassesFor($cColors);
@@ -27,24 +35,43 @@
 @include setBackgroundClassesFor($cBrandColors, 'brand');
 
 @include setShadowClasses();
-.sha.sha.sha {
-	&:active {
-		box-shadow:var(--ish-sm);
-	}
+.sha.sha.sha
+{
+  &:focus,
+  &:active,
+	> *:focus,
+	> *:active 
+  {
+    box-shadow:var(--ish-sm);
+		--cs:var(--ish-sm);
+  }
 }
 
-.simple {
-	background:transparent;
-	color:$linkColor;
+.simple
+{
+  background:transparent;
+  color:$linkColor;
 }
-.simpleh {
-	&:hover,
-	&:focus{
-		color:$linkHoverColor;
-	}
+.simpleh
+{
+  &:hover,
+  &:focus
+  {
+    color:$linkHoverColor;
+  }
 }
 
-.bxc {
-	@include collapsible-border(var(--c));
+.bxc
+{
+  @include collapsible-border(var(--c));
 }
+
+.disabled.disabled
+	{
+		cursor:unset;
+		color:$disabledColor;
+		box-shadow:initial;
+
+								  
+	}
 

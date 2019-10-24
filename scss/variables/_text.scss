@@ -2,12 +2,18 @@
 /*--- Sizes ---*/
 $defaultFontMultipler:16!default;
 $defaultFontSize:16*1px!default;
-$sizeXSMultiplier:12!default;
-$sizeSMMultiplier:14!default;
+$sizeXSMultiplier:11!default;
+$sizeSMMultiplier:13!default;
 $sizeMDMultiplier:16!default;
 $sizeLGMultiplier:24!default;
 $sizeXLMultiplier:32!default;
 $sizeXXLMultiplier:48!default;
+//$sizeRelativeXS:($sizeXSMultiplier / $defaultFontMultipler) * 1em;
+$sizeRelativeSM:($sizeSMMultiplier / $defaultFontMultipler) * 1em;
+$sizeRelativeMD:($sizeMDMultiplier / $defaultFontMultipler) * 1em;
+$sizeRelativeLG:($sizeLGMultiplier / $defaultFontMultipler) * 1em;
+$sizeRelativeXL:($sizeXLMultiplier / $defaultFontMultipler) * 1em;
+//$sizeRelativeXXL:($sizeXXLMultiplier / $defaultFontMultipler) * rem;
 $sizeXS:($sizeXSMultiplier / $defaultFontMultipler) * 1rem;
 $sizeSM:($sizeSMMultiplier / $defaultFontMultipler) * 1rem;
 $sizeMD:($sizeMDMultiplier / $defaultFontMultipler) * 1rem;
@@ -25,6 +31,12 @@ $cSizes:(
 	'xxl':$sizeXXL,
 )!default;
 
+$cRelativeSizes:(
+	'sm':$sizeRelativeSM,
+	'md':$sizeRelativeMD,
+	'lg':$sizeRelativeLG,
+	'xl':$sizeRelativeXL,
+)!default;
 
 /*--- Text Size ---*/
 $smallClassName:'sm'!default;

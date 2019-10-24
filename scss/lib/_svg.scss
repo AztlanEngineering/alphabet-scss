@@ -8,13 +8,13 @@ SVG Styles
 
 svg use
 {
-  fill: var(--f,$orange);
-  stroke: var(--sc,$red);
-  stroke-width: var(--sw, 0);
-  stroke-dasharray: var(--sda, 0);
+  fill:var(--f,$orange);
+  stroke:var(--sc,$red);
+  stroke-width:var(--sw, 0);
+  stroke-dasharray:var(--sda, 0);
 
-	&:not(.anti) {
-		animation:var(--path-animation, none);
-	}
+  &:not(.anti)
+  {
+    animation:var(--path-animation, none);
+  }
 }
-

@@ -71,9 +71,9 @@ $invertedColor:$white!default;
 /*--- Shadow color ---*/
 $shadowColor:$black!default;
 $shadowAlpha:.22!default;
-$shadowXYBlurSmall: 0 .3rem .6rem!default;
-$shadowXYBlurMedium: 0 .6rem .8rem!default;
-$shadowXYBlurLarge: 0 .9rem 1rem!default;
+$shadowXYBlurSmall:0 .3rem .6rem!default;
+$shadowXYBlurMedium:0 .6rem .8rem!default;
+$shadowXYBlurLarge:0 .9rem 1rem!default;
 $shadowSmall:$shadowXYBlurSmall rgba(red($shadowColor), green($shadowColor), blue($shadowColor), $shadowAlpha)!default;
 $shadowMedium:$shadowXYBlurMedium rgba(red($shadowColor), green($shadowColor), blue($shadowColor), $shadowAlpha)!default;
 $shadowLarge:$shadowXYBlurLarge rgba(red($shadowColor), green($shadowColor), blue($shadowColor), $shadowAlpha)!default;
@@ -88,7 +88,6 @@ $cMonochrome:(
   'off-black':$offBlack,
   'black':$black,
 )!default;
-
 $cMonochromeHover:(
   'white':'light-grey',
   'off-white':'light-grey',
@@ -165,7 +164,6 @@ $cBrandColors:(
 	'youtube':$youtubeColor,
 	'instagram':$instagramColor,
 )!default;
-
 $cBrandHover:(
 	'facebook':'blue',
 	'twitter':'teal',
@@ -180,7 +178,7 @@ $cColorContrasts:(
   'red':$lightColor,
   'orange':$lightColor,
   'yellow':$darkColor,
-	'olive':$lightColor,
+	'olive':$darkColor,
   'green':$lightColor,
   'teal':$lightColor,
 	'blue':$lightColor,
@@ -197,7 +195,8 @@ $cColorContrasts:(
 	'instagram':$lightColor,
 )!default;
 
-@function contrastForColor($color) {
+@function contrastForColor($color)
+{
   @return map-get($cColorContrasts, $color)
 }
 
@@ -208,28 +207,34 @@ $cShadowSizes:(
 	'lg':$shadowLarge,
 )!default;
 
-/*--- Shadow Vars  ---*/
-$shadowClassPrefix:"sh-"!default;
-$shadowVarPrefix:$shadowClassPrefix!default;
-$shadowHoverClassPrefix:"shh-"!default;
-$shadowActiveClassPrefix:"sha-"!default;
+/*--- Disabled ---*/
+$disabledColor:var(--grey);
 
-@mixin setShadowClasses($a:$cShadowSizes){
+/*--- Shadow Vars  ---*/
+$shadowClassPrefix:'sh-'!default;
+$shadowVarPrefix:$shadowClassPrefix!default;
+$shadowHoverClassPrefix:'shh-'!default;
+$shadowActiveClassPrefix:'sha-'!default;
+
+@mixin setShadowClasses($a:$cShadowSizes)
+{
   @each $n, $c in $a
-	{
-		&.#{$shadowClassPrefix}#{$n}
-		{
-			box-shadow:var(--#{$shadowVarPrefix}#{$n})
-    }
-		&.#{$shadowHoverClassPrefix}#{$n}
+  {
+    &.#{$shadowClassPrefix}#{$n}
     {
-			&:hover,
-			&:focus{
-				box-shadow:var(--#{$shadowVarPrefix}#{$n})
-			}
+      box-shadow:var(--#{$shadowVarPrefix}#{$n});
+			--cs:var(--#{$shadowVarPrefix}#{$n});
+    }
+    &.#{$shadowHoverClassPrefix}#{$n}
+    {
+      &:hover,
+      &:focus
+      {
+        box-shadow:var(--#{$shadowVarPrefix}#{$n});
+				--cs:var(--#{$shadowVarPrefix}#{$n});
+      }
     }
   }
-
 }
 
 /*--- Hover Dict ---*/
@@ -239,7 +244,8 @@ $cHover:(
 	'brand':$cBrandHover,
 )!default;
 
-@function HoverForColor($family, $color) {
+@function HoverForColor($family, $color)
+{
   @return map-get(map-get($cHover, $family),$color)
 }
 
@@ -249,79 +255,84 @@ $backgroundClassPrefix:'b-'!default;
 $backgroundHoverClassPrefix:'bh-'!default;
 $fillClassPrefix:'f-'!default;
 
-@mixin setColorClassesFor($a){
+@mixin setColorClassesFor($a)
+{
   @each $n, $c in $a
-	{
-		&.#{$colorClassPrefix}#{$n}
+  {
+    &.#{$colorClassPrefix}#{$n}
     {
       color:var(--#{$n});
-  		--sc:var(--#{$n});
+      --sc:var(--#{$n});
     }
   }
-
 }
 
-@mixin setBackgroundClassesFor($a, $family, $color:true){
+@mixin setBackgroundClassesFor($a, $family, $color:true)
+{
   @each $n, $c in $a
   {
     &.#{$backgroundClassPrefix}#{$n}
     {
-  		@if color {
-  			background-color:var(--#{$n});
-  		}
-  		@else {
-  			background:var(--#{$n});
-  		}
-  		color:var(--on-#{$n});
-  		--cb:var(--#{$n});
-  		--cc:var(--on-#{$n});
+      @if color
+      {
+        background-color:var(--#{$n});
+      }
+      @else
+      {
+        background:var(--#{$n});
+      }
+      color:var(--on-#{$n});
+      --cb:var(--#{$n});
+      --cc:var(--on-#{$n});
     }
-  
-  	&.#{$backgroundHoverClassPrefix}#{$n}
+
+    &.#{$backgroundHoverClassPrefix}#{$n}
     {
-  		&:hover,
-  		&:focus {
-				$hoverBack:HoverForColor($family, $n);
-  			@if color {
-  				background-color:var(--#{$hoverBack});
-  			}
-  			@else {
-  				background:var(--light-#{$hoverBack});
-  			}
-  			color:var(--on-#{$n});
-				--cb:var(--#{$n});
-				--cc:var(--on-#{$n});
-  		}
+      &:hover,
+      &:focus
+      {
+        $hoverBack:HoverForColor($family, $n);
+        @if color
+        {
+          background-color:var(--#{$hoverBack});
+        }
+        @else
+        {
+          background:var(--light-#{$hoverBack});
+        }
+        color:var(--on-#{$n});
+        --cb:var(--#{$n});
+        --cc:var(--on-#{$n});
+      }
     }
 
     &.#{$fillClassPrefix}#{$n}
     {
-  		--f:var(--#{$n});
+      --f:var(--#{$n});
     }
   }
 }
 
 /*--- Collapsible-border / box-shadow ---*/
 $boxShadowWidth:2px!default;
-
-$boxShadowDefaultX: $boxShadowWidth 0 0 0 var(--cc, blue),
+$boxShadowDefaultX:$boxShadowWidth 0 0 0 var(--cc, blue),
       0 $boxShadowWidth 0 0 var(--cc, blue),
       $boxShadowWidth $boxShadowWidth 0 0 var(--cc, blue),   /* Just to fix the corner */
       $boxShadowWidth 0 0 0 var(--cc, blue) inset,
       0 $boxShadowWidth 0 0 var(--cc, blue) inset!default;
-
-$boxShadowDefault: $boxShadowWidth 0 0 0 var(--c),
+$boxShadowDefault:$boxShadowWidth 0 0 0 var(--c),
       0 $boxShadowWidth 0 0 var(--c),
       $boxShadowWidth $boxShadowWidth 0 0 var(--c),   /* Just to fix the corner */
       $boxShadowWidth 0 0 0 var(--c) inset,
       0 $boxShadowWidth 0 0 var(--c) inset!default;
 
-@mixin collapsible-border($color, $width:1px) {
-    box-shadow: $width 0 0 0 $color,
-      0 $width 0 0 $color,
-      $width $width 0 0 $color,   /* Just to fix the corner */
-      $width 0 0 0 $color inset,
-      0 $width 0 0 $color inset;
+@mixin collapsible-border($color, $width:1px)
+{
+  box-shadow:$width 0 0 0 $color,
+  0 $width 0 0 $color,
+  $width $width 0 0 $color,   /* Just to fix the corner */
+  $width 0 0 0 $color inset,
+  0 $width 0 0 $color inset;
 }
 
 /*--- Default Theme ---*/
@@ -332,4 +343,3 @@ $accent3:$blue!default;
 $colorAccent1:$white!default;
 $colorAccent2:$black!default;
 $colorAccent3:$white!default;
-

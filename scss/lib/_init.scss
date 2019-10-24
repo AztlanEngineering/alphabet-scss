@@ -65,6 +65,11 @@
 		--#{$n}:#{$c};
 	}
 
+	@each $n, $c in $cRelativeSizes
+	{
+		--r-#{$n}:#{$c};
+	}
+
 	@each $n, $c in $cSvg
 	{
 		--#{$n}:#{$c};
@@ -95,6 +100,7 @@
 
 	--font-h:#{$fontHeaders};
 	--font-p:#{$fontDefault};
+	--font-d:var(--font-p);
 
 	--xs-sm:#{$xs-sm};
 	--sm-md:#{$sm-md};

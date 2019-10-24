@@ -31,53 +31,64 @@ Custom : .h1, .h2, .h3, .h4, .h5, .h6, .small, .p
 Other
 
 .s-size
+.r-size
 do not mix with .sm
 
 */
 
-.tl {
-  font-weight: lighter;
+.tl
+{
+  font-weight:lighter;
 }
 
-.tb {
-  font-weight: bold;
+.tb
+{
+  font-weight:bold;
 }
 
-.ti {
-  font-style: italic;
+.ti
+{
+  font-style:italic;
 }
 
-.tu {
-  text-transform: uppercase;
+.tu
+{
+  text-transform:uppercase;
 }
 
-.tv {
-  text-decoration: underline;
+.tv
+{
+  text-decoration:underline;
 }
 
-.tw {
-  text-transform: lowercase;
+.tw
+{
+  text-transform:lowercase;
 }
 
-.ts {
-  font-feature-settings:"smcp" 1;
+.ts
+{
+  font-feature-settings:'smcp' 1;
 }
 
-.tls {
-	letter-spacing:$textLetterSpacingHigh;
+.tls
+{
+  letter-spacing:$textLetterSpacingHigh;
 }
 
-.to {
-  font-feature-settings:"onum" $textOpenTypeOnum,
- "kern" $textOpenTypeKern,
- "liga" $textOpenTypeLiga,
- "dlig" $textOpenTypeDlig,
- "hlig" $textOpenTypeHlig,
- "clig" $textOpenTypeClig; 
+.to
+{
+  font-feature-settings:'onum' $textOpenTypeOnum,
+  'kern' $textOpenTypeKern,
+  'liga' $textOpenTypeLiga,
+  'dlig' $textOpenTypeDlig,
+  'hlig' $textOpenTypeHlig,
+  'clig' $textOpenTypeClig;
 }
 
-.tn {
-  font-feature-settings:"onum" 1;
+.tn
+{
+  font-feature-settings:'onum' 1;
 }
 
 @each $n, $c in $cSizes
@@ -88,8 +99,17 @@ do not mix with .sm
   }
 }
 
-ul {
-	list-style:$ulListStyle;
+@each $n, $c in $cRelativeSizes
+{
+  &.r-#{$n}
+  {
+    font-size:var(--r-#{$n});
+  }
+}
+
+ul
+{
+  list-style:$ulListStyle;
 }
 
 /*--- ---*/
@@ -153,7 +173,7 @@ h4.#{$smallClassName},
 small,
 .#{$smallClassName}
 {
-  font-size:$small;
+  font-size:var(--r-sm);
 }
 
 h1:first-child,
@@ -180,8 +200,8 @@ p
 {
   margin:$textMarginParagraph ;
   line-height:$textLineHeightParagraph;
-	widows:$paragraphWidows;
-	orphans:$paragraphOrphans;
+  widows:$paragraphWidows;
+  orphans:$paragraphOrphans;
 }
 
 p:first-child
@@ -208,19 +228,22 @@ a:hover
   text-decoration:$linkHoverUnderline;
 }
 
-@include responsive(ul) {
-	text-align:left;
-} 
+@include responsive(ul)
+{
+  text-align:left;
+}
 
-@include responsive(ur) {
-	text-align:right;
-} 
+@include responsive(ur)
+{
+  text-align:right;
+}
 
-@include responsive(uc) {
-	text-align:center;
-} 
+@include responsive(uc)
+{
+  text-align:center;
+}
 
-@include responsive(uj) {
-	text-align:justify;
-} 
-
+@include responsive(uj)
+{
+  text-align:justify;
+}

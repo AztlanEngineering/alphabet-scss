@@ -8,7 +8,8 @@ Text styles
 .tn : oldstyle number
 .tu : uppercase
 .tw : lowercase
-.ts : small caps (only on otf files featuring it)
+.ts : text with stroke 
+.tsm : small caps (only on otf files featuring it)
 .to : most open type features for content (ligatures))
 .tls : high letter spacing
 .nd : no decoration
@@ -66,10 +67,18 @@ do not mix with .sm
   text-transform:lowercase;
 }
 
-.ts
+.tsm
 {
   font-feature-settings:'smcp' 1;
 }
+
+.ts{
+  -webkit-text-stroke: $textStrokeWidth var(--cc, #{$default});
+     text-stroke: $textStrokeWidth var(--cc, #{$default});
+		 color:transparent;
+
+}
+
 
 .tls
 {

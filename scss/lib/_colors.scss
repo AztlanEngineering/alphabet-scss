@@ -35,6 +35,7 @@
 @include setBackgroundClassesFor($cBrandColors, 'brand');
 
 @include setShadowClasses();
+
 .sha.sha.sha
 {
   &:focus,
@@ -42,16 +43,19 @@
 	> *:focus,
 	> *:active 
   {
-    box-shadow:var(--ish-sm);
-		--cs:var(--ish-sm);
+    box-shadow:var(--ish-xs);
+		--cs:var(--ish-xs);
   }
 }
 
+
+/*--- TODO Simple ---*/
 .simple
 {
   background:transparent;
   color:$linkColor;
 }
+
 .simpleh
 {
   &:hover,
@@ -61,10 +65,12 @@
   }
 }
 
+/*
 .bxc
 {
   @include collapsible-border(var(--c));
 }
+*/
 
 .disabled.disabled
 	{

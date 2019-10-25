@@ -71,9 +71,12 @@ $invertedColor:$white!default;
 /*--- Shadow color ---*/
 $shadowColor:$black!default;
 $shadowAlpha:.22!default;
+$shadowAlphaXS:.15!default;
+$shadowXYBlurXS:0 .2rem .3rem!default;
 $shadowXYBlurSmall:0 .3rem .6rem!default;
 $shadowXYBlurMedium:0 .6rem .8rem!default;
 $shadowXYBlurLarge:0 .9rem 1rem!default;
+$shadowXSmall:$shadowXYBlurXS rgba(red($shadowColor), green($shadowColor), blue($shadowColor), $shadowAlphaXS)!default;
 $shadowSmall:$shadowXYBlurSmall rgba(red($shadowColor), green($shadowColor), blue($shadowColor), $shadowAlpha)!default;
 $shadowMedium:$shadowXYBlurMedium rgba(red($shadowColor), green($shadowColor), blue($shadowColor), $shadowAlpha)!default;
 $shadowLarge:$shadowXYBlurLarge rgba(red($shadowColor), green($shadowColor), blue($shadowColor), $shadowAlpha)!default;
@@ -202,6 +205,7 @@ $cColorContrasts:(
 
 /*--- Shadow Classes ---*/
 $cShadowSizes:(
+	'xs':$shadowXSmall,
 	'sm':$shadowSmall,
 	'md':$shadowMedium,
 	'lg':$shadowLarge,
@@ -215,17 +219,18 @@ $shadowClassPrefix:'sh-'!default;
 $shadowVarPrefix:$shadowClassPrefix!default;
 $shadowHoverClassPrefix:'shh-'!default;
 $shadowActiveClassPrefix:'sha-'!default;
+$shadowInsetClassPrefix:'i'!default;
 
 @mixin setShadowClasses($a:$cShadowSizes)
 {
   @each $n, $c in $a
   {
-    &.#{$shadowClassPrefix}#{$n}
+    .#{$shadowClassPrefix}#{$n}
     {
       box-shadow:var(--#{$shadowVarPrefix}#{$n});
 			--cs:var(--#{$shadowVarPrefix}#{$n});
     }
-    &.#{$shadowHoverClassPrefix}#{$n}
+    .#{$shadowHoverClassPrefix}#{$n}
     {
       &:hover,
       &:focus
@@ -234,6 +239,11 @@ $shadowActiveClassPrefix:'sha-'!default;
 				--cs:var(--#{$shadowVarPrefix}#{$n});
       }
     }
+		.#{$shadowInsetClassPrefix}#{$shadowHoverClassPrefix}#{$n}{
+      box-shadow: inset var(--#{$shadowVarPrefix}#{$n});
+			--cs:var(--#{$shadowVarPrefix}#{$n});
+		}
+		
   }
 }
 
@@ -262,7 +272,7 @@ $fillClassPrefix:'f-'!default;
     &.#{$colorClassPrefix}#{$n}
     {
       color:var(--#{$n});
-      --sc:var(--#{$n});
+      --cc:var(--#{$n});
     }
   }
 }

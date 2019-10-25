@@ -89,8 +89,8 @@
 	@each $n, $c in $cShadowSizes
 	{
 		--#{$shadowVarPrefix}#{$n}:#{$c};
+		--#{$shadowInsetClassPrefix}#{$shadowVarPrefix}#{$n}:inset #{$c};
 	}
-	--ish-sm:inset #{$shadowSmall};
 
 	--r-left:#{$borderRadiusLeft};
 	--r-right:#{$borderRadiusRight};

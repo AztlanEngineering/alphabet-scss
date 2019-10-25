@@ -8,7 +8,7 @@ $sizeMDMultiplier:16!default;
 $sizeLGMultiplier:24!default;
 $sizeXLMultiplier:32!default;
 $sizeXXLMultiplier:48!default;
-//$sizeRelativeXS:($sizeXSMultiplier / $defaultFontMultipler) * 1em;
+$sizeRelativeXS:($sizeXSMultiplier / $defaultFontMultipler) * 1em;
 $sizeRelativeSM:($sizeSMMultiplier / $defaultFontMultipler) * 1em;
 $sizeRelativeMD:($sizeMDMultiplier / $defaultFontMultipler) * 1em;
 $sizeRelativeLG:($sizeLGMultiplier / $defaultFontMultipler) * 1em;
@@ -32,6 +32,7 @@ $cSizes:(
 )!default;
 
 $cRelativeSizes:(
+	'xs':$sizeRelativeXS,
 	'sm':$sizeRelativeSM,
 	'md':$sizeRelativeMD,
 	'lg':$sizeRelativeLG,
@@ -51,10 +52,10 @@ $small:.81em!default;
 
 /*--- Text Line, Margin ---*/
 $textLineHeightDefault:1.07!default;
-$textLineHeightHeaders:$textLineHeightDefault!default;
+$textLineHeightHeaders:1.22!default;
 $textLineHeightParagraph:$textLineHeightDefault!default;
 $textMarginParagraph:0 0 1em!default;
-$textMarginHeaders:0 0 .7em!default;
+$textMarginHeaders:0 0 .6em!default;
 
 /*--- Text Display ---*/
 $textOrphansDefault:2!default;
@@ -66,6 +67,7 @@ $textWidowsParagraph:$textWidowsDefault!default;
 $textOrphansHeaders:$textOrphansDefault!default;
 $textWidowsHeaders:$textWidowsDefault!default;
 $textTransformHeaders:none!default;
+$textStrokeWidth:2px!default;
 
 /*--- Link ---*/
 $linkUnderline:none!default;

@@ -3,7 +3,7 @@
 $white:#fff!default;
 $offWhite:#f5f5f5!default;
 $lightGrey:#dedede!default;
-$grey:#757677!default;
+$grey:#959697!default;
 $darkGrey:#424242!default;
 $offBlack:#1b1c1d!default;
 $black:#1b1c1d!default;
@@ -42,7 +42,7 @@ $darkYellow:#f4d35e!default;
 $darkOlive:#d9e778!default;
 $darkGreen:#2ecc40!default;
 $darkTeal:#74e0d7!default;
-$darkBlue:#22aed1!default;
+$darkBlue:#1045b1!default;
 $darkViolet:#a291fb!default;
 $darkPurple:#a682ff!default;
 $darkPink:#ff8edf!default;
@@ -60,12 +60,27 @@ $instagramColor:#49769c!default;
 
 /*--- Link ---*/
 $linkColor:$lightBlue!default;
-$linkHoverColor:$green!default;
+$linkHoverColor:$teal!default;
+$linkDiscreetColor:$lightGrey!default;
+
+
+/*--- Default Theme ---*/
+$default:$black!default;
+$accent1:$teal!default;
+$accent2:$orange!default;
+$accent3:$blue!default;
+$onAccent1:$white!default;
+$onAccent2:$black!default;
+$onAccent3:$white!default;
+$defaultHover:$linkHoverColor!default;
+$accent1Hover:$lightTeal!default;
+$accent2Hover:$lightOrange!default;
+$accent3Hover:$lightBlue!default;
 
 /*--- Page colors ---*/
 $pageBackground:$white!default;
-$textColor:$black!default;
-$headersColor:$blue!default;
+$textColor:$default!default;
+$headersColor:$accent1!default;
 $invertedColor:$white!default;
 
 /*--- Shadow color ---*/
@@ -174,6 +189,27 @@ $cBrandHover:(
 	'instagram':'blue',
 )!default;
 
+/*--- Link Colors ---*/
+$cLinkColors:(
+	'l':$linkColor,
+	'lh':$linkHoverColor,
+	'ld':$linkDiscreetColor,
+);
+
+/*--- Theme Colors ---*/
+$cThemeColors:(
+	'default':$default,
+	'accent1':$accent1,
+	'accent2':$accent2,
+	'accent3':$accent3,
+);
+$cThemeHover:(
+	'default':$defaultHover,
+	'accent1':$accent1Hover,
+	'accent2':$accent2Hover,
+	'accent3':$accent3Hover,
+);
+
 /*--- Content In Colors ---*/
 $darkColor:$black;
 $lightColor:$white;
@@ -196,6 +232,10 @@ $cColorContrasts:(
 	'twitter':$lightColor,
 	'youtube':$lightColor,
 	'instagram':$lightColor,
+	'default':$lightColor,
+	'accent1':$onAccent1,
+	'accent2':$onAccent2,
+	'accent3':$onAccent3,
 )!default;
 
 @function contrastForColor($color)
@@ -252,6 +292,7 @@ $cHover:(
 	'colors':$cColorsHover,
 	'monochrome':$cMonochromeHover,
 	'brand':$cBrandHover,
+	'theme':$cThemeHover,
 )!default;
 
 @function HoverForColor($family, $color)
@@ -259,10 +300,44 @@ $cHover:(
   @return map-get(map-get($cHover, $family),$color)
 }
 
+/*--- Collapsible-border / box-shadow ---*/
+$boxShadowWidth:2px!default;
+$boxShadowDefaultColor:$accent1;
+$boxShadowDefaultX:$boxShadowWidth 0 0 0 var(--cc, var(--default, #{$boxShadowDefaultColor})),
+      0 $boxShadowWidth 0 0 var(--cc, var(--default, #{$boxShadowDefaultColor})),
+      //$boxShadowWidth $boxShadowWidth 0 0 var(--cc, var(--default, #{$boxShadowDefaultColor})),   /* Just to fix the corner */
+      $boxShadowWidth 0 0 0 var(--cc, var(--default, #{$boxShadowDefaultColor})) inset,
+      0 $boxShadowWidth 0 0 var(--cc, var(--default, #{$boxShadowDefaultColor})) inset!default;
+
+/*
+	$boxShadowDefault:$boxShadowWidth 0 0 0 var(--c),
+      0 $boxShadowWidth 0 0 var(--cc),
+      $boxShadowWidth $boxShadowWidth 0 0 var(--c),   
+      $boxShadowWidth 0 0 0 var(--cc) inset,
+      0 $boxShadowWidth 0 0 var(--cc) inset!default;
+*/
+
+@mixin collapsible-border($color, $width:1px)
+{
+  box-shadow:$width 0 0 0 $color,
+  0 $width 0 0 $color,
+  $width $width 0 0 $color,   /* Just to fix the corner */
+  $width 0 0 0 $color inset,
+  0 $width 0 0 $color inset;
+}
+
+/*--- Border ---*/
+$borderWidth:$boxShadowWidth;
+
+%border-all {
+	border:$borderWidth solid var(--cc, var(--default, #{$boxShadowDefaultColor})); 
+}
+
 /*--- Set Color Classes  */
 $colorClassPrefix:'c-'!default;
 $backgroundClassPrefix:'b-'!default;
 $backgroundHoverClassPrefix:'bh-'!default;
+$basicClassPrefix:'bs-'!default;
 $fillClassPrefix:'f-'!default;
 
 @mixin setColorClassesFor($a)
@@ -273,6 +348,7 @@ $fillClassPrefix:'f-'!default;
     {
       color:var(--#{$n});
       --cc:var(--#{$n});
+      --cb:var(--on-#{$n});
     }
   }
 }
@@ -316,40 +392,29 @@ $fillClassPrefix:'f-'!default;
       }
     }
 
+    &.#{$backgroundHoverClassPrefix}#{$n}
+    {
+      &:hover,
+      &:focus
+      {
+        $hoverBack:HoverForColor($family, $n);
+        @if color
+        {
+          background-color:var(--#{$hoverBack});
+        }
+        @else
+        {
+          background:var(--light-#{$hoverBack});
+        }
+        color:var(--on-#{$n});
+        --cb:var(--#{$n});
+        --cc:var(--on-#{$n});
+      }
+    }
+
     &.#{$fillClassPrefix}#{$n}
     {
       --f:var(--#{$n});
     }
   }
 }
-
-/*--- Collapsible-border / box-shadow ---*/
-$boxShadowWidth:2px!default;
-$boxShadowDefaultX:$boxShadowWidth 0 0 0 var(--cc, blue),
-      0 $boxShadowWidth 0 0 var(--cc, blue),
-      $boxShadowWidth $boxShadowWidth 0 0 var(--cc, blue),   /* Just to fix the corner */
-      $boxShadowWidth 0 0 0 var(--cc, blue) inset,
-      0 $boxShadowWidth 0 0 var(--cc, blue) inset!default;
-$boxShadowDefault:$boxShadowWidth 0 0 0 var(--c),
-      0 $boxShadowWidth 0 0 var(--c),
-      $boxShadowWidth $boxShadowWidth 0 0 var(--c),   /* Just to fix the corner */
-      $boxShadowWidth 0 0 0 var(--c) inset,
-      0 $boxShadowWidth 0 0 var(--c) inset!default;
-
-@mixin collapsible-border($color, $width:1px)
-{
-  box-shadow:$width 0 0 0 $color,
-  0 $width 0 0 $color,
-  $width $width 0 0 $color,   /* Just to fix the corner */
-  $width 0 0 0 $color inset,
-  0 $width 0 0 $color inset;
-}
-
-/*--- Default Theme ---*/
-$default:$black!default;
-$accent1:$teal!default;
-$accent2:$orange!default;
-$accent3:$blue!default;
-$colorAccent1:$white!default;
-$colorAccent2:$black!default;
-$colorAccent3:$white!default;

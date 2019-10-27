@@ -29,10 +29,13 @@
 @include setColorClassesFor($cColors);
 @include setColorClassesFor($cMonochrome);
 @include setColorClassesFor($cBrandColors);
+@include setColorClassesFor($cLinkColors); //Note that we don't set BG classes for this one
+@include setColorClassesFor($cThemeColors);
 
 @include setBackgroundClassesFor($cColors, 'colors');
 @include setBackgroundClassesFor($cMonochrome, 'monochrome');
 @include setBackgroundClassesFor($cBrandColors, 'brand');
+@include setBackgroundClassesFor($cBrandColors, 'theme');
 
 @include setShadowClasses();
 
@@ -65,18 +68,43 @@
   }
 }
 
-/*
+.brd {
+	@extend %border-all;
+}
+
 .bxc
 {
-  @include collapsible-border(var(--c));
+	box-shadow:$boxShadowDefaultX;
+ // @include collapsible-border(var(--c));
 }
-*/
+
+.bxc-sha {
+  &:focus,
+  &:active,
+	> *:focus,
+	> *:active 
+  {
+    box-shadow:$boxShadowDefaultX, var(--ish-sm);
+		--cs:var(--ish-xs);
+  }
+}
+
+.b-t {
+	background:transparent;
+}
 
 .disabled.disabled
 	{
 		cursor:unset;
 		color:$disabledColor;
 		box-shadow:initial;
+
+		svg{
+			opacity:.75;
+			path {
+				stroke:$disabledColor!important;
+			}
+		}
 
 								  
 	}

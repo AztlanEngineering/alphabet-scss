@@ -60,6 +60,11 @@
 		--dark-#{$n}:#{$c};
 	}
 
+	@each $n, $c in $cLinkColors
+	{
+		--#{$n}:#{$c};
+	}
+
 	@each $n, $c in $cSizes
 	{
 		--#{$n}:#{$c};

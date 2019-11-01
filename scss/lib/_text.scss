@@ -2,6 +2,7 @@
  
 Text styles
 
+.nt : no style
 .tl : lighter
 .tb : bold
 .ti : italic
@@ -36,6 +37,11 @@ Other
 do not mix with .sm
 
 */
+
+.nt {
+	font-weight:normal;
+	font-style:normal;
+}
 
 .tl
 {

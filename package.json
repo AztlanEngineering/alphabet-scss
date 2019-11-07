@@ -1,6 +1,6 @@
 {
   "name": "fwr-scss",
-  "version": "4.10.1",
+  "version": "4.10.2",
   "description": "FWR (Fewer) SCSS Library, compatible CSS4",
   "main": "main.scss",
   "scripts": {

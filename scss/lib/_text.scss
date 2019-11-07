@@ -12,6 +12,7 @@ Text styles
 .ts : text with stroke 
 .tsm : small caps (only on otf files featuring it)
 .to : most open type features for content (ligatures))
+.tos : oldstyle numbers 
 .tls : high letter spacing
 .nd : no decoration
 .ndh : no decoration (hover)
@@ -99,6 +100,11 @@ do not mix with .sm
   'dlig' $textOpenTypeDlig,
   'hlig' $textOpenTypeHlig,
   'clig' $textOpenTypeClig;
+}
+
+.tos
+{
+  font-feature-settings:'onum' 1,
 }
 
 .tn

@@ -1,6 +1,6 @@
 {
-  "name": "fwr-scss",
-  "version": "4.10.2",
+  "name": "@fwrlines/scss",
+  "version": "0.1.0",
   "description": "FWR (Fewer) SCSS Library, compatible CSS4",
   "main": "main.scss",
   "scripts": {
@@ -10,14 +10,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/779g/fwr-scss.git"
+    "url": "https://github.com/fwrlines/scss.git"
+  },
+	"author": {
+    "name": "fwrlines",
+    "email": "800@779.mx",
+    "url": "https://github.com/fwrlines"
   },
   "author": "779g",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/779g/fwr-scss/issues"
+    "url": "https://github.com/fwrlines/scss/issues"
   },
-  "homepage": "https://github.com/779g/fwr-scss#readme",
+  "homepage": "https://github.com/fwrlines/scss#readme",
   "devDependencies": {
     "csscomb": "^4.3.0"
   }

@@ -67,6 +67,10 @@ Circle
 Vertical Align
 .wb : vertical-align bottom
 
+Grid and Flex
+
+.stretch : align-items stretch https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
 */
 
 /*--- No Scrollbar ---*/
@@ -360,7 +364,7 @@ Vertical Align
 
 
 /*--- Default Blocks ---*/
-[class*='block']
+/*[class*='block']
 {
   padding:1rem;
   box-shadow:var(--sh-sm);
@@ -376,10 +380,31 @@ Vertical Align
 .block
 {
   background:var(--white);
-}
+}*/
 
-.block-alt
+/*.block-alt
 {
   background:var(--light-grey);
+}*/
+
+
+/*--- Grid and Flex ---*/
+.h-stretch {
+	> * {
+		flex-grow:4;
+		> button, 
+		> div { //Hackish
+			width:100%;
+		}
+	}
 }
 
+.v-stretch {
+	> * {
+		flex-grow:4;
+		> button, 
+		> div {
+			height:100%;
+		}
+	}
+}

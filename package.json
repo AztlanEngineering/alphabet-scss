@@ -1,6 +1,6 @@
 {
   "name": "@fwrlines/scss",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "FWR (Fewer) SCSS Library, compatible CSS4",
   "main": "main.scss",
   "scripts": {
@@ -11,11 +11,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/fwrlines/scss.git"
-  },
-	"author": {
-    "name": "fwrlines",
-    "email": "800@779.mx",
-    "url": "https://github.com/fwrlines"
   },
   "author": "779g",
   "license": "MIT",

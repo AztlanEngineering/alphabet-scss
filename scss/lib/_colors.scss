@@ -82,8 +82,8 @@
 .bxc-sha {
   &:focus,
   &:active,
-	> *:focus,
-	> *:active 
+	> *:not(span):focus,
+	> *:not(span):active 
   {
     box-shadow:$boxShadowDefaultX, var(--ish-sm);
 		--cs:var(--ish-xs);

@@ -10,6 +10,10 @@
 .w {
 	display:grid;
 	grid-template-columns: repeat($gridColumns, 1fr);
+
+	> * {
+		grid-column-end:span $gridColumns;
+	}
 }
 
 /*--- Responsive  ---*/
@@ -23,6 +27,7 @@
 		}
 	}
 }
+
 
 // Columns normal (not responsive)
 @for $i from 1 through $gridColumns {

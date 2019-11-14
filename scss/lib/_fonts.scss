@@ -10,6 +10,10 @@ Font styles
 
 @charset 'UTF-8';
 
+//@include import-font($fontParaName, 't', normal, normal)
+//@include import-font($fontParaName, 'tb', bold, normal)
+//@include import-font($fontHeadersName, 'h', normal, normal)
+
 @font-face
 {
   font-family:'if';
@@ -41,9 +45,6 @@ i.icon
   -moz-osx-font-smoothing:grayscale;
 }
 
-@include import-font($fontParaName, 't', 't', normal, normal)
-@include import-font($fontParaName, 'tb', 'tb', bold, normal)
-@include import-font($fontHeadersName, 'h', 'h', normal, normal)
 
 .fh
 {

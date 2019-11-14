@@ -1,4 +1,5 @@
 @import '../variables/colors';
+@import '../variables/fonts';
 $textSizeHeadersMultiplier:1.4;
 $default:$blue;
 $textColor:$default;
@@ -8,3 +9,22 @@ $accent3:$blue;
 $colorAccent1:$white;
 $colorAccent2:$black;
 $colorAccent3:$white;
+
+$fontHeadersName:Px Grotesk;
+$fontHeaders:$fontHeadersName, 'Courier', 'Helvetica', 'Verdana', 'Arial', sans-serif;
+$fontWeightHeaders:bold;
+$fontHLight:'PxLight';
+$fontHRegular:'PxRegular';
+$fontHBold:'PxBold';
+
+@include import-font($fontHeadersName, $fontHRegular, normal, normal);
+@include import-font($fontHeadersName, $fontHRegular, bold, normal);
+@include import-font($fontHeadersName, $fontHRegular, lighter, normal);
+
+$fontParaName:Roboto;
+$fontDefault:$fontParaName, 'HK Grotesk Pro', 'Garamond', 'Baskerville', 'Times', 'Times New Roman', serif;
+
+//@include import-font($fontParaName, 't', 't', normal, normal)
+//@include import-font($fontParaName, 'tb', 'tb', bold, normal)
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');

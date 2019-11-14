@@ -33,7 +33,7 @@ ol.#{$listStyleName}
   margin:0;
   > li
   {
-    font-weight:bold;
+    //font-weight:bold;
 
     ul
     {
@@ -41,7 +41,7 @@ ol.#{$listStyleName}
       font-size:.92rem;
       > li
       {
-        font-weight:normal;
+        //font-weight:normal;
       }
     }
   }

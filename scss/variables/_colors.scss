@@ -335,6 +335,7 @@ $borderWidth:$boxShadowWidth;
 
 /*--- Set Color Classes  */
 $colorClassPrefix:'c-'!default;
+$colorClassContextPrefix:'cc-'!default;
 $backgroundClassPrefix:'b-'!default;
 $backgroundHoverClassPrefix:'bh-'!default;
 $basicClassPrefix:'bs-'!default;
@@ -349,7 +350,17 @@ $fillClassPrefix:'f-'!default;
       color:var(--#{$n});
       --cc:var(--#{$n});
       --cb:var(--on-#{$n});
+			--cd:var(--dark-#{$n});
+			--cl:var(--light-#{$n});
     }
+    &.#{$colorClassContextPrefix}#{$n}
+    {
+			--cc:var(--#{$n});
+			--cd:var(--dark-#{$n});
+			--cl:var(--light-#{$n});
+    }
+
+
   }
 }
 

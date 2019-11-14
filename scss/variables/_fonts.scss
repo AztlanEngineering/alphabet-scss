@@ -20,7 +20,7 @@ $fontDefault:$fontParaName, 'HK Grotesk Pro', 'Garamond', 'Baskerville', 'Times'
   font-smooth:always;
 }
 
-@mixin import-font($font-family, $woff2, $woff, $weight:normal, $style:normal)
+@mixin import-font($font-family, $woff, $weight:normal, $style:normal)
 {
   @font-face
   {
@@ -30,7 +30,7 @@ $fontDefault:$fontParaName, 'HK Grotesk Pro', 'Garamond', 'Baskerville', 'Times'
 
     @include font-smoothing(dark);
     font-display:fallback;
-    src:url('/#{$woff2}.woff2') format('woff2'),
+    src:url('/#{$woff}.woff2') format('woff2'),
     url('/#{$woff}.woff') format('woff');
   }
 }

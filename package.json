@@ -1,6 +1,6 @@
 {
   "name": "@fwrlines/scss",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "FWR (Fewer) SCSS Library, compatible CSS4",
   "main": "main.scss",
   "scripts": {

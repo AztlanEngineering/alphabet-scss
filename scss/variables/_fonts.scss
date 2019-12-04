@@ -25,8 +25,8 @@ $fontDefault:$fontParaName, 'HK Grotesk Pro', 'Garamond', 'Baskerville', 'Times'
   @font-face
   {
     font-family:$font-family;
-    font-weight:normal;
-    font-style:normal;
+    font-weight:$weight;
+    font-style:$style;
 
     @include font-smoothing(dark);
     font-display:fallback;

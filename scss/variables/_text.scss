@@ -51,11 +51,12 @@ $h5:$sizeSM * $textSizeHeadersMultiplier!default;
 $small:.81em!default;
 
 /*--- Text Line, Margin ---*/
-$textLineHeightDefault:1.07!default;
+$textLineHeightDefault:1.1!default;
 $textLineHeightHeaders:1.22!default;
 $textLineHeightParagraph:$textLineHeightDefault!default;
 $textMarginParagraph:0 0 1em!default;
 $textMarginHeaders:0 0 .6em!default;
+$textMarginHeadersSpacing:1.2em!default;
 
 /*--- Text Display ---*/
 $textOrphansDefault:2!default;

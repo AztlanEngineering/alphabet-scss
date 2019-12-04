@@ -84,9 +84,9 @@
 	--accent1:#{$accent1};
 	--accent2:#{$accent2};
 	--accent3:#{$accent3};
-	--on-accent1:#{$colorAccent1};
-	--on-accent2:#{$colorAccent2};
-	--on-accent3:#{$colorAccent3};
+	--on-accent1:#{$onAccent1};
+	--on-accent2:#{$onAccent2};
+	--on-accent3:#{$onAccent3};
 
 	//--bxc:#{$boxShadowDefaultX};
 
@@ -102,6 +102,7 @@
 	--r-top:#{$borderRadiusTop};
 	--r-bottom:#{$borderRadiusBottom};
 	--r:#{$borderRadiusAll};
+	--r2:#{$borderRadiusAll2};
 
 	--font-h:#{$fontHeaders};
 	--font-p:#{$fontDefault};

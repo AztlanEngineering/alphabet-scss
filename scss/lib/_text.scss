@@ -145,6 +145,11 @@ h5,
   margin:$textMarginHeaders;
   font-weight:$fontWeightHeaders;
   padding:0;
+	
+	p + & {
+		margin-top:$textMarginHeadersSpacing;
+
+	}
 }
 
 h1,
@@ -214,6 +219,7 @@ h5:last-child
 
 p
 {
+	font-size:$textSizeParagraph;
   margin:$textMarginParagraph ;
   line-height:$textLineHeightParagraph;
   widows:$paragraphWidows;

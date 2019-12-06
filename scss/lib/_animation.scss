@@ -9,6 +9,24 @@ Transition
   transition:all $transitionTime;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+p,
+li,
+a,
+figure blockquote,
+figure figcaption {
+	@extend .t;
+}
+
 @keyframes draw-stroke {
 	0% {
 	  stroke-dashoffset: var(--ado, 1000); 

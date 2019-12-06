@@ -75,6 +75,11 @@
 		--r-#{$n}:#{$c};
 	}
 
+	@each $n, $c in $cHeadersSizes
+	{
+		--#{$n}:#{$c};
+	}
+
 	@each $n, $c in $cSvg
 	{
 		--#{$n}:#{$c};
@@ -111,6 +116,11 @@
 	--xs-sm:#{$xs-sm};
 	--sm-md:#{$sm-md};
 	--md-lg:#{$md-lg};
+
+	--lh-default:#{$textLineHeightDefault};
+	--lh-headers:#{$textLineHeightHeaders};
+	--lh-paragraph:#{$textLineHeightParagraph};
+	--lh-content:#{$textLineHeightParagraphContent};
 	
 }
 
@@ -124,7 +134,12 @@ body
 
 html
 {
-  font-size:$defaultFontSize;
+  font-size:$defaultFontSizeSm;
+
+	
+	@include media($from:$sm-md){
+		font-size:$defaultFontSize;
+	}
 }
 
 

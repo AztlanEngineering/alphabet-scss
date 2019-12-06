@@ -1,25 +1,27 @@
 
 /*--- Sizes ---*/
-$defaultFontMultipler:16!default;
+$defaultFontMultipler:1!default;
 $defaultFontSize:16*1px!default;
-$sizeXSMultiplier:11!default;
-$sizeSMMultiplier:13!default;
-$sizeMDMultiplier:16!default;
-$sizeLGMultiplier:24!default;
-$sizeXLMultiplier:34!default;
-$sizeXXLMultiplier:52!default;
-$sizeRelativeXS:($sizeXSMultiplier / $defaultFontMultipler) * 1em;
-$sizeRelativeSM:($sizeSMMultiplier / $defaultFontMultipler) * 1em;
-$sizeRelativeMD:($sizeMDMultiplier / $defaultFontMultipler) * 1em;
-$sizeRelativeLG:($sizeLGMultiplier / $defaultFontMultipler) * 1em;
-$sizeRelativeXL:($sizeXLMultiplier / $defaultFontMultipler) * 1em;
+$defaultFontSizeSm:14*1px!default;
+$sizeXSMultiplier:.8!default;
+$sizeSMMultiplier:.9!default;
+$sizeMDMultiplier:1!default;
+$sizeLGMultiplier:1.5!default;
+$sizeXLMultiplier:2.125!default;
+$sizeXXLMultiplier:3.25!default;
+$sizeRelativeXS:($sizeXSMultiplier * $defaultFontMultipler) * 1em;
+$sizeRelativeSM:($sizeSMMultiplier * $defaultFontMultipler) * 1em;
+$sizeRelativeMD:($sizeMDMultiplier * $defaultFontMultipler) * 1em;
+$sizeRelativeLG:($sizeLGMultiplier * $defaultFontMultipler) * 1em;
+$sizeRelativeXL:($sizeXLMultiplier * $defaultFontMultipler) * 1em;
 //$sizeRelativeXXL:($sizeXXLMultiplier / $defaultFontMultipler) * rem;
-$sizeXS:($sizeXSMultiplier / $defaultFontMultipler) * 1rem;
-$sizeSM:($sizeSMMultiplier / $defaultFontMultipler) * 1rem;
-$sizeMD:($sizeMDMultiplier / $defaultFontMultipler) * 1rem;
-$sizeLG:($sizeLGMultiplier / $defaultFontMultipler) * 1rem;
-$sizeXL:($sizeXLMultiplier / $defaultFontMultipler) * 1rem;
-$sizeXXL:($sizeXXLMultiplier / $defaultFontMultipler) * 1rem;
+$sizeXS:($sizeXSMultiplier * $defaultFontMultipler) * 1rem;
+$sizeSM:($sizeSMMultiplier * $defaultFontMultipler) * 1rem;
+$sizeMD:($sizeMDMultiplier * $defaultFontMultipler) * 1rem;
+$sizeLG:($sizeLGMultiplier * $defaultFontMultipler) * 1rem;
+$sizeXL:($sizeXLMultiplier * $defaultFontMultipler) * 1rem;
+$sizeXXL:($sizeXXLMultiplier * $defaultFontMultipler) * 1rem;
+$smallHeadersInClass:'small-h';
 
 /*---sizes iterator ---*/
 $cSizes:(
@@ -50,10 +52,20 @@ $h4:$sizeMD * $textSizeHeadersMultiplier!default;
 $h5:$sizeSM * $textSizeHeadersMultiplier!default;
 $small:.81em!default;
 
+$cHeadersSizes:(
+	'h1':$h1,
+	'h2':$h2,
+	'h3':$h3,
+	'h4':$h4,
+	'h5':$h5,
+	'p':$textSizeParagraph,
+)!default;
+
 /*--- Text Line, Margin ---*/
 $textLineHeightDefault:1.1!default;
 $textLineHeightHeaders:1.22!default;
 $textLineHeightParagraph:$textLineHeightDefault!default;
+$textLineHeightParagraphContent:1.35!default;
 $textMarginParagraph:0 0 1em!default;
 $textMarginHeaders:0 0 .6em!default;
 $textMarginHeadersSpacing:1.2em!default;
@@ -86,7 +98,23 @@ $textOpenTypeHlig:1!default;
 $textOpenTypeClig:1!default;
 
 /*--- Widows ---*/
-$paragraphWidows:2;
-$paragraphOrphans:3;
+$paragraphWidows:2!default;
+$paragraphOrphans:3!default;
 
-/*--- ---*/
+/*--- Blockquote ---*/
+$blockquoteMarginBottom:1.6em!default;
+$blockquoteFontSize:2rem!default;
+$blockquoteBeforeChar:'“'!default;
+$blockquoteBeforeSize:10em!default;
+$blockquoteBeforeColor:var(--accent1)!default;
+$blockquoteBeforeOpacity:.45!default;
+$blockquoteBeforeTop:-5rem!default;
+$blockquoteBeforeLeft:-2.5rem!default;
+$blockquoteLeftPadding:.5em!default;
+$blockquoteFontStyle:italic!default;
+
+$blockquoteAuthorBeforeChar:'—'!default;
+$blockquoteAuthorMarginRight:4em!default;
+$blockquoteAuthorBeforeMarginRight:1em!default;
+$blockquoteAuthorFontSize:1.2em!default;
+

@@ -162,7 +162,9 @@ h1,
 h2,
 .h2,
 h1.#{$smallClassName},
-.h1.#{$smallClassName}
+.h1.#{$smallClassName},
+.#{$smallHeadersInClass} h1,
+.#{$smallHeadersInClass} .h1
 {
   font-size:$h2;
 }
@@ -170,7 +172,9 @@ h1.#{$smallClassName},
 h3,
 .h3,
 h2.#{$smallClassName},
-.h2.#{$smallClassName}
+.h2.#{$smallClassName},
+.#{$smallHeadersInClass} h2,
+.#{$smallHeadersInClass} .h2
 {
   font-size:$h3;
 }
@@ -178,7 +182,9 @@ h2.#{$smallClassName},
 h4,
 .h4,
 h3.#{$smallClassName},
-.h3.#{$smallClassName}
+.h3.#{$smallClassName},
+.#{$smallHeadersInClass} h3,
+.#{$smallHeadersInClass} .h3
 {
   font-size:$h4;
 }
@@ -186,7 +192,9 @@ h3.#{$smallClassName},
 h5,
 .h5,
 h4.#{$smallClassName},
-.h4.#{$smallClassName}
+.h4.#{$smallClassName},
+.#{$smallHeadersInClass} h4,
+.#{$smallHeadersInClass} .h4
 {
   font-size:$h5;
 }
@@ -217,11 +225,15 @@ h5:last-child
 
 /*--- ParagraphText ---*/
 
-p
+p, ul, ol
 {
 	font-size:$textSizeParagraph;
-  margin:$textMarginParagraph ;
   line-height:$textLineHeightParagraph;
+}
+
+p, li
+{
+  margin:$textMarginParagraph ;
   widows:$paragraphWidows;
   orphans:$paragraphOrphans;
 }
@@ -234,6 +246,42 @@ p:first-child
 p:last-child
 {
   margin-bottom:0;
+}
+
+blockquote {
+	font-size:$blockquoteFontSize;
+	//$blockquoteBeforeChar:'“';
+	padding-left:$blockquoteLeftPadding;
+	position:relative;
+	font-style:$blockquoteFontStyle;
+
+	& + *:not(figcaption) {
+		margin-top:$blockquoteMarginBottom;
+	}
+
+	& + figcaption {
+		margin-top:1em;
+		font-size:$blockquoteAuthorFontSize;
+		padding-right:$blockquoteAuthorMarginRight;
+
+		&:before {
+			content:$blockquoteAuthorBeforeChar;
+			margin-right:$blockquoteAuthorBeforeMarginRight;
+		}
+	}
+
+	&:before {
+		content:$blockquoteBeforeChar;
+		color:$blockquoteBeforeColor;
+		opacity:$blockquoteBeforeOpacity;
+		position:absolute;
+		top:$blockquoteBeforeTop;
+		left:$blockquoteBeforeLeft;
+		font-size:$blockquoteBeforeSize;
+		z-index:-1;
+		font-style:normal;
+	}
+
 }
 
 /*--- Links ---*/

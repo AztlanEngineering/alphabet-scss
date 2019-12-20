@@ -32,7 +32,6 @@ $cSizes:(
 	'xl':$sizeXL,
 	'xxl':$sizeXXL,
 )!default;
-
 $cRelativeSizes:(
 	'xs':$sizeRelativeXS,
 	'sm':$sizeRelativeSM,
@@ -51,7 +50,6 @@ $h3:$sizeLG * $textSizeHeadersMultiplier!default;
 $h4:$sizeMD * $textSizeHeadersMultiplier!default;
 $h5:$sizeSM * $textSizeHeadersMultiplier!default;
 $small:.81em!default;
-
 $cHeadersSizes:(
 	'h1':$h1,
 	'h2':$h2,
@@ -112,9 +110,7 @@ $blockquoteBeforeTop:-5rem!default;
 $blockquoteBeforeLeft:-2.5rem!default;
 $blockquoteLeftPadding:.5em!default;
 $blockquoteFontStyle:italic!default;
-
 $blockquoteAuthorBeforeChar:'—'!default;
 $blockquoteAuthorMarginRight:4em!default;
 $blockquoteAuthorBeforeMarginRight:1em!default;
 $blockquoteAuthorFontSize:1.2em!default;
-

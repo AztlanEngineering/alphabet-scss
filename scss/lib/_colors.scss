@@ -44,11 +44,11 @@
 {
   &:focus,
   &:active,
-	> *:focus,
-	> *:active 
+  > *:focus,
+  > *:active
   {
     box-shadow:var(--ish-xs);
-		--cs:var(--ish-xs);
+    --cs:var(--ish-xs);
   }
 }
 
@@ -69,44 +69,46 @@
   }
 }
 
-.brd {
-	@extend %border-all;
+.brd
+{
+  @extend %border-all;
 }
 
 .bxc
 {
-	box-shadow:$boxShadowDefaultX;
- // @include collapsible-border(var(--c));
+  box-shadow:$boxShadowDefaultX;
+  // @include collapsible-border(var(--c));
 }
 
-.bxc-sha {
+.bxc-sha
+{
   &:focus,
   &:active,
-	> *:not(span):focus,
-	> *:not(span):active 
+  > *:not(span):focus,
+  > *:not(span):active
   {
     box-shadow:$boxShadowDefaultX, var(--ish-sm);
-		--cs:var(--ish-xs);
+    --cs:var(--ish-xs);
   }
 }
 
-.b-t {
-	background:transparent;
+.b-t
+{
+  background:transparent;
 }
 
 .disabled.disabled
-	{
-		cursor:unset;
-		color:$disabledColor;
-		box-shadow:initial;
+{
+  cursor:unset;
+  color:$disabledColor;
+  box-shadow:initial;
 
-		svg{
-			opacity:.75;
-			path {
-				stroke:$disabledColor!important;
-			}
-		}
-
-								  
-	}
-
+  svg
+  {
+    opacity:.75;
+    path
+    {
+      stroke:$disabledColor!important;
+    }
+  }
+}

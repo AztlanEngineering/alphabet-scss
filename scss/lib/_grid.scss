@@ -7,33 +7,41 @@
 
 /*--- Base Grid ---*/
 
-.w {
-	display:grid;
-	grid-template-columns: repeat($gridColumns, 1fr);
+.w
+{
+  display:grid;
+  grid-template-columns:repeat($gridColumns, 1fr);
 
-	> * {
-		grid-column-end:span $gridColumns;
-	}
+  > *
+  {
+    grid-column-end:span $gridColumns;
+  }
 }
 
 /*--- Responsive  ---*/
 
-@mixin columns($suffix:false, $from:false){
-	@include media($from:$from) {
-		@for $i from 1 through $gridColumns {
-			.w#{$i}-#{$suffix} {
-				grid-column-end: span $i;
-			}
-		}
-	}
+@mixin columns($suffix:false, $from:false)
+{
+  @include media($from:$from)
+  {
+    @for $i from 1 through $gridColumns
+    {
+      .w#{$i}-#{$suffix}
+      {
+        grid-column-end:span $i;
+      }
+    }
+  }
 }
 
 
 // Columns normal (not responsive)
-@for $i from 1 through $gridColumns {
-	.w#{$i} {
-	  grid-column-end: span $i;
-	}
+@for $i from 1 through $gridColumns
+{
+  .w#{$i}
+  {
+    grid-column-end:span $i;
+  }
 }
 //@include columns('xs' );
 @include columns('sm', $from:$xs-sm);
@@ -45,15 +53,15 @@
 {
   .gh#{$name}
   {
-		grid-column-gap:#{$current}rem;
+    grid-column-gap:#{$current}rem;
   }
   .gv#{$name}
   {
-		grid-row-gap:#{$current}rem;
+    grid-row-gap:#{$current}rem;
   }
   .g#{$name}
   {
-		grid-gap:#{$current}rem;
+    grid-gap:#{$current}rem;
   }
 }
 
@@ -66,7 +74,7 @@
     @include grid-gap-code($current:$current, $name:$current);
   }
   @include grid-gap-code($current:.5, $name:'05')
-  @include grid-gap-code($current:.2, $name:'02')
+  @include grid-gap-code($current:.2, $name:'02');
   //@include grid-gap-code($current:.1, $name:'01');
 }
 @include grid-gap;

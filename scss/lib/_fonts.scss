@@ -58,7 +58,8 @@ i.icon
 
 @include import-font($fontWireframe, $fontWireframe, normal, normal);
 
-.fw {
-	font-family:"BLOKK"!important;
-	line-height:1.1em!important;
+.fw
+{
+  font-family:'BLOKK'!important;
+  line-height:1.1em!important;
 }

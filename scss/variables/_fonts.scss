@@ -4,7 +4,6 @@ $fontHeadersName:'Akzg'!default;
 $fontHeaders:$fontHeadersName, 'Courier', 'Helvetica', 'Verdana', 'Arial', sans-serif!default;
 $fontWeightHeaders:normal!default;
 $fontDefault:$fontParaName, 'HK Grotesk Pro', 'Garamond', 'Baskerville', 'Times', 'Times New Roman', serif!default;
-
 $fontWireframe:'BLOKK';
 
 @mixin font-smoothing($value:light)

@@ -23,28 +23,32 @@ p,
 li,
 a,
 figure blockquote,
-figure figcaption {
-	@extend .t;
-}
+figure figcaption
+{
+  @extend .t;}
 
-@keyframes draw-stroke {
-	0% {
-	  stroke-dashoffset: var(--ado, 1000); 
+@keyframes draw-stroke
+{
+  0%
+  {
+    stroke-dashoffset:var(--ado, 1000);
   }
 
-  100% {
-    stroke-dashoffset: var(--do, 0);
+  100%
+  {
+    stroke-dashoffset:var(--do, 0);
   }
 }
 
-@keyframes show {
-	0% {
+@keyframes show
+{
+  0%
+  {
     opacity:0;
   }
 
-  100% {
+  100%
+  {
     opacity:1;
   }
 }
-
-

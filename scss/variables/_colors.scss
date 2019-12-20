@@ -130,7 +130,6 @@ $cColors:(
   'pink':$pink,
 	'brown':$brown,
 )!default;
-
 $cColorsHover:(
   'red':'light-red',
   'orange':'light-orange',
@@ -182,7 +181,6 @@ $cBrandColors:(
 	'youtube':$youtubeColor,
 	'instagram':$instagramColor,
 )!default;
-
 $cBrandHover:(
 	'facebook':'blue',
 	'twitter':'teal',
@@ -273,7 +271,7 @@ $shadowInsetClassPrefix:'i'!default;
     .#{$shadowClassPrefix}#{$n}
     {
       box-shadow:var(--#{$shadowVarPrefix}#{$n});
-			--cs:var(--#{$shadowVarPrefix}#{$n});
+      --cs:var(--#{$shadowVarPrefix}#{$n});
     }
     .#{$shadowHoverClassPrefix}#{$n}
     {
@@ -281,14 +279,14 @@ $shadowInsetClassPrefix:'i'!default;
       &:focus
       {
         box-shadow:var(--#{$shadowVarPrefix}#{$n});
-				--cs:var(--#{$shadowVarPrefix}#{$n});
+        --cs:var(--#{$shadowVarPrefix}#{$n});
       }
     }
-		.#{$shadowInsetClassPrefix}#{$shadowHoverClassPrefix}#{$n}{
-      box-shadow: inset var(--#{$shadowVarPrefix}#{$n});
-			--cs:var(--#{$shadowVarPrefix}#{$n});
-		}
-		
+    .#{$shadowInsetClassPrefix}#{$shadowHoverClassPrefix}#{$n}
+    {
+      box-shadow:inset var(--#{$shadowVarPrefix}#{$n});
+      --cs:var(--#{$shadowVarPrefix}#{$n});
+    }
   }
 }
 
@@ -334,8 +332,9 @@ $boxShadowDefaultX:$boxShadowWidth 0 0 0 var(--cc, var(--default, #{$boxShadowDe
 /*--- Border ---*/
 $borderWidth:$boxShadowWidth;
 
-%border-all {
-	border:$borderWidth solid var(--cc, var(--default, #{$boxShadowDefaultColor})); 
+%border-all
+{
+  border:$borderWidth solid var(--cc, var(--default, #{$boxShadowDefaultColor}));
 }
 
 /*--- Set Color Classes  */
@@ -356,27 +355,27 @@ $fillClassPrefix:'f-'!default;
       color:var(--#{$n});
       --cc:var(--#{$n});
       --cb:var(--on-#{$n});
-			--cd:var(--dark-#{$n});
-			--cl:var(--light-#{$n});
+      --cd:var(--dark-#{$n});
+      --cl:var(--light-#{$n});
     }
     &.#{$colorClassContextPrefix}#{$n}
     {
-			--cc:var(--#{$n});
-			--cd:var(--dark-#{$n});
-			--cl:var(--light-#{$n});
+      --cc:var(--#{$n});
+      --cd:var(--dark-#{$n});
+      --cl:var(--light-#{$n});
     }
-		&.#{$colorHoverClassPrefix}#{$n} {
-			&:hover,
-			&:focus {
-				color:var(--#{$n});
-				--cc:var(--#{$n});
-				--cb:var(--on-#{$n});
-				--cd:var(--dark-#{$n});
-				--cl:var(--light-#{$n});
-			}
-		}
-
-
+    &.#{$colorHoverClassPrefix}#{$n}
+    {
+      &:hover,
+      &:focus
+      {
+        color:var(--#{$n});
+        --cc:var(--#{$n});
+        --cb:var(--on-#{$n});
+        --cd:var(--dark-#{$n});
+        --cl:var(--light-#{$n});
+      }
+    }
   }
 }
 

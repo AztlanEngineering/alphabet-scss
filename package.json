@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/fwrlines/scss#readme",
   "devDependencies": {
-    "csscomb": "^4.3.0"
+    "stylelint": "^12.0.0",
+    "stylelint-config-palantir": "^4.0.1",
+    "stylelint-scss": "^3.13.0"
   }
 }

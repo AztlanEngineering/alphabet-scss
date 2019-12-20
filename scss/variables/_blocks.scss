@@ -13,10 +13,9 @@ $borderRadiusRight:0 $borderRadiusTopRight*.95 $borderRadiusBottomRight*.95 0!de
 $borderRadiusTop:$borderRadiusTopLeft*.95 $borderRadiusTopRight*.95 0 0!default;
 $borderRadiusBottom:0 0 $borderRadiusBottomRight*.95 $borderRadiusBottomLeft*.95!default;
 $borderRadiusAll:$borderRadiusTopLeft $borderRadiusTopRight $borderRadiusBottomRight $borderRadiusBottomLeft!default;
-$borderRadiusAll2:
-	($borderRadiusTopLeft * 2) 
-	($borderRadiusTopRight * 2) 
-	($borderRadiusBottomRight * 2) 
+$borderRadiusAll2:($borderRadiusTopLeft * 2)
+	($borderRadiusTopRight * 2)
+	($borderRadiusBottomRight * 2)
 	($borderRadiusBottomLeft * 2)
 	!default;
 

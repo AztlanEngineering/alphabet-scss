@@ -1,5 +1,5 @@
 /*
- 
+
 Text styles
 
 .nt : no style
@@ -9,10 +9,10 @@ Text styles
 .tn : oldstyle number
 .tu : uppercase
 .tw : lowercase
-.ts : text with stroke 
+.ts : text with stroke
 .tsm : small caps (only on otf files featuring it)
 .to : most open type features for content (ligatures))
-.tos : oldstyle numbers 
+.tos : oldstyle numbers
 .tls : high letter spacing
 .nd : no decoration
 .ndh : no decoration (hover)
@@ -28,7 +28,7 @@ Paragraph styles
 
 HTML Styles
 
-HTML : h1, h2, h3, h4, h5, h6, small, p, a, b, 
+HTML : h1, h2, h3, h4, h5, h6, small, p, a, b,
 Custom : .h1, .h2, .h3, .h4, .h5, .h6, .small, .p
 
 Other
@@ -39,97 +39,80 @@ do not mix with .sm
 
 */
 
-.nt
-{
-  font-weight:normal;
-  font-style:normal;
+.nt {
+    font-weight: normal;
+    font-style: normal;
 }
 
-.tl
-{
-  font-weight:lighter;
+.tl {
+    font-weight: lighter;
 }
 
-.tb
-{
-  font-weight:bold;
+.tb {
+    font-weight: bold;
 }
 
-.ti
-{
-  font-style:italic;
+.ti {
+    font-style: italic;
 }
 
-.tu
-{
-  text-transform:uppercase;
+.tu {
+    text-transform: uppercase;
 }
 
-.tv
-{
-  text-decoration:underline;
+.tv {
+    text-decoration: underline;
 }
 
-.tw
-{
-  text-transform:lowercase;
+.tw {
+    text-transform: lowercase;
 }
 
-.tsm
-{
-  font-feature-settings:'smcp' 1;
+.tsm {
+    font-feature-settings: "smcp" 1;
 }
 
-.ts
-{
-  -webkit-text-stroke:$textStrokeWidth var(--cc, #{$default});
-          text-stroke:$textStrokeWidth var(--cc, #{$default});
-  color:transparent;
+.ts {
+    color: transparent;
+    -webkit-text-stroke: $textStrokeWidth var(--cc, #{$default});
+    text-stroke: $textStrokeWidth var(--cc, #{$default});
 }
 
 
-.tls
-{
-  letter-spacing:$textLetterSpacingHigh;
+.tls {
+    letter-spacing: $textLetterSpacingHigh;
 }
 
-.to
-{
-  font-feature-settings:'onum' $textOpenTypeOnum,
-  'kern' $textOpenTypeKern,
-  'liga' $textOpenTypeLiga,
-  'dlig' $textOpenTypeDlig,
-  'hlig' $textOpenTypeHlig,
-  'clig' $textOpenTypeClig;
+.to {
+    font-feature-settings:"onum" $textOpenTypeOnum,
+  "kern" $textOpenTypeKern,
+  "liga" $textOpenTypeLiga,
+  "dlig" $textOpenTypeDlig,
+  "hlig" $textOpenTypeHlig,
+  "clig" $textOpenTypeClig;
 }
 
-.tos
-{
-  font-feature-settings:'onum' 1,;
+.tos {
+    font-feature-settings: "onum" 1,;
 }
 
-.tn
-{
-  font-feature-settings:'onum' 1;
+.tn {
+    font-feature-settings: "onum" 1;
 }
 
-@each $n, $c in $cSizes
-{
-  &.s-#{$n}
-  {
-    font-size:var(--#{$n});
-  }
+@each $n, $c in $cSizes {
+    &.s-#{$n} {
+        font-size: var(--#{$n});
+    }
 }
 
-@each $n, $c in $cRelativeSizes
-{
-  &.r-#{$n}
-  {
-    font-size:var(--r-#{$n});
-  }
+@each $n, $c in $cRelativeSizes {
+    &.r-#{$n} {
+        font-size: var(--r-#{$n});
+    }
 }
 
-/*--- ---*/
+/* --- --- */
 h1,
 h2,
 h3,
@@ -139,25 +122,22 @@ h5,
 .h2,
 .h3,
 .h4,
-.h5
-{
-  font-family:$fontHeaders;
-  line-height:$textLineHeightHeaders;
-  margin:$textMarginHeaders;
-  font-weight:$fontWeightHeaders;
-  padding:0;
+.h5 {
+    margin: $textMarginHeaders;
+    padding: 0;
+    line-height: $textLineHeightHeaders;
+    font-family: $fontHeaders;
+    font-weight: $fontWeightHeaders;
 
-  p + &
-  {
-    margin-top:$textMarginHeadersSpacing;
-  }
+    p + & {
+        margin-top: $textMarginHeadersSpacing;
+    }
 }
 
 h1,
-.h1
-{
-  min-height:1rem;
-  font-size:$h1;
+.h1 {
+    min-height: 1rem;
+    font-size: $h1;
 }
 
 h2,
@@ -165,9 +145,8 @@ h2,
 h1.#{$smallClassName},
 .h1.#{$smallClassName},
 .#{$smallHeadersInClass} h1,
-.#{$smallHeadersInClass} .h1
-{
-  font-size:$h2;
+.#{$smallHeadersInClass} .h1 {
+    font-size: $h2;
 }
 
 h3,
@@ -175,9 +154,8 @@ h3,
 h2.#{$smallClassName},
 .h2.#{$smallClassName},
 .#{$smallHeadersInClass} h2,
-.#{$smallHeadersInClass} .h2
-{
-  font-size:$h3;
+.#{$smallHeadersInClass} .h2 {
+    font-size: $h3;
 }
 
 h4,
@@ -185,9 +163,8 @@ h4,
 h3.#{$smallClassName},
 .h3.#{$smallClassName},
 .#{$smallHeadersInClass} h3,
-.#{$smallHeadersInClass} .h3
-{
-  font-size:$h4;
+.#{$smallHeadersInClass} .h3 {
+    font-size: $h4;
 }
 
 h5,
@@ -195,133 +172,114 @@ h5,
 h4.#{$smallClassName},
 .h4.#{$smallClassName},
 .#{$smallHeadersInClass} h4,
-.#{$smallHeadersInClass} .h4
-{
-  font-size:$h5;
+.#{$smallHeadersInClass} .h4 {
+    font-size: $h5;
 }
 
 small,
-.#{$smallClassName}
-{
-  font-size:var(--r-sm);
+.#{$smallClassName} {
+    font-size: var(--r-sm);
 }
 
 h1:first-child,
 h2:first-child,
 h3:first-child,
 h4:first-child,
-h5:first-child
-{
-  margin-top:0;
+h5:first-child {
+    margin-top: 0;
 }
 
 h1:last-child,
 h2:last-child,
 h3:last-child,
 h4:last-child,
-h5:last-child
-{
-  margin-bottom:0;
+h5:last-child {
+    margin-bottom: 0;
 }
 
-/*--- ParagraphText ---*/
+/* --- ParagraphText --- */
 
 p,
 ul,
-ol
-{
-  font-size:$textSizeParagraph;
-  line-height:$textLineHeightParagraph;
+ol {
+    line-height: $textLineHeightParagraph;
+    font-size: $textSizeParagraph;
 }
 
 p,
-li
-{
-  margin:$textMarginParagraph ;
-  widows:$paragraphWidows;
-  orphans:$paragraphOrphans;
+li {
+    margin: $textMarginParagraph;
+    orphans: $paragraphOrphans;
+    widows: $paragraphWidows;
 }
 
-p:first-child
-{
-  margin-top:0;
+p:first-child {
+    margin-top: 0;
 }
 
-p:last-child
-{
-  margin-bottom:0;
+p:last-child {
+    margin-bottom: 0;
 }
 
-blockquote
-{
-  font-size:$blockquoteFontSize;
-  //$blockquoteBeforeChar:'“';
-  padding-left:$blockquoteLeftPadding;
-  position:relative;
-  font-style:$blockquoteFontStyle;
+blockquote {
+    position: relative;
+    //$blockquoteBeforeChar:'“';
+    padding-left: $blockquoteLeftPadding;
+    font-size: $blockquoteFontSize;
+    font-style: $blockquoteFontStyle;
 
-  & + *:not(figcaption)
-  {
-    margin-top:$blockquoteMarginBottom;
-  }
-
-  & + figcaption
-  {
-    margin-top:1em;
-    font-size:$blockquoteAuthorFontSize;
-    padding-right:$blockquoteAuthorMarginRight;
-
-    &:before
-    {
-      content:$blockquoteAuthorBeforeChar;
-      margin-right:$blockquoteAuthorBeforeMarginRight;
+    & + *:not(figcaption) {
+        margin-top: $blockquoteMarginBottom;
     }
-  }
 
-  &:before
-  {
-    content:$blockquoteBeforeChar;
-    color:$blockquoteBeforeColor;
-    opacity:$blockquoteBeforeOpacity;
-    position:absolute;
-    top:$blockquoteBeforeTop;
-    left:$blockquoteBeforeLeft;
-    font-size:$blockquoteBeforeSize;
-    z-index:-1;
-    font-style:normal;
-  }
+    & + figcaption {
+        margin-top: 1em;
+        padding-right: $blockquoteAuthorMarginRight;
+        font-size: $blockquoteAuthorFontSize;
+
+        &::before {
+            margin-right: $blockquoteAuthorBeforeMarginRight;
+            content: $blockquoteAuthorBeforeChar;
+        }
+    }
+
+    &::before {
+        position: absolute;
+        top: $blockquoteBeforeTop;
+        left: $blockquoteBeforeLeft;
+        opacity: $blockquoteBeforeOpacity;
+        z-index: -1;
+        color: $blockquoteBeforeColor;
+        font-size: $blockquoteBeforeSize;
+        font-style: normal;
+        content: $blockquoteBeforeChar;
+    }
 }
 
-/*--- Links ---*/
+/* --- Links --- */
 
-a
-{
-  color:$linkColor;
-  text-decoration:$linkUnderline;
+a {
+    text-decoration: $linkUnderline;
+    color: $linkColor;
 }
 
-a:hover
-{
-  color:$linkHoverColor;
-  text-decoration:$linkHoverUnderline;
+a:hover {
+    text-decoration: $linkHoverUnderline;
+    color: $linkHoverColor;
 }
 
-@include responsive(ul)
-{
-  text-align:left;
+@include responsive(ul) {
+    text-align: left;
 }
 
-@include responsive(ur)
-{
-  text-align:right;
+@include responsive(ur) {
+    text-align: right;
 }
 
-@include responsive(uc)
-{
-  text-align:center;
+@include responsive(uc) {
+    text-align: center;
 }
 
-@include responsive(uj)
-{
-  text-align:justify;
+@include responsive(uj) {
+    text-align: justify;
 }

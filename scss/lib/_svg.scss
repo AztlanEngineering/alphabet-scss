@@ -6,15 +6,13 @@ SVG Styles
 
 */
 
-svg use
-{
-  fill:var(--f,$orange);
-  stroke:var(--cc,$red);
-  stroke-width:var(--sw, 0);
-  stroke-dasharray:var(--sda, 0);
+svg use {
+    fill: var(--f, $orange);
+    stroke: var(--cc, $red);
+    stroke-dasharray: var(--sda, 0);
+    stroke-width: var(--sw, 0);
 
-  &:not(.anti)
-  {
-    animation:var(--path-animation, none);
-  }
+    &:not(.anti) {
+        animation: var(--path-animation, none);
+    }
 }

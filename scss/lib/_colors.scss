@@ -2,28 +2,25 @@
 //
 // .c-initial : initial color
 // .c-color : stroke, or color
-// .b-color : background, with matching color 
+// .b-color : background, with matching color
 // .f-color : fill
 // .sh-sm : shadow
 // .shh-sm : shadow hover
 // .sha : shadow active
 // .simple : transparent
 
-@keyframes back-horizontal
-{
-  0%
-  {
-    background-position:200% 50%;
-  }
-  100%
-  {
-    background-position:-100% 50%;
-  }
+@keyframes back-horizontal {
+    0% {
+        background-position: 200% 50%;
+    }
+
+    100% {
+        background-position: -100% 50%;
+    }
 }
 
-.c-init.c-init
-{
-  color:var(--default);
+.c-init.c-init {
+    color: var(--default);
 }
 
 
@@ -32,83 +29,71 @@
 @include setColorClassesFor($cBrandColors);
 @include setColorClassesFor($cLinkColors); //Note that we don't set BG classes for this one
 @include setColorClassesFor($cThemeColors);
-
-@include setBackgroundClassesFor($cColors, 'colors');
-@include setBackgroundClassesFor($cMonochrome, 'monochrome');
-@include setBackgroundClassesFor($cBrandColors, 'brand');
-@include setBackgroundClassesFor($cThemeColors, 'theme');
-
+@include setBackgroundClassesFor($cColors, "colors");
+@include setBackgroundClassesFor($cMonochrome, "monochrome");
+@include setBackgroundClassesFor($cBrandColors, "brand");
+@include setBackgroundClassesFor($cThemeColors, "theme");
 @include setShadowClasses();
 
-.sha.sha.sha
-{
-  &:focus,
-  &:active,
-  > *:focus,
-  > *:active
-  {
-    box-shadow:var(--ish-xs);
-    --cs:var(--ish-xs);
-  }
-}
+.sha.sha.sha {
+    &:focus,
+    &:active,
+    > *:focus,
+    > *:active {
+        box-shadow: var(--ish-xs);
 
-
-/*--- TODO Simple ---*/
-.simple
-{
-  background:transparent;
-  color:$linkColor;
-}
-
-.simpleh
-{
-  &:hover,
-  &:focus
-  {
-    color:$linkHoverColor;
-  }
-}
-
-.brd
-{
-  @extend %border-all;
-}
-
-.bxc
-{
-  box-shadow:$boxShadowDefaultX;
-  // @include collapsible-border(var(--c));
-}
-
-.bxc-sha
-{
-  &:focus,
-  &:active,
-  > *:not(span):focus,
-  > *:not(span):active
-  {
-    box-shadow:$boxShadowDefaultX, var(--ish-sm);
-    --cs:var(--ish-xs);
-  }
-}
-
-.b-t
-{
-  background:transparent;
-}
-
-.disabled.disabled
-{
-  cursor:unset;
-  color:$disabledColor;
-  box-shadow:initial;
-
-  svg
-  {
-    opacity:.75;
-    path
-    {
-      stroke:$disabledColor!important;
+        --cs: var(--ish-xs);
     }
-  }
+}
+
+
+/* --- TODO Simple --- */
+.simple {
+    background: transparent;
+    color: $linkColor;
+}
+
+.simpleh {
+    &:hover,
+    &:focus {
+        color: $linkHoverColor;
+    }
+}
+
+.brd {
+    @extend %border-all;
+}
+
+.bxc {
+    box-shadow: $boxShadowDefaultX;
+    // @include collapsible-border(var(--c));
+}
+
+.bxc-sha {
+    &:focus,
+    &:active,
+    > *:not(span):focus,
+    > *:not(span):active {
+        box-shadow: $boxShadowDefaultX, var(--ish-sm);
+
+        --cs: var(--ish-xs);
+    }
+}
+
+.b-t {
+    background: transparent;
+}
+
+.disabled.disabled {
+    box-shadow: initial;
+    cursor: unset;
+    color: $disabledColor;
+
+    svg {
+        opacity: 0.75;
+
+        path {
+            stroke: $disabledColor !important;
+        }
+    }
 }

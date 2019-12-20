@@ -1,14 +1,14 @@
 
-/*--- Sizes ---*/
-$defaultFontMultipler:1!default;
-$defaultFontSize:16*1px!default;
-$defaultFontSizeSm:14*1px!default;
-$sizeXSMultiplier:.8!default;
-$sizeSMMultiplier:.9!default;
-$sizeMDMultiplier:1!default;
-$sizeLGMultiplier:1.5!default;
-$sizeXLMultiplier:2.125!default;
-$sizeXXLMultiplier:3.25!default;
+/* --- Sizes --- */
+$defaultFontMultipler:1 !default;
+$defaultFontSize:16*1px !default;
+$defaultFontSizeSm:14*1px !default;
+$sizeXSMultiplier:0.8 !default;
+$sizeSMMultiplier:0.9 !default;
+$sizeMDMultiplier:1 !default;
+$sizeLGMultiplier:1.5 !default;
+$sizeXLMultiplier:2.125 !default;
+$sizeXXLMultiplier:3.25 !default;
 $sizeRelativeXS:($sizeXSMultiplier * $defaultFontMultipler) * 1em;
 $sizeRelativeSM:($sizeSMMultiplier * $defaultFontMultipler) * 1em;
 $sizeRelativeMD:($sizeMDMultiplier * $defaultFontMultipler) * 1em;
@@ -21,96 +21,97 @@ $sizeMD:($sizeMDMultiplier * $defaultFontMultipler) * 1rem;
 $sizeLG:($sizeLGMultiplier * $defaultFontMultipler) * 1rem;
 $sizeXL:($sizeXLMultiplier * $defaultFontMultipler) * 1rem;
 $sizeXXL:($sizeXXLMultiplier * $defaultFontMultipler) * 1rem;
-$smallHeadersInClass:'small-h';
+$smallHeadersInClass:"small-h";
 
-/*---sizes iterator ---*/
+/* ---sizes iterator --- */
 $cSizes:(
-	'xs':$sizeXS,
-	'sm':$sizeSM,
-	'md':$sizeMD,
-	'lg':$sizeLG,
-	'xl':$sizeXL,
-	'xxl':$sizeXXL,
-)!default;
+	"xs":$sizeXS,
+	"sm":$sizeSM,
+	"md":$sizeMD,
+	"lg":$sizeLG,
+	"xl":$sizeXL,
+	"xxl":$sizeXXL,
+) !default;
 $cRelativeSizes:(
-	'xs':$sizeRelativeXS,
-	'sm':$sizeRelativeSM,
-	'md':$sizeRelativeMD,
-	'lg':$sizeRelativeLG,
-	'xl':$sizeRelativeXL,
-)!default;
+	"xs":$sizeRelativeXS,
+	"sm":$sizeRelativeSM,
+	"md":$sizeRelativeMD,
+	"lg":$sizeRelativeLG,
+	"xl":$sizeRelativeXL,
+) !default;
 
-/*--- Text Size ---*/
-$smallClassName:'sm'!default;
-$textSizeParagraph:1rem!default;
-$textSizeHeadersMultiplier:1!default;
-$h1:$sizeXXL * $textSizeHeadersMultiplier!default;
-$h2:$sizeXL * $textSizeHeadersMultiplier!default;
-$h3:$sizeLG * $textSizeHeadersMultiplier!default;
-$h4:$sizeMD * $textSizeHeadersMultiplier!default;
-$h5:$sizeSM * $textSizeHeadersMultiplier!default;
-$small:.81em!default;
+/* --- Text Size --- */
+$smallClassName:"sm" !default;
+$textSizeParagraph:1rem !default;
+$textSizeHeadersMultiplier:1 !default;
+$h1:$sizeXXL * $textSizeHeadersMultiplier !default;
+$h2:$sizeXL * $textSizeHeadersMultiplier !default;
+$h3:$sizeLG * $textSizeHeadersMultiplier !default;
+$h4:$sizeMD * $textSizeHeadersMultiplier !default;
+$h5:$sizeSM * $textSizeHeadersMultiplier !default;
+$small:0.81em !default;
 $cHeadersSizes:(
-	'h1':$h1,
-	'h2':$h2,
-	'h3':$h3,
-	'h4':$h4,
-	'h5':$h5,
-	'p':$textSizeParagraph,
-)!default;
+	"h1":$h1,
+	"h2":$h2,
+	"h3":$h3,
+	"h4":$h4,
+	"h5":$h5,
+	"p":$textSizeParagraph,
+) !default;
 
-/*--- Text Line, Margin ---*/
-$textLineHeightDefault:1.1!default;
-$textLineHeightHeaders:1.22!default;
-$textLineHeightParagraph:$textLineHeightDefault!default;
-$textLineHeightParagraphContent:1.35!default;
-$textMarginParagraph:0 0 1em!default;
-$textMarginHeaders:0 0 .6em!default;
-$textMarginHeadersSpacing:1.2em!default;
+/* --- Text Line, Margin --- */
+$textLineHeightDefault:1.1 !default;
+$textLineHeightHeaders:1.22 !default;
+$textLineHeightParagraph:$textLineHeightDefault !default;
+$textLineHeightParagraphContent:1.35 !default;
+$textMarginParagraph:0 0 1em !default;
+$textMarginHeaders:0 0 0.6em !default;
+$textMarginHeadersSpacing:1.2em !default;
 
-/*--- Text Display ---*/
-$textOrphansDefault:2!default;
-$textWidowsDefault:3!default;
-$textLetterSpacingDefault:initial!default;
-$textLetterSpacingHigh:.1em!default;
-$textOrphansParagraph:$textOrphansDefault!default;
-$textWidowsParagraph:$textWidowsDefault!default;
-$textOrphansHeaders:$textOrphansDefault!default;
-$textWidowsHeaders:$textWidowsDefault!default;
-$textTransformHeaders:none!default;
-$textStrokeWidth:2px!default;
+/* --- Text Display --- */
+$textOrphansDefault:2 !default;
+$textWidowsDefault:3 !default;
+$textLetterSpacingDefault:initial !default;
+$textLetterSpacingHigh:0.1em !default;
+$textOrphansParagraph:$textOrphansDefault !default;
+$textWidowsParagraph:$textWidowsDefault !default;
+$textOrphansHeaders:$textOrphansDefault !default;
+$textWidowsHeaders:$textWidowsDefault !default;
+$textTransformHeaders:none !default;
+$textStrokeWidth:2px !default;
 
-/*--- Link ---*/
-$linkUnderline:none!default;
-$linkHoverUnderline:none!default;
-/*--- Lists ---*/
-$ulListStyle:none!default;
-$olListStyle:33333!default;
+/* --- Link --- */
+$linkUnderline:none !default;
+$linkHoverUnderline:none !default;
 
-/*--- OpenType ---*/
-$textOpenTypeOnum:1!default;
-$textOpenTypeKern:1!default;
-$textOpenTypeLiga:1!default;
-$textOpenTypeDlig:1!default;
-$textOpenTypeHlig:1!default;
-$textOpenTypeClig:1!default;
+/* --- Lists --- */
+$ulListStyle:none !default;
+$olListStyle:33333 !default;
 
-/*--- Widows ---*/
-$paragraphWidows:2!default;
-$paragraphOrphans:3!default;
+/* --- OpenType --- */
+$textOpenTypeOnum:1 !default;
+$textOpenTypeKern:1 !default;
+$textOpenTypeLiga:1 !default;
+$textOpenTypeDlig:1 !default;
+$textOpenTypeHlig:1 !default;
+$textOpenTypeClig:1 !default;
 
-/*--- Blockquote ---*/
-$blockquoteMarginBottom:1.6em!default;
-$blockquoteFontSize:2rem!default;
-$blockquoteBeforeChar:'“'!default;
-$blockquoteBeforeSize:10em!default;
-$blockquoteBeforeColor:var(--accent1)!default;
-$blockquoteBeforeOpacity:.45!default;
-$blockquoteBeforeTop:-5rem!default;
-$blockquoteBeforeLeft:-2.5rem!default;
-$blockquoteLeftPadding:.5em!default;
-$blockquoteFontStyle:italic!default;
-$blockquoteAuthorBeforeChar:'—'!default;
-$blockquoteAuthorMarginRight:4em!default;
-$blockquoteAuthorBeforeMarginRight:1em!default;
-$blockquoteAuthorFontSize:1.2em!default;
+/* --- Widows --- */
+$paragraphWidows:2 !default;
+$paragraphOrphans:3 !default;
+
+/* --- Blockquote --- */
+$blockquoteMarginBottom:1.6em !default;
+$blockquoteFontSize:2rem !default;
+$blockquoteBeforeChar:"“" !default;
+$blockquoteBeforeSize:10em !default;
+$blockquoteBeforeColor:var(--accent1) !default;
+$blockquoteBeforeOpacity:0.45 !default;
+$blockquoteBeforeTop:-5rem !default;
+$blockquoteBeforeLeft:-2.5rem !default;
+$blockquoteLeftPadding:0.5em !default;
+$blockquoteFontStyle:italic !default;
+$blockquoteAuthorBeforeChar:"—" !default;
+$blockquoteAuthorMarginRight:4em !default;
+$blockquoteAuthorBeforeMarginRight:1em !default;
+$blockquoteAuthorFontSize:1.2em !default;

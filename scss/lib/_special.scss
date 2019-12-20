@@ -1,7 +1,6 @@
 
-.#{$special1Name}
-{
-  -webkit-backdrop-filter:$special1Filter;
-          backdrop-filter:$special1Filter;
-  opacity:$special1Opacity;
+.#{$special1Name} {
+    opacity: $special1Opacity;
+    -webkit-backdrop-filter: $special1Filter;
+    backdrop-filter: $special1Filter;
 }

@@ -182,7 +182,7 @@ Grid and Flex
 
     @include margin-padding-code($current:0.5, $name:"05")
         @include margin-padding-code($current:0.2, $name:"02")
-  @include margin-padding-code($current:0.1, $name:"01");
+        @include margin-padding-code($current:0.1, $name:"01");
 }
 
 @include margin-padding;

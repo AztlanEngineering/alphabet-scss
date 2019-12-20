@@ -5,55 +5,49 @@
 
 */
 
-.lsn
-{
-  list-style:none;
-  padding-left:0;
+.lsn {
+    padding-left: 0;
+    list-style: none;
 }
 
 ul,
-ol
-{
-  margin:$textMarginParagraph ;
-  line-height:$textLineHeightParagraph;
-  padding-left:$listDefaultPaddingLeft;
-  &:first-child
-  {
-    margin-top:0;
-  }
-  &:last-child
-  {
-    margin-bottom:0;
-  }
+ol {
+    margin: $textMarginParagraph;
+    padding-left: $listDefaultPaddingLeft;
+    line-height: $textLineHeightParagraph;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 ul.#{$listStyleName},
-ol.#{$listStyleName}
-{
-  margin:0;
-  > li
-  {
-    //font-weight:bold;
+ol.#{$listStyleName} {
+    margin: 0;
 
-    ul
-    {
-      margin-bottom:$listNestedMarginBottom;
-      font-size:.92rem;
-      > li
-      {
-        //font-weight:normal;
-      }
+    > li {
+        //font-weight:bold;
+
+        ul {
+            margin-bottom: $listNestedMarginBottom;
+            font-size: 0.92rem;
+
+            > li {
+                //font-weight:normal;
+            }
+        }
     }
-  }
 
-  ul,
-  ol
-  {
-    padding-left:$listNestedPaddingLeft;
-  }
+    ul,
+    ol {
+        padding-left: $listNestedPaddingLeft;
+    }
 
-  li
-  {
-    line-height:$listLineHeight;
-  }
+    li {
+        line-height: $listLineHeight;
+    }
 }

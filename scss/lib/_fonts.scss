@@ -14,52 +14,46 @@ Font styles
 //@include import-font($fontParaName, 'tb', bold, normal)
 //@include import-font($fontHeadersName, 'h', normal, normal)
 
-@font-face
-{
-  font-family:'if';
-  src:url('/if.woff') format('woff');
-  font-weight:normal;
-  font-style:normal;
+@font-face {
+    font-family: "if";
+    font-weight: normal;
+    font-style: normal;
+    src: url("/if.woff") format("woff");
 }
 
-/*--- 360 Rotate --*/
-[data-icon]:before
-{
-  margin-right:.35em;
+/* --- 360 Rotate -- */
+[data-icon]::before {
+    margin-right: 0.35em;
 }
 
-[data-icon]:before,
+[data-icon]::before,
 .fi,
-i.icon
-{
-  font-family:'if' !important;
-  content:attr(data-icon);
-  font-style:normal !important;
-  font-weight:normal !important;
-  font-variant:normal !important;
-  text-transform:none !important;
-  vertical-align:middle;
-  speak:none;
-  line-height:1;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+i.icon {
+    vertical-align: middle;
+    text-transform: none !important;
+    line-height: 1;
+    font-family: "if" !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: attr(data-icon);
+    font-variant: normal !important;
+    speak: none;
 }
 
 
-.fh
-{
-  font-family:$fontHeaders;
+.fh {
+    font-family: $fontHeaders;
 }
 
-.fp
-{
-  font-family:$fontDefault;
+.fp {
+    font-family: $fontDefault;
 }
 
 @include import-font($fontWireframe, $fontWireframe, normal, normal);
 
-.fw
-{
-  font-family:'BLOKK'!important;
-  line-height:1.1em!important;
+.fw {
+    line-height: 1.1em !important;
+    font-family: "BLOKK" !important;
 }

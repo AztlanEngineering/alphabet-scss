@@ -4,6 +4,9 @@
     "stylelint-config-palantir/sass.js",
   ],
   "rules": {
-    // Add overrides and additional rules here
+    "indentation":2,
+    "at-rule-no-unknown": [ true, {
+      "ignoreAtRules": ["use"]
+    }],
   }
 }

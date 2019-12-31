@@ -1,0 +1,397 @@
+//
+//Config Variables (Advanced)
+//
+
+$prefix-hover:"h" !default;
+$prefixes-setters:"x", "y", "z" !default;
+$registry-length:5 !default;
+
+$getter-background:"b" !default;
+$getter-color-stroke:"c" !default;
+$getter-border:"d" !default;
+$getter-fill:"e" !default;
+
+$setter-dark-theme:"dark";
+
+//
+//Variables
+//
+
+$darken-by:10% !default;
+$lighten-by:10% !default;
+$saturate-by:10% !default;
+$desaturate-by:10% !default;
+
+//Monochrome
+$white:#ffffff !default;
+$off-white:#ffffff !default;
+
+$black:#000000 !default;
+$off-black:#000000 !default;
+
+$grey1:#aabbcc !default;
+$grey2:#aabbcc !default;
+$grey3:#aabbcc !default;
+$grey4:#aabbcc !default;
+$grey5:#aabbcc !default;
+
+$dark-text:$off-black !default;
+$light-text:$off-white !default;
+$treshold-dark-light:0.69;
+
+@function dark-nuance($color) {
+  @return saturate(darken($color, $darken-by), $saturate-by);
+}
+
+@function light-nuance($color) {
+  @return desaturate(lighten($color, $lighten-by), $desaturate-by);
+}
+
+@function on-nuance($color) {
+  $count:red($color) + green($color) + blue($color);
+  $max:256 * 3 * $treshold-dark-light;
+
+  @if $count < $max {
+    @return $white;
+  }
+  @else {
+    @return $black;
+  }
+}
+
+//REG R AND D
+
+//
+//
+//Theme
+//
+//
+
+//Primary
+$primary:#213a8f !default;
+$light-primary:light-nuance($primary) !default;
+$dark-primary:dark-nuance($primary) !default;
+$on-primary:on-nuance($primary) !default;
+
+//Secondary
+$secondary:#ff947a !default;
+$light-secondary:light-nuance($secondary) !default;
+$dark-secondary:dark-nuance($secondary) !default;
+$on-secondary:on-nuance($secondary) !default;
+
+//Accent1
+$accent1:#32f9e1 !default;
+$light-accent1:light-nuance($accent1) !default;
+$dark-accent1:dark-nuance($accent1) !default;
+$on-accent1:on-nuance($accent1) !default;
+
+//Accent2
+$accent2:#ee4266 !default;
+$light-accent2:light-nuance($accent2) !default;
+$dark-accent2:dark-nuance($accent2) !default;
+$on-accent2:on-nuance($accent2) !default;
+
+//Accent3
+$accent3:pink !default;
+$light-accent3:light-nuance($accent3) !default;
+$dark-accent3:dark-nuance($accent3) !default;
+$on-accent3:on-nuance($accent3) !default;
+
+
+//
+//
+//Color wheel
+//
+//
+
+
+//Red
+$red:#f8333c !default;
+$light-red:light-nuance($red) !default;
+$dark-red:dark-nuance($red) !default;
+$on-red:on-nuance($red) !default;
+
+//Orange
+$orange:#f46036 !default;
+$light-orange:light-nuance($orange) !default;
+$dark-orange:dark-nuance($orange) !default;
+$on-orange:on-nuance($orange) !default;
+
+//Yellow
+$yellow:#ffbf00 !default;
+$light-yellow:light-nuance($yellow) !default;
+$dark-yellow:dark-nuance($yellow) !default;
+$on-yellow:on-nuance($yellow) !default;
+
+//Olive
+$olive:grey !default;
+$light-olive:light-nuance($olive) !default;
+$dark-olive:dark-nuance($olive) !default;
+$on-olive:on-nuance($olive) !default;
+
+//Green
+$green:#44af69 !default;
+$light-green:light-nuance($green) !default;
+$dark-green:dark-nuance($green) !default;
+$on-green:on-nuance($green) !default;
+
+//Indigo
+$indigo:#43aa8b !default;
+$light-indigo:light-nuance($indigo) !default;
+$dark-indigo:dark-nuance($indigo) !default;
+$on-indigo:on-nuance($indigo) !default;
+
+//Azure
+$azure:$accent1 !default;
+$light-azure:light-nuance($azure) !default;
+$dark-azure:dark-nuance($azure) !default;
+$on-azure:on-nuance($azure) !default;
+
+//Blue
+$blue:$primary !default;
+$light-blue:light-nuance($blue) !default;
+$dark-blue:dark-nuance($blue) !default;
+$on-blue:on-nuance($blue) !default;
+
+//Violet
+$violet:#9381ff !default;
+$light-violet:light-nuance($violet) !default;
+$dark-violet:dark-nuance($violet) !default;
+$on-violet:on-nuance($violet) !default;
+
+
+//Pink
+$pink:grey !default;
+$light-pink:light-nuance($pink) !default;
+$dark-pink:dark-nuance($pink) !default;
+$on-pink:on-nuance($pink) !default;
+
+
+//
+//
+//Modals
+//
+//
+
+//Success
+$success:$green !default;
+$light-success:light-nuance($success) !default;
+$dark-success:dark-nuance($success) !default;
+$on-success:on-nuance($success) !default;
+
+//Warning
+$warning:$yellow !default;
+$light-warning:light-nuance($warning) !default;
+$dark-warning:dark-nuance($warning) !default;
+$on-warning:on-nuance($warning) !default;
+
+//Error
+$error:$red !default;
+$light-error:light-nuance($error) !default;
+$dark-error:dark-nuance($error) !default;
+$on-error:on-nuance($error) !default;
+
+$theme-colors:(
+  "primary":(
+    "base":$primary,
+    "light":$light-primary,
+    "dark":$dark-primary,
+    "con":$on-primary,
+  ),
+  "secondary":(
+    "base":$secondary,
+    "light":$light-secondary,
+    "dark":$dark-secondary,
+    "on":$on-secondary,
+  ),
+  "accent1":(
+    "base":$accent1,
+    "light":$light-accent1,
+    "dark":$dark-accent1,
+    "on":$on-accent1,
+  ),
+  "accent2":(
+    "base":$accent2,
+    "light":$light-accent2,
+    "dark":$dark-accent2,
+    "on":$on-accent2,
+  ),
+  "accent3":(
+    "base":$accent3,
+    "light":$light-accent3,
+    "dark":$dark-accent3,
+    "on":$on-accent3,
+  ),
+);
+
+$wheel-colors:(
+  "red":(
+    "base":$red,
+    "light":$light-red,
+    "dark":$dark-red,
+    "on":$on-red,
+  ),
+  "orange":(
+    "base":$orange,
+    "light":$light-orange,
+    "dark":$dark-orange,
+    "on":$on-orange,
+  ),
+  "yellow":(
+    "base":$yellow,
+    "light":$light-yellow,
+    "dark":$dark-yellow,
+    "on":$on-yellow,
+  ),
+  "olive":(
+    "base":$olive,
+    "light":$light-olive,
+    "dark":$dark-olive,
+    "on":$on-olive,
+  ),
+  "green":(
+    "base":$green,
+    "light":$light-green,
+    "dark":$dark-green,
+    "on":$on-green,
+  ),
+  "indigo":(
+    "base":$indigo,
+    "light":$light-indigo,
+    "dark":$dark-indigo,
+    "on":$on-indigo,
+  ),
+  "azure":(
+    "base":$azure,
+    "light":$light-azure,
+    "dark":$dark-azure,
+    "on":$on-azure,
+  ),
+  "blue":(
+    "base":$blue,
+    "light":$light-blue,
+    "dark":$dark-blue,
+    "on":$on-blue,
+  ),
+  "violet":(
+    "base":$violet,
+    "light":$light-violet,
+    "dark":$dark-violet,
+    "on":$on-violet,
+  ),
+  "pink":(
+    "base":$pink,
+    "light":$light-pink,
+    "dark":$dark-pink,
+    "on":$on-pink,
+  )
+);
+
+$modals-colors:(
+  "error":(
+    "base":$error,
+    "light":$light-error,
+    "dark":$dark-error,
+    "on":$on-error,
+  ),
+  "warning":(
+    "base":$warning,
+    "light":$light-warning,
+    "dark":$dark-warning,
+    "on":$on-warning,
+  ),
+  "success":(
+    "base":$success,
+    "light":$light-success,
+    "dark":$dark-success,
+    "on":$on-success,
+  ),
+);
+
+
+//D
+
+@mixin define-variables($array) {
+  @each $name, $subarray in $array {
+    @each $variant, $value in $subarray {
+      @if $variant == "base" {
+        --#{$name}: #{$value};
+      }
+      @else {
+        --#{$variant}-#{$name}: #{$value};
+      }
+    }
+  }
+}
+
+:root {
+  @include define-variables($modals-colors);
+  @include define-variables($theme-colors);
+  @include define-variables($wheel-colors);
+}
+
+//
+//Private variables
+//
+
+
+//
+//Setters
+//
+//
+
+
+@mixin setterFromMap($array) {
+  @each $name, $subarray in $array {
+    @each $prefix in $prefixes-setters {
+      .#{$prefix}-#{$name},
+      .#{$prefix}#{$prefix-hover}-#{$name}:focus,
+      .#{$prefix}#{$prefix-hover}-#{$name}:hover {
+        --#{$prefix}: var(--#{$name});
+        --#{$prefix}-light: var(--light-#{$name});
+        --#{$prefix}-dark: var(--dark-#{$name});
+        --#{$prefix}-on: var(--on-#{$name});
+      }
+    }
+  }
+}
+
+@mixin getterFactory($prefix,$var-name,$properties) {
+  .#{$prefix}#{$var-name} {
+    @each $property in $properties {
+      #{$property}: var(--#{$var-name});
+    }
+  }
+}
+
+@mixin getters {
+  $variants:"","light","dark","on";
+
+  @each $register in $prefixes-setters {
+    @each $variant in $variants {
+      @if $variant == "" {
+        @include getterFactory($getter-background,$register,("background"));
+        @include getterFactory($getter-color-stroke, $register,("color", "stroke"));
+        @include getterFactory($getter-border,$register,("border-color"));
+        @include getterFactory($getter-fill,$register,("fill"));
+      }
+      @else {
+        $v:"#{$register}-#{$variant}";
+
+        @include getterFactory($getter-background,$v,("background"));
+        @include getterFactory($getter-color-stroke, $v,("color", "stroke"));
+        @include getterFactory($getter-border,$v,("border-color"));
+        @include getterFactory($getter-fill,$v,("fill"));
+      }
+    }
+  }
+}
+
+@include setterFromMap($theme-colors);
+@include setterFromMap($modals-colors);
+@include setterFromMap($wheel-colors);
+@include getters;
+
+//
+//Getters
+//

@@ -1,0 +1,80 @@
+
+
+//Use of namespace
+$columns-classgen-prefix:'w';
+$gap-classgen-prefix:'g';
+$row-class:'row';
+
+
+$num-columns:12 !default;
+$gap-classgen-iterations:2;
+
+/* ---  Fixed --- */
+
+.#{$row-class} {
+    width: 100%;
+}
+
+/* --- Base Grid --- */
+
+.#{$columns-classgen-prefix} {
+    display: grid;
+    grid-template-columns: repeat($num-columns, 1fr);
+
+    > * {
+        grid-column-end: span $num-columns;
+    }
+}
+
+/* --- Responsive  --- */
+
+@mixin columns($suffix:false, $from:false) {
+    @include media($from:$from) {
+        @for $i from 1 through $num-columns {
+            .#{$columns-classgen-prefix}#{$i}-#{$suffix} {
+                grid-column-end: span $i;
+            }
+        }
+    }
+}
+
+
+// Columns normal (not responsive)
+@for $i from 1 through $num-columns {
+    .#{$columns-classgen-prefix}#{$i} {
+        grid-column-end: span $i;
+    }
+}
+//@include columns('xs' );
+@include columns("sm", $from:$xs-sm);
+@include columns("md", $from:$sm-md);
+@include columns("lg", $from:$md-lg);
+
+
+@mixin grid-gap-code($current, $name) {
+    .#{$gap-classgen-prefix}h#{$name} {
+        grid-column-gap: #{$current}rem;
+    }
+
+    .#{$gap-classgen-prefix}v#{$name} {
+        grid-row-gap: #{$current}rem;
+    }
+
+    .#{$gap-classgen-prefix}#{$name} {
+        grid-gap: #{$current}rem;
+    }
+}
+
+@mixin grid-gap {
+    @for $i from 1 through $gap-classgen-iterations {
+        $current:$i;
+
+        @include grid-gap-code($current:$current, $name:$current);
+    }
+
+    @include grid-gap-code($current:0.5, $name:"05")
+        @include grid-gap-code($current:0.2, $name:"02");
+    //@include grid-gap-code($current:.1, $name:'01');
+}
+
+@include grid-gap;

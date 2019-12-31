@@ -5,19 +5,18 @@
   "main": "main.scss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pretty": "csscomb -v ./scss",
     "pub": "git add . && git commit -m 'Various improvements' && npm version minor && git push"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fwrlines/scss.git"
+    "url": "https://github.com/fwrlines/ds-scss.git"
   },
   "author": "779g",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fwrlines/scss/issues"
+    "url": "https://github.com/fwrlines/ds-scss/issues"
   },
-  "homepage": "https://github.com/fwrlines/scss#readme",
+  "homepage": "https://github.com/fwrlines/ds-scss#readme",
   "devDependencies": {
     "sass": "^1.24.0",
     "stylelint": "^12.0.0",

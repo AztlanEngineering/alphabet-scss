@@ -1,6 +1,6 @@
-// 
-// Config Variables (Advanced)
-// 
+//
+//Config Variables (Advanced)
+//
 
 $prefix-hover:"h" !default;
 $prefixes-setters:"x", "y", "z" !default;
@@ -13,8 +13,8 @@ $getter-fill:"e" !default;
 
 $setter-dark-theme:"dark";
 
-// 
-// Variables
+//
+//Variables
 //
 
 $darken-by:10% !default;
@@ -22,7 +22,7 @@ $lighten-by:10% !default;
 $saturate-by:10% !default;
 $desaturate-by:10% !default;
 
-// Monochrome
+//Monochrome
 $white:#ffffff !default;
 $off-white:#ffffff !default;
 
@@ -63,35 +63,35 @@ $treshold-dark-light:0.69;
 
 //
 //
-// Theme
+//Theme
 //
 //
 
-// Primary
+//Primary
 $primary:#213a8f !default;
 $light-primary:light-nuance($primary) !default;
 $dark-primary:dark-nuance($primary) !default;
 $on-primary:on-nuance($primary) !default;
 
-// Secondary
+//Secondary
 $secondary:#ff947a !default;
 $light-secondary:light-nuance($secondary) !default;
 $dark-secondary:dark-nuance($secondary) !default;
 $on-secondary:on-nuance($secondary) !default;
 
-// Accent1
+//Accent1
 $accent1:#32f9e1 !default;
 $light-accent1:light-nuance($accent1) !default;
 $dark-accent1:dark-nuance($accent1) !default;
 $on-accent1:on-nuance($accent1) !default;
 
-// Accent2
+//Accent2
 $accent2:#ee4266 !default;
 $light-accent2:light-nuance($accent2) !default;
 $dark-accent2:dark-nuance($accent2) !default;
 $on-accent2:on-nuance($accent2) !default;
 
-// Accent3
+//Accent3
 $accent3:pink !default;
 $light-accent3:light-nuance($accent3) !default;
 $dark-accent3:dark-nuance($accent3) !default;
@@ -100,67 +100,67 @@ $on-accent3:on-nuance($accent3) !default;
 
 //
 //
-// Color wheel
+//Color wheel
 //
 //
 
 
-// Red
+//Red
 $red:#f8333c !default;
 $light-red:light-nuance($red) !default;
 $dark-red:dark-nuance($red) !default;
 $on-red:on-nuance($red) !default;
 
-// Orange
+//Orange
 $orange:#f46036 !default;
 $light-orange:light-nuance($orange) !default;
 $dark-orange:dark-nuance($orange) !default;
 $on-orange:on-nuance($orange) !default;
 
-// Yellow
+//Yellow
 $yellow:#ffbf00 !default;
 $light-yellow:light-nuance($yellow) !default;
 $dark-yellow:dark-nuance($yellow) !default;
 $on-yellow:on-nuance($yellow) !default;
 
-// Olive
+//Olive
 $olive:grey !default;
 $light-olive:light-nuance($olive) !default;
 $dark-olive:dark-nuance($olive) !default;
 $on-olive:on-nuance($olive) !default;
 
-// Green
+//Green
 $green:#44af69 !default;
 $light-green:light-nuance($green) !default;
 $dark-green:dark-nuance($green) !default;
 $on-green:on-nuance($green) !default;
 
-// Indigo
+//Indigo
 $indigo:#43aa8b !default;
 $light-indigo:light-nuance($indigo) !default;
 $dark-indigo:dark-nuance($indigo) !default;
 $on-indigo:on-nuance($indigo) !default;
 
-// Azure
+//Azure
 $azure:$accent1 !default;
 $light-azure:light-nuance($azure) !default;
 $dark-azure:dark-nuance($azure) !default;
 $on-azure:on-nuance($azure) !default;
 
-// Blue
+//Blue
 $blue:$primary !default;
 $light-blue:light-nuance($blue) !default;
 $dark-blue:dark-nuance($blue) !default;
 $on-blue:on-nuance($blue) !default;
 
-// Violet
+//Violet
 $violet:#9381ff !default;
 $light-violet:light-nuance($violet) !default;
 $dark-violet:dark-nuance($violet) !default;
 $on-violet:on-nuance($violet) !default;
 
 
-// Pink
+//Pink
 $pink:grey !default;
 $light-pink:light-nuance($pink) !default;
 $dark-pink:dark-nuance($pink) !default;
@@ -169,23 +169,23 @@ $on-pink:on-nuance($pink) !default;
 
 //
 //
-// Modals
+//Modals
 //
 //
 
-// Success
+//Success
 $success:$green !default;
 $light-success:light-nuance($success) !default;
 $dark-success:dark-nuance($success) !default;
 $on-success:on-nuance($success) !default;
 
-// Warning
+//Warning
 $warning:$yellow !default;
 $light-warning:light-nuance($warning) !default;
 $dark-warning:dark-nuance($warning) !default;
 $on-warning:on-nuance($warning) !default;
 
-// Error
+//Error
 $error:$red !default;
 $light-error:light-nuance($error) !default;
 $dark-error:dark-nuance($error) !default;
@@ -309,7 +309,7 @@ $modals-colors:(
 );
 
 
-// D
+//D
 
 @mixin define-variables($array) {
   @each $name, $subarray in $array {
@@ -331,13 +331,13 @@ $modals-colors:(
 }
 
 //
-// Private variables
-// 
+//Private variables
+//
 
 
-// 
-// Setters
-// 
+//
+//Setters
+//
 //
 
 
@@ -392,6 +392,6 @@ $modals-colors:(
 @include setterFromMap($wheel-colors);
 @include getters;
 
-// 
-// Getters
+//
+//Getters
 //

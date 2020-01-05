@@ -1,11 +1,11 @@
 {
   "name": "@fwrlines/alphabet-scss",
-  "version": "0.10.0",
+  "version": "0.9.1",
   "description": "fwrlines Design System SCSS Base",
   "main": "main.scss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pub": "npm version minor && npm publish"
+    "pub": "npm version patch && npm publish"
   },
   "repository": {
     "type": "git",

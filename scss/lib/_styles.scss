@@ -1,0 +1,64 @@
+@use "../defs/blocks";
+
+.basic.basic {
+
+  //@include blocks.collapsible-border(var(--x, --primary), 1px);
+  border: 2px solid var(--x, var(--black));
+  background: transparent;
+  color: var(--x, var(--black));
+}
+
+.hbasic.hbasic.hbasic {
+  &:hover {
+    //@include blocks.collapsible-border(var(--x, --primary), 1px);
+    border: 2px solid var(--x-dark, var(--black));
+    background: transparent;
+    color: var(--x-dark, var(--black));
+  }
+
+  &:focus,
+  &:active {
+    //@include blocks.collapsible-border(var(--x, --primary), 1px);
+    border: 2px solid var(--x, var(--black));
+    background: var(--x, var(--black));
+    color: var(--x-on, var(--black));
+  }
+}
+
+.simple.simple {
+
+  //@include blocks.collapsible-border(var(--x, --primary), 1px);
+  background: transparent;
+  color: var(--x, var(--black));
+}
+
+.hsimple.hsimple.hsimple {
+
+  //@include blocks.collapsible-border(var(--x, --primary), 1px);
+  &:hover {
+    background: transparent;
+    color: var(--x-dark, var(--black));
+  }
+
+  &:focus,
+  &:active {
+    background: transparent;
+    color: var(--x-light, var(--black));
+  }
+}
+
+.in3d.in3d {
+  border-bottom: 5px solid var(--x-dark);
+  border-radius: 0.2rem;
+}
+
+.hin3d.hin3d.hin3d {
+  &:hover {
+    border-bottom: 5px solid var(--x);
+  }
+
+  &:focus,
+  &:active {
+    border-bottom: 0;
+  }
+}

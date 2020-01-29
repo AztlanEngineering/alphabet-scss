@@ -1,0 +1,37 @@
+@use "../mixins/responsive";
+@import "../vars/main";
+@import "../vars/responsive";
+@import "../vars/fonts";
+@import "../vars/text";
+@import "../vars/sizes";
+//@import "../vars/text";
+
+@mixin html-body() {
+  /* --- Main  --- */
+  html,
+  body {
+    height: 100%;
+  }
+
+
+  html {
+    @include responsive.media($from:$sm-md) {
+      font-size: var(--emsize-sm);
+    }
+    font-size: var(--emsize);
+  }
+
+
+  body {
+
+    //min-width: $pageMinWidth;
+    margin: 0;
+    background: var(--background);
+    overflow-x: $pageOverflowX;
+    padding: 0;
+    //font-size: $fontSize;
+    line-height: $textLineHeightParagraph;
+    color: var(--paragraph);
+    font-family: var(--fp);
+  }
+}

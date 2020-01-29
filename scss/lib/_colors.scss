@@ -1,0 +1,8 @@
+@use "../defs/colors" as *;
+@include setterFromMap($monochrome-colors);
+@include setterFromMap($theme-colors);
+@include setterFromMap($modals-colors);
+@include setterFromMap($wheel-colors);
+@include setterFromMap($ui-colors);
+@include setterFromMap($sm-colors);
+@include getters;

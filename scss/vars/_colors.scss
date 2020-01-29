@@ -3,7 +3,7 @@
 //
 
 $prefix-hover:"h" !default;
-$prefixes-setters:"x", "y", "z" !default;
+$prefixes-setters:"x", "y", "z";
 $registry-length:5 !default;
 
 $getter-background:"b" !default;
@@ -17,8 +17,8 @@ $setter-dark-theme:"dark";
 //Variables
 //
 
-$darken-by:10% !default;
-$lighten-by:10% !default;
+$darken-by:15% !default;
+$lighten-by:15% !default;
 $saturate-by:10% !default;
 $desaturate-by:10% !default;
 
@@ -29,14 +29,17 @@ $off-white:#ffffff !default;
 $black:#000000 !default;
 $off-black:#000000 !default;
 
-$grey1:#aabbcc !default;
-$grey2:#aabbcc !default;
-$grey3:#aabbcc !default;
-$grey4:#aabbcc !default;
-$grey5:#aabbcc !default;
+$lighter-grey:#aabbcc !default;
+$light-grey:#aabbcc !default;
+$grey:#aabbcc !default;
+$dark-grey:#aabbcc !default;
+$darker-grey:#aabbcc !default;
+$on-grey:$white !default;
+$on-black:$white !default;
+$on-white:$black !default;
 
-$dark-text:$off-black !default;
-$light-text:$off-white !default;
+$dark-text:$on-white !default;
+$light-text:$on-black !default;
 $treshold-dark-light:0.69;
 
 @function dark-nuance($color) {
@@ -52,10 +55,10 @@ $treshold-dark-light:0.69;
   $max:256 * 3 * $treshold-dark-light;
 
   @if $count < $max {
-    @return $white;
+    @return $light-text;
   }
   @else {
-    @return $black;
+    @return $dark-text;
   }
 }
 
@@ -166,6 +169,11 @@ $light-pink:light-nuance($pink) !default;
 $dark-pink:dark-nuance($pink) !default;
 $on-pink:on-nuance($pink) !default;
 
+//Transparent
+$transparent:transparent !default;
+$light-transparent:transparent !default;
+$dark-transparent:transparent !default;
+$on-transparent:$black !default;
 
 //
 //
@@ -191,12 +199,61 @@ $light-error:light-nuance($error) !default;
 $dark-error:dark-nuance($error) !default;
 $on-error:on-nuance($error) !default;
 
+//
+//
+//SM Social media
+//
+//
+
+//Twitter
+$twitter:#55acee !default;
+$light-twitter:light-nuance($twitter) !default;
+$dark-twitter:dark-nuance($twitter) !default;
+$on-twitter:on-nuance($twitter) !default;
+
+//Facebook
+$facebook:#3b5999 !default;
+$light-facebook:light-nuance($facebook) !default;
+$dark-facebook:dark-nuance($facebook) !default;
+$on-facebook:on-nuance($facebook) !default;
+
+//Instagram
+$instagram:#e4405f !default;
+$light-instagram:light-nuance($instagram) !default;
+$dark-instagram:dark-nuance($instagram) !default;
+$on-instagram:on-nuance($instagram) !default;
+
+//Google
+$google:$off-white !default;
+$light-google:light-nuance($google) !default;
+$dark-google:dark-nuance($google) !default;
+$on-google:on-nuance($google) !default;
+
+$monochrome-colors:(
+  "black":(
+    "base":$black,
+    "light":$off-black,
+    "on":$on-black,
+  ),
+  "white":(
+    "base":$white,
+    "dark":$off-white,
+    "on":$on-white,
+  ),
+  "grey":(
+    "base":$grey,
+    "light":$light-grey,
+    "dark":$dark-grey,
+    "on":$on-grey,
+  )
+);
+
 $theme-colors:(
   "primary":(
     "base":$primary,
     "light":$light-primary,
     "dark":$dark-primary,
-    "con":$on-primary,
+    "on":$on-primary,
   ),
   "secondary":(
     "base":$secondary,
@@ -284,6 +341,12 @@ $wheel-colors:(
     "light":$light-pink,
     "dark":$dark-pink,
     "on":$on-pink,
+  ),
+  "transparent":(
+    "base":$transparent,
+    "light":$light-transparent,
+    "dark":$dark-transparent,
+    "on":$on-transparent,
   )
 );
 
@@ -308,90 +371,67 @@ $modals-colors:(
   ),
 );
 
+$sm-colors:(
+  "twitter":(
+    "base":$twitter,
+    "light":$light-twitter,
+    "dark":$dark-twitter,
+    "on":$on-twitter,
+  ),
+  "facebook":(
+    "base":$facebook,
+    "light":$light-facebook,
+    "dark":$dark-facebook,
+    "on":$on-facebook,
+  ),
+  "instagram":(
+    "base":$instagram,
+    "light":$light-instagram,
+    "dark":$dark-instagram,
+    "on":$on-instagram,
+  ),
+  "google":(
+    "base":$google,
+    "light":$light-google,
+    "dark":$dark-google,
+    "on":$on-google,
+  ),
+);
 
-//D
-
-@mixin define-variables($array) {
-  @each $name, $subarray in $array {
-    @each $variant, $value in $subarray {
-      @if $variant == "base" {
-        --#{$name}: #{$value};
-      }
-      @else {
-        --#{$variant}-#{$name}: #{$value};
-      }
-    }
-  }
-}
-
-:root {
-  @include define-variables($modals-colors);
-  @include define-variables($theme-colors);
-  @include define-variables($wheel-colors);
-}
-
-//
-//Private variables
-//
-
-
-//
-//Setters
-//
-//
-
-
-@mixin setterFromMap($array) {
-  @each $name, $subarray in $array {
-    @each $prefix in $prefixes-setters {
-      .#{$prefix}-#{$name},
-      .#{$prefix}#{$prefix-hover}-#{$name}:focus,
-      .#{$prefix}#{$prefix-hover}-#{$name}:hover {
-        --#{$prefix}: var(--#{$name});
-        --#{$prefix}-light: var(--light-#{$name});
-        --#{$prefix}-dark: var(--dark-#{$name});
-        --#{$prefix}-on: var(--on-#{$name});
-      }
-    }
-  }
-}
-
-@mixin getterFactory($prefix,$var-name,$properties) {
-  .#{$prefix}#{$var-name} {
-    @each $property in $properties {
-      #{$property}: var(--#{$var-name});
-    }
-  }
-}
-
-@mixin getters {
-  $variants:"","light","dark","on";
-
-  @each $register in $prefixes-setters {
-    @each $variant in $variants {
-      @if $variant == "" {
-        @include getterFactory($getter-background,$register,("background"));
-        @include getterFactory($getter-color-stroke, $register,("color", "stroke"));
-        @include getterFactory($getter-border,$register,("border-color"));
-        @include getterFactory($getter-fill,$register,("fill"));
-      }
-      @else {
-        $v:"#{$register}-#{$variant}";
-
-        @include getterFactory($getter-background,$v,("background"));
-        @include getterFactory($getter-color-stroke, $v,("color", "stroke"));
-        @include getterFactory($getter-border,$v,("border-color"));
-        @include getterFactory($getter-fill,$v,("fill"));
-      }
-    }
-  }
-}
-
-@include setterFromMap($theme-colors);
-@include setterFromMap($modals-colors);
-@include setterFromMap($wheel-colors);
-@include getters;
-
-//
-//Getters
-//
+$ui-colors:(
+  "background":(
+    "base":$off-white,
+    "light":$white,
+    "dark":$lighter-grey,
+  ),
+  "paragraph":(
+    "base":$black,
+    "light":$light-primary,
+    "dark":$dark-primary,
+    "on":$on-primary,
+  ),
+  "links":(
+    "base":$blue,
+    "light":$light-blue,
+    "dark":$dark-blue,
+    "on":$on-blue,
+  ),
+  "headings":(
+    "base":$black,
+    "light":$off-black,
+    "dark":$black,
+    "on":$on-black,
+  ),
+  "subtitles":(
+    "base":$dark-grey,
+    "light":$grey,
+    "dark":$off-black,
+    "on":$on-black,
+  ),
+  "metadata":(
+    "base":$secondary,
+    "light":$light-secondary,
+    "dark":$dark-secondary,
+    "on":$on-secondary,
+  ),
+);

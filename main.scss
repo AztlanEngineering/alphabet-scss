@@ -12,7 +12,14 @@
 
 //@import "scss/vars";
 
-//@use "scss/colors/all" as colors;
-
-@import "scss/colors";
+//@use "scss/colors" as colors;
+@import "scss/mixins/reset";
+@import "scss/lib/main";
+@import "scss/lib/animation";
+@import "scss/lib/colors";
+@import "scss/lib/fonts";
+@import "scss/lib/img";
+@import "scss/lib/styles";
+@import "scss/lib/sizes";
+@import "scss/lib/text";
 

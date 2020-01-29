@@ -1,0 +1,5 @@
+@use "../defs/sizes" as *;
+@include setterTextSizes();
+@include setterNormalSizes();
+@include getters();
+

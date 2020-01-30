@@ -25,19 +25,19 @@ $smallHeadersInClass:"small-h";
 
 /* ---sizes iterator --- */
 $cSizes:(
-	"xs":$sizeXS,
-	"sm":$sizeSM,
-	"md":$sizeMD,
-	"lg":$sizeLG,
-	"xl":$sizeXL,
-	"xxl":$sizeXXL,
+  "xs":$sizeXS,
+  "sm":$sizeSM,
+  "md":$sizeMD,
+  "lg":$sizeLG,
+  "xl":$sizeXL,
+  "xxl":$sizeXXL,
 ) !default;
 $cRelativeSizes:(
-	"xs":$sizeRelativeXS,
-	"sm":$sizeRelativeSM,
-	"md":$sizeRelativeMD,
-	"lg":$sizeRelativeLG,
-	"xl":$sizeRelativeXL,
+  "xs":$sizeRelativeXS,
+  "sm":$sizeRelativeSM,
+  "md":$sizeRelativeMD,
+  "lg":$sizeRelativeLG,
+  "xl":$sizeRelativeXL,
 ) !default;
 
 /* --- Text Size --- */
@@ -51,12 +51,12 @@ $h4:$sizeMD * $textSizeHeadersMultiplier !default;
 $h5:$sizeSM * $textSizeHeadersMultiplier !default;
 $small:0.81em !default;
 $cHeadersSizes:(
-	"h1":$h1,
-	"h2":$h2,
-	"h3":$h3,
-	"h4":$h4,
-	"h5":$h5,
-	"p":$textSizeParagraph,
+  "h1":$h1,
+  "h2":$h2,
+  "h3":$h3,
+  "h4":$h4,
+  "h5":$h5,
+  "p":$textSizeParagraph,
 ) !default;
 
 /* --- Text Line, Margin --- */
@@ -87,6 +87,7 @@ $linkHoverUnderline:none !default;
 /* --- Lists --- */
 $ulListStyle:none !default;
 $olListStyle:33333 !default;
+$compact-name:"compact" !default;
 
 /* --- OpenType --- */
 $textOpenTypeOnum:1 !default;
@@ -115,3 +116,5 @@ $blockquoteAuthorBeforeChar:"—" !default;
 $blockquoteAuthorMarginRight:4em !default;
 $blockquoteAuthorBeforeMarginRight:1em !default;
 $blockquoteAuthorFontSize:1.2em !default;
+
+

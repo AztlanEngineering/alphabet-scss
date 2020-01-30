@@ -188,7 +188,7 @@ Other
   ul,
   ol {
     line-height: $textLineHeightParagraph;
-    color: var(--paragraph);
+    color: var(inherit, var(--paragraph));
     font-size: $textSizeParagraph;
   }
 
@@ -198,6 +198,25 @@ Other
     orphans: $paragraphOrphans;
     widows: $paragraphWidows;
   }
+
+  .#{$compact-name} {
+    margin: $textMarginParagraph;
+
+    li {
+      margin-bottom: unset;
+    }
+  }
+
+  ul {
+    padding-left: unset;
+    list-style: $ulListStyle;
+
+    ul,
+    ol {
+      margin-left: 1em;
+    }
+  }
+
 
   p:first-child {
     margin-top: 0;

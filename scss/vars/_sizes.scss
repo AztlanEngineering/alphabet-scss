@@ -32,6 +32,7 @@ $size-multipliers-map:(
   "-3":fn.power($size-multiplier, -3),
   "-2":fn.power($size-multiplier, -2),
   "-1":fn.power($size-multiplier, -1),
+  "0":1,
   "1":fn.power($size-multiplier, 1),
   "2":fn.power($size-multiplier, 2),
   "3":fn.power($size-multiplier, 3),

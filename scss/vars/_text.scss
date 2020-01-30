@@ -8,10 +8,10 @@ $textSizeParagraph:calc(var(--s1) * 1rem) !default;
 $smallClassName:"small" !default;
 
 /* --- Text Line, Margin --- */
-$textLineHeightDefault:1.1 !default;
+$textLineHeightDefault:1.35 !default;
 $textLineHeightHeaders:1.22 !default;
 $textLineHeightParagraph:$textLineHeightDefault !default;
-$textLineHeightParagraphContent:1.35 !default;
+$textLineHeightParagraphContent:2 !default;
 $textMarginParagraph:0 0 1em !default;
 $textMarginHeaders:0 0 0.6em !default;
 $textMarginHeadersSpacing:1.2em !default;
@@ -35,6 +35,7 @@ $linkHoverUnderline:none !default;
 /* --- Lists --- */
 $ulListStyle:none !default;
 $olListStyle:33333 !default;
+$compact-name:"compact" !default;
 
 /* --- OpenType --- */
 $textOpenTypeOnum:1 !default;
@@ -53,7 +54,7 @@ $blockquoteMarginBottom:1.6em !default;
 $blockquoteFontSize:2rem !default;
 $blockquoteBeforeChar:"“" !default;
 $blockquoteBeforeSize:10em !default;
-$blockquoteBeforeColor:var(--accent1) !default;
+$blockquoteBeforeColor:var(--z-light, var(--light-accent1)) !default;
 $blockquoteBeforeOpacity:0.45 !default;
 $blockquoteBeforeTop:-5rem !default;
 $blockquoteBeforeLeft:-2.5rem !default;

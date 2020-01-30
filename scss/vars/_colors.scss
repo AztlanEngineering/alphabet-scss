@@ -24,16 +24,16 @@ $desaturate-by:10% !default;
 
 //Monochrome
 $white:#ffffff !default;
-$off-white:#ffffff !default;
+$off-white:#f2f3f4 !default;
 
 $black:#000000 !default;
-$off-black:#000000 !default;
+$off-black:#121314 !default;
 
 $lighter-grey:#aabbcc !default;
-$light-grey:#aabbcc !default;
+$light-grey:#bcbdbe !default;
 $grey:#aabbcc !default;
-$dark-grey:#aabbcc !default;
-$darker-grey:#aabbcc !default;
+$dark-grey:#727374 !default;
+$darker-grey:#323334 !default;
 $on-grey:$white !default;
 $on-black:$white !default;
 $on-white:$black !default;
@@ -429,9 +429,9 @@ $ui-colors:(
     "on":$on-black,
   ),
   "metadata":(
-    "base":$secondary,
-    "light":$light-secondary,
-    "dark":$dark-secondary,
-    "on":$on-secondary,
+    "base":$light-grey,
+    "light":$lighter-grey,
+    "dark":$grey,
+    "on":$black,
   ),
 );

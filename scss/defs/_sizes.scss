@@ -39,7 +39,7 @@
 ) {
   @each $size, $multiple in $map {
     @each $prefix in $prefixes {
-      @if $size <= 1 {
+      @if $size < 1 {
         .#{$prefix}#{$size * 100} {
           --#{$prefix}: #{$size};
         }

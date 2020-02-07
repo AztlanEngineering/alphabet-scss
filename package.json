@@ -1,6 +1,6 @@
 {
   "name": "@fwrlines/alphabet-scss",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "description": "fwrlines Design System SCSS Base",
   "main": "main.scss",
   "scripts": {

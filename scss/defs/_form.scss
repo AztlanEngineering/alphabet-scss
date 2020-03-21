@@ -1,123 +1,133 @@
 
+@use "../vars/fonts";
 @import "../vars/form";
 
-@mixin form-style-general($style, $name) {
-  .#{$fc}.#{$name} {
-    font-size: calc(var(--t, 1) * 1em);
-
-    .inside {
-      > * {
-    border-top: map-get($style, "border");
-    border-bottom: map-get($style, "border");
-
-      }
-
-      > :last-child {
-        border-right: map-get($style, "border");
-        border-bottom-right-radius: map-get($style, "border-radius");
-        border-top-right-radius: map-get($style, "border-radius");
-      }
-
-      > :first-child {
-        border-left: map-get($style, "border");
-        border-bottom-left-radius: map-get($style, "border-radius");
-        border-top-left-radius: map-get($style, "border-radius");
-      }
+@mixin define-form-style-vars($array, $theme-name) {
+  .#{$fc}.#{$theme-name} {
+    @each $variable, $value in $array {
+      --#{$form-variables-prefix}-#{$variable}: #{$value};
     }
   }
 }
 
-@mixin form-style-fieldset($style, $name) {
-  .#{$fc}.#{$name} {
+@mixin form-style-general() {
+  .#{$fc} {
+    font-size: calc(var(--t, 1) * 1em);
+
+    .inside {
+      border: var(--form-border);
+      border-radius: var(--form-border-radius);
+      overflow-x: hidden;
+      transition: 0.3s border-color;
+
+      * {
+        transition: 0.3s all;
+      }
+    }
+
+    &:not(:disabled) .inside {
+
+      &:hover {
+        border-color: var(--form-input-hover-border-color);
+      }
+
+      &:focus-within,
+      &:focus {
+        border-color: var(--form-input-focus-border-color);
+      }
+    }
+  }
+
+  .#{$fc}.#{$form-error-class} {
+    --y:var(--error);
+    --light-y:var(--light-error);
+    --dark-y:var(--dark-error);
+    --on-y:var(--on-error);
+
+    --form-state-color:var(--error);
+    --form-state-color-light:var(--light-error);
+  }
+
+  .#{$fc}.#{$form-valid-class} {
+    --y:var(--success);
+    --light-y:var(--light-success);
+    --dark-y:var(--dark-success);
+    --on-y:var(--on-success);
+
+    --form-state-color:var(--success);
+    --form-state-color-light:var(--light-success);
+  }
+}
+
+@mixin form-style-fieldset() {
+  .#{$fc} {
     //background: blue;
   }
 }
 
-@mixin form-style-text-input($style, $name) {
-  .#{$fc}.#{$name} input,
-  .#{$fc}.#{$name} textarea {
-    background: map-get($style, "input-background");
+@mixin form-style-text-input() {
+  .#{$fc} input,
+  .#{$fc} textarea {
+    background: var(--form-input-background);
 
-    padding: map-get($style, "input-padding");
-    line-height: map-get($style, "input-line-height");
-    color: map-get($style, "input-color");
-    font-size: map-get($style, "input-font-size");
-    font-weight: map-get($style, "input-font-weight");
+    padding: var(--form-input-padding);
+    line-height: var(--form-input-line-height);
+    color: var(--form-input-color);
+    font-size: var(--form-input-font-size);
+    font-weight: var(--form-input-font-weight);
+
+    caret-color: var(--form-input-caret-color);
 
     &:disabled {
-      border-color: map-get($style, "input-disabled-border");
-      background: map-get($style, "input-disabled-background");
-      color: map-get($style, "input-disabled-color");
+      border-color: var(--form-input-disabled-border);
+      background: var(--form-input-disabled-background);
+
+      &::placeholder {
+        color: var(--form-input-disabled-color);
+      }
     }
 
-    &:hover:not(:disabled) {
-      border-color: map-get($style, "input-hover-border-color");
-      //color: map-get($style, "input-hover-color");
+    &::placeholder {
+      color: var(--form-input-placeholder-color);
     }
 
-    &:focus:not(:disabled) {
-      border-color: map-get($style, "input-focus-border-color");
-      color: map-get($style, "input-focus-color");
+    &:focus {
+      color: var(--form-input-focus-color);
     }
   }
 
-  .#{$fc}.#{$name} textarea {
-    resize: map-get($style, "textarea-resize");
-  }
-
-  .#{$fc}.#{$name}.#{$form-error-class} input,
-  .#{$fc}.#{$name}.#{$form-error-class} textarea {
-    border-color: map-get($style, "input-error-border-color");
-  }
-
-  .#{$fc}.#{$name}.#{$form-valid-class} input,
-  .#{$fc}.#{$name}.#{$form-valid-class} textarea {
-    border-color: map-get($style, "input-valid-border-color");
+  .#{$fc} textarea {
+    resize: var(--form-textarea-resize);
   }
 }
 
-@mixin form-style-label($style, $name) {
-  .#{$fc}.#{$name} > label,
-  .#{$fc}.#{$name} > legend {
-    margin: map-get($style, "label-margin");
-    padding: map-get($style, "label-padding");
-    color: map-get($style, "label-color");
-    font-size: map-get($style, "label-font-size");
+@mixin form-style-label() {
+  .#{$fc} > label,
+  .#{$fc} > legend {
+    margin: var(--form-label-margin);
+    padding: var(--form-label-padding);
+    color: var(--form-label-color);
+    font-size: var(--form-label-font-size);
   }
 }
 
-@mixin form-style-description($style, $name) {
-  .#{$fc}.#{$name} > .#{$form-description-class} {
-    margin: map-get($style, "description-margin");
-    padding: map-get($style, "description-padding");
-    color: map-get($style, "description-color");
-    font-size: map-get($style, "description-font-size");
+@mixin form-compact-style() {
+  .#{$fc}.#{$form-compact-class} > label,
+  .#{$fc}.#{$form-compact-class} > legend {
+    padding: var(--form-label-compact-padding);
   }
+
+  .#{$fc}.#{$form-compact-class} input,
+  .#{$fc}.#{$form-compact-class} textarea {
+    padding: var(--form-input-compact-padding);
+  }   
 }
 
-@mixin form-style-side($style, $name) {
-  .#{$fc}.#{$name} > .inside .side {
-    background: map-get($style, "side-background");
-    padding: map-get($style, "input-padding");
-
-    border-color: map-get($style, "side-border-color");
-
-
-    &.left {
-    }
-
-    &.right {
-
-    }
-  }
-}
-
-@mixin form-style($style, $name) {
-  @include form-style-general($style, $name);
-  @include form-style-fieldset($style, $name);
-  @include form-style-text-input($style, $name);
-  @include form-style-label($style, $name);
-  @include form-style-description($style, $name);
-  @include form-style-side($style, $name);
+@mixin form-styles() {
+  @include form-style-general();
+  @include form-style-fieldset();
+  @include form-style-text-input();
+  @include form-style-label();
+  @include form-compact-style();
 }
 

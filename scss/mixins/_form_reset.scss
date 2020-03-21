@@ -222,3 +222,24 @@ fieldset {
   @extend %form-reset-fieldset;
 }
 
+@mixin opinionated-form-reset {
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  input:valid,
+  input:invalid {
+    border:unset;
+    box-shadow:unset;
+  }
+}
+
+@include opinionated-form-reset;

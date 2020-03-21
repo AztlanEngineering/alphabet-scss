@@ -405,10 +405,10 @@ $ui-colors:(
     "dark":$lighter-grey,
   ),
   "paragraph":(
-    "base":$black,
-    "light":$light-primary,
-    "dark":$dark-primary,
-    "on":$on-primary,
+    "base":$off-black,
+    "light":$black,
+    "dark":$darker-grey,
+    "on":$white,
   ),
   "links":(
     "base":$blue,

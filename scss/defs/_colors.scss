@@ -33,9 +33,9 @@
       .#{$prefix}#{$prefix-hover}-#{$name}:focus,
       .#{$prefix}#{$prefix-hover}-#{$name}:hover {
         --#{$prefix}: var(--#{$name});
-        --#{$prefix}-light: var(--light-#{$name});
-        --#{$prefix}-dark: var(--dark-#{$name});
-        --#{$prefix}-on: var(--on-#{$name});
+        --light-#{$prefix}: var(--light-#{$name});
+        --dark-#{$prefix}: var(--dark-#{$name});
+        --on-#{$prefix}: var(--on-#{$name});
       }
     }
   }

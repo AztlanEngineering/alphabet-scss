@@ -16,7 +16,8 @@ html {
   box-sizing: border-box;
 }
 
-/* iPad Input Shadows */
+/*
+// iPad Input Shadows
 input[type="text"],
 input[type="tel"],
 input[type="email"],
@@ -24,13 +25,15 @@ input[type="search"],
 input[type="number"],
 input[type="date"],
 input[type="time"],
-input[type="password"] {
+input[type="password"],
+textarea {
   border-radius: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  /* mobile firefox too! */
+  //mobile firefox too!
 }
+*/
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 
@@ -368,10 +371,14 @@ fieldset {
  * 2. Correct the color inheritance from `fieldset` elements in IE.
  * 3. Remove the padding so developers are not caught out when they zero out
  *    `fieldset` elements in all browsers.
+ * 4. Try to make it appear completely in the fieldset
  */
 legend {
   /* 2 */
   display: table;
+
+  /* 4 */
+  float: left;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 
@@ -387,7 +394,9 @@ legend {
   /* 1 */
   color: inherit;
 
-  /* 1 */
+  + * {
+    clear: both;
+  }
 }
 
 /**

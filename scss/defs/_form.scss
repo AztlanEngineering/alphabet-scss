@@ -1,0 +1,123 @@
+
+@import "../vars/form";
+
+@mixin form-style-general($style, $name) {
+  .#{$fc}.#{$name} {
+    font-size: calc(var(--t, 1) * 1em);
+
+    .inside {
+      > * {
+    border-top: map-get($style, "border");
+    border-bottom: map-get($style, "border");
+
+      }
+
+      > :last-child {
+        border-right: map-get($style, "border");
+        border-bottom-right-radius: map-get($style, "border-radius");
+        border-top-right-radius: map-get($style, "border-radius");
+      }
+
+      > :first-child {
+        border-left: map-get($style, "border");
+        border-bottom-left-radius: map-get($style, "border-radius");
+        border-top-left-radius: map-get($style, "border-radius");
+      }
+    }
+  }
+}
+
+@mixin form-style-fieldset($style, $name) {
+  .#{$fc}.#{$name} {
+    //background: blue;
+  }
+}
+
+@mixin form-style-text-input($style, $name) {
+  .#{$fc}.#{$name} input,
+  .#{$fc}.#{$name} textarea {
+    background: map-get($style, "input-background");
+
+    padding: map-get($style, "input-padding");
+    line-height: map-get($style, "input-line-height");
+    color: map-get($style, "input-color");
+    font-size: map-get($style, "input-font-size");
+    font-weight: map-get($style, "input-font-weight");
+
+    &:disabled {
+      border-color: map-get($style, "input-disabled-border");
+      background: map-get($style, "input-disabled-background");
+      color: map-get($style, "input-disabled-color");
+    }
+
+    &:hover:not(:disabled) {
+      border-color: map-get($style, "input-hover-border-color");
+      //color: map-get($style, "input-hover-color");
+    }
+
+    &:focus:not(:disabled) {
+      border-color: map-get($style, "input-focus-border-color");
+      color: map-get($style, "input-focus-color");
+    }
+  }
+
+  .#{$fc}.#{$name} textarea {
+    resize: map-get($style, "textarea-resize");
+  }
+
+  .#{$fc}.#{$name}.#{$form-error-class} input,
+  .#{$fc}.#{$name}.#{$form-error-class} textarea {
+    border-color: map-get($style, "input-error-border-color");
+  }
+
+  .#{$fc}.#{$name}.#{$form-valid-class} input,
+  .#{$fc}.#{$name}.#{$form-valid-class} textarea {
+    border-color: map-get($style, "input-valid-border-color");
+  }
+}
+
+@mixin form-style-label($style, $name) {
+  .#{$fc}.#{$name} > label,
+  .#{$fc}.#{$name} > legend {
+    margin: map-get($style, "label-margin");
+    padding: map-get($style, "label-padding");
+    color: map-get($style, "label-color");
+    font-size: map-get($style, "label-font-size");
+  }
+}
+
+@mixin form-style-description($style, $name) {
+  .#{$fc}.#{$name} > .#{$form-description-class} {
+    margin: map-get($style, "description-margin");
+    padding: map-get($style, "description-padding");
+    color: map-get($style, "description-color");
+    font-size: map-get($style, "description-font-size");
+  }
+}
+
+@mixin form-style-side($style, $name) {
+  .#{$fc}.#{$name} > .inside .side {
+    background: map-get($style, "side-background");
+    padding: map-get($style, "input-padding");
+
+    border-color: map-get($style, "side-border-color");
+
+
+    &.left {
+    }
+
+    &.right {
+
+    }
+  }
+}
+
+@mixin form-style($style, $name) {
+  @include form-style-general($style, $name);
+  @include form-style-fieldset($style, $name);
+  @include form-style-text-input($style, $name);
+  @include form-style-label($style, $name);
+  @include form-style-description($style, $name);
+  @include form-style-side($style, $name);
+}
+

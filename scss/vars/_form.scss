@@ -1,0 +1,57 @@
+$form-base-class:"input" !default; //main class for the form, applied to the container
+$form-description-class:"description" !default;
+$form-error-class:"error" !default;
+$form-valid-class:"valid" !default;
+$fc:$form-base-class; //shorter alias to the previous
+
+// Basic Style
+$simple:(
+  "border":2px solid var(--fibc, var(--metadata)),
+  "border-radius":var(--r),
+  "box-shadow":"yes",
+
+  "fieldset-padding":0,
+  "fieldset-background":var(--metadata),
+
+  "label-color":var(--subtitles),
+  "label-font-size": calc(var(--s, 1) * 1em),
+  "label-margin":0 0 .7em,
+  "label-padding":0 1em,
+
+  "input-font-weight":normal,
+  "input-background":transparent,
+  "input-line-height":2em,
+  "input-padding":1em 1em,
+  "input-color":var(--dark-subtitles),
+  "input-font-size":calc(var(--s, 1) * var(--s1) * 1em),
+  "input-disabled-color":var(--dark-metadata),
+  "input-disabled-background":var(--background),
+  "input-disabled-border":var(--dark-metadata),
+  "input-error-color":var(--error),
+  "input-error-border-color":var(--error),
+  "input-valid-color":var(--valid),
+  "input-valid-border-color":var(--valid),
+  "input-focus-border-color":var(--primary),
+  "input-focus-background":var(--valid),
+  //"input-hover-color":var(--),
+  "input-hover-border-color":var(--light-primary),
+  //"input-focus-color":var(--paragraph),
+
+  "textarea-resize":none,
+
+  "description-color":var(--light-subtitles),
+  "description-padding":0 1em,
+  "description-margin":.7em 0 0,
+  "description-font-size":calc(var(--s, 1) * 1em),
+
+  "side-background":var(--z-light, var(--background)),
+  "side-border-color":var(--z, var(--metadata)), //used as fibc
+);
+
+$big:(
+  "da":222
+);
+
+
+// Big Style
+

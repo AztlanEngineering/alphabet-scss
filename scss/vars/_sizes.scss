@@ -26,7 +26,7 @@ $getter-size-border-radius:"r" !default;
 
 $base-size:16px;
 $base-size-small:14px;
-$size-multiplier:1.25;
+$size-multiplier:1.2;
 
 $size-multipliers-map:(
   "-3":fn.power($size-multiplier, -3),

@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/fwrlines/alphabet-scss#readme",
   "devDependencies": {
-    "sass": "^1.25.0",
-    "stylelint": "^13.0.0",
+    "sass": "^1.26.3",
+    "stylelint": "^13.2.1",
     "stylelint-config-palantir": "^4.0.1",
-    "stylelint-scss": "^3.14.2"
+    "stylelint-scss": "^3.16.0"
   },
   "dependencies": {}
 }

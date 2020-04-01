@@ -53,7 +53,7 @@
         @include getterFactory($getter-fill,$register,("fill"));
       }
       @else {
-        $v:"#{$register}-#{$variant}";
+        $v:"#{$variant}-#{$register}";
 
         @include getterFactory($getter-background,$v,("background"));
         @include getterFactory($getter-color-stroke, $v,("color", "stroke"));

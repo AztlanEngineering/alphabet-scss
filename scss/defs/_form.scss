@@ -87,6 +87,7 @@
       }
     }
 
+    &::-webkit-input-placeholder, /* Edge */
     &::placeholder {
       color: var(--form-input-placeholder-color);
     }

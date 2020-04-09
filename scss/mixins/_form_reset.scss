@@ -114,6 +114,20 @@ A couple of things to watch out for:
 }
 
 @mixin form-reset-select-specific {
+  & {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+}
+/* Remove IE arrow */
+&::-ms-expand {
+  display: none;
+}
   /* Move the label to the top */
   &[multiple] {
     vertical-align: top;

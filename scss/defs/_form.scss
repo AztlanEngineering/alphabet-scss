@@ -36,6 +36,14 @@
         border-color: var(--form-input-focus-border-color);
       }
     }
+
+    &:disabled {
+      .inside div {
+        //border-color: var(--form-input-disabled-border);
+        background: var(--form-input-disabled-background);
+
+      }
+    }
   }
 
   .#{$fc}.#{$form-error-class} {
@@ -67,7 +75,8 @@
 
 @mixin form-style-text-input() {
   .#{$fc} input,
-  .#{$fc} textarea {
+  .#{$fc} textarea,
+  .#{$fc} select {
     background: var(--form-input-background);
 
     padding: var(--form-input-padding);
@@ -76,11 +85,22 @@
     font-size: var(--form-input-font-size);
     font-weight: var(--form-input-font-weight);
 
+    &:disabled {
+      //border-color: var(--form-input-disabled-border);
+      background: var(--form-input-disabled-background);
+    }
+
+    &:focus {
+      color: var(--form-input-focus-color);
+    }
+  }
+
+
+  .#{$fc} input,
+  .#{$fc} textarea {
     caret-color: var(--form-input-caret-color);
 
     &:disabled {
-      border-color: var(--form-input-disabled-border);
-      background: var(--form-input-disabled-background);
 
       &::placeholder {
         color: var(--form-input-disabled-color);
@@ -92,14 +112,12 @@
       color: var(--form-input-placeholder-color);
     }
 
-    &:focus {
-      color: var(--form-input-focus-color);
-    }
   }
 
   .#{$fc} textarea {
     resize: var(--form-textarea-resize);
   }
+
 }
 
 @mixin form-style-label() {
@@ -119,7 +137,8 @@
   }
 
   .#{$fc}.#{$form-compact-class} input,
-  .#{$fc}.#{$form-compact-class} textarea {
+  .#{$fc}.#{$form-compact-class} textarea,
+  .#{$fc}.#{$form-compact-class} select {
     padding: var(--form-input-compact-padding);
   }   
 }

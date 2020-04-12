@@ -12,9 +12,9 @@
 .hbasic.hbasic.hbasic {
   &:hover {
     //@include blocks.collapsible-border(var(--x, --primary), 1px);
-    border: 2px solid var(--x-dark, var(--black));
+    border: 2px solid var(--dark-x, var(--black));
     background: transparent;
-    color: var(--x-dark, var(--black));
+    color: var(--dark-x, var(--black));
   }
 
   &:focus,
@@ -22,7 +22,7 @@
     //@include blocks.collapsible-border(var(--x, --primary), 1px);
     border: 2px solid var(--x, var(--black));
     background: var(--x, var(--black));
-    color: var(--x-on, var(--black));
+    color: var(--on-x, var(--black));
   }
 }
 
@@ -39,14 +39,14 @@
 
   //@include blocks.collapsible-border(var(--x, --primary), 1px);
   &:hover {
-    background: transparent;
-    color: var(--x-dark, var(--black));
+    background:rgba(255,255,255,.2);
+    color: var(--dark-x, var(--black));
   }
 
   &:focus,
   &:active {
-    background: transparent;
-    color: var(--x-light, var(--black));
+    background:rgba(255,255,255,.3);
+    color: var(--light-x, var(--black));
   }
 }
 
@@ -54,7 +54,7 @@
 // 3D style for buttons
 
 .in3d.in3d {
-  border-bottom: 5px solid var(--x-dark);
+  border-bottom: 5px solid var(--dark-x);
   border-radius: 0.2rem;
 }
 

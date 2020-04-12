@@ -233,10 +233,12 @@ $monochrome-colors:(
   "black":(
     "base":$black,
     "light":$off-black,
+    "dark":$black, //sensible default
     "on":$on-black,
   ),
   "white":(
     "base":$white,
+    "light":$white, //sensible default
     "dark":$off-white,
     "on":$on-white,
   ),

@@ -87,23 +87,42 @@
   $prefix-vertical:v;
 
   @each $side, $prefix-side in $rect {
-    .#{$prefix}#{$prefix-side}#{$var-name} {
+    .#{$prefix}#{$prefix-side}-#{$var-name} {
       #{$property}-#{$side}: calc(var(--#{$var-name}) * #{$factor});
     }
   }
 
-  .#{$prefix}#{$prefix-horizontal}#{$var-name} {
+  .#{$prefix}#{$prefix-horizontal}-#{$var-name} {
     #{$property}-left: calc(var(--#{$var-name}) * #{$factor});
     #{$property}-right: calc(var(--#{$var-name}) * #{$factor});
   }
 
-  .#{$prefix}#{$prefix-vertical}#{$var-name} {
+  .#{$prefix}#{$prefix-vertical}-#{$var-name} {
     #{$property}-top: calc(var(--#{$var-name}) * #{$factor});
     #{$property}-bottom: calc(var(--#{$var-name}) * #{$factor});
   }
 
-  .#{$prefix}#{$var-name} {
+  .#{$prefix}-#{$var-name} {
     #{$property}: calc(var(--#{$var-name}) * #{$factor});
+  }
+}
+
+@mixin getterFactoryCorners($prefix,$var-name,$property, $suffix, $factor) {
+  $rect:(
+    top-left:tl,
+    bottom-left:bl,
+    top-right:tr,
+    bottom-right:br,
+  );
+
+  @each $side, $prefix-side in $rect {
+    .#{$prefix}#{$prefix-side}-#{$var-name} {
+      #{$property}-#{$side}-#{$suffix}: calc(var(--#{$var-name}) * #{$factor});
+    }
+  }
+
+  .#{$prefix}-#{$var-name} {
+    #{$property}-#{$suffix}: calc(var(--#{$var-name}) * #{$factor});
   }
 }
 
@@ -120,7 +139,7 @@
     @include getterFactoryCoords($getter-coordinates, $register);
     @include getterFactoryRect($getter-size-margin, $register, ("margin"), "1rem");
     @include getterFactoryRect($getter-size-padding, $register, ("padding"), "1rem");
-    @include getterFactoryRect($getter-size-border-radius, $register, ("border-radius"), "1rem");
+    @include getterFactoryCorners($getter-size-border-radius, $register, ("border"), ("radius"), "1rem");
   }
 }
 

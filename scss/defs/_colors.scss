@@ -15,6 +15,12 @@
   }
 }
 
+@mixin define-theme($array, $theme-name) {
+  .#{$theme-name} {
+    @include define-variables($array);
+  }
+}
+
 //
 //Private variables
 //

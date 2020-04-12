@@ -17,6 +17,8 @@ $setter-dark-theme:"dark";
 //Variables
 //
 
+$dark-theme-class:"ui-dark" !default;
+
 $darken-by:15% !default;
 $lighten-by:15% !default;
 $saturate-by:10% !default;
@@ -410,7 +412,7 @@ $ui-colors:(
     "base":$off-black,
     "light":$black,
     "dark":$darker-grey,
-    "on":$white,
+    "on":$on-black,
   ),
   "links":(
     "base":$blue,
@@ -434,6 +436,44 @@ $ui-colors:(
     "base":$light-grey,
     "light":$lighter-grey,
     "dark":$grey,
+    "on":$black,
+  ),
+);
+
+$ui-colors-dark:(
+  "background":(
+    "base":$off-black,
+    "light":$darker-grey,
+    "dark":$black,
+  ),
+  "paragraph":(
+    "base":$off-white,
+    "light":$white,
+    "dark":$lighter-grey,
+    "on":$on-white,
+  ),
+  "links":(
+    "base":$blue,
+    "light":$light-blue,
+    "dark":$dark-blue,
+    "on":$on-blue,
+  ),
+  "headings":(
+    "base":$white,
+    "light":$white,
+    "dark":$off-white,
+    "on":$on-white,
+  ),
+  "subtitles":(
+    "base":$light-grey,
+    "light":$lighter-grey,//todo diff here
+    "dark":$grey,
+    "on":$on-white,
+  ),
+  "metadata":(
+    "base":$dark-grey,
+    "light":$grey,
+    "dark":$darker-grey,
     "on":$black,
   ),
 );

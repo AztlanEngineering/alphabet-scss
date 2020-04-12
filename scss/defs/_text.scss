@@ -188,7 +188,7 @@ Other
   ul,
   ol {
     line-height: $textLineHeightParagraph;
-    color: var(inherit, var(--paragraph));
+    color: var(--paragraph, inherit);
     font-size: $textSizeParagraph;
   }
 

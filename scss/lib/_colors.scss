@@ -5,4 +5,5 @@
 @include setterFromMap($wheel-colors);
 @include setterFromMap($ui-colors);
 @include setterFromMap($sm-colors);
+@include define-theme($ui-colors-dark, $dark-theme-class);
 @include getters;

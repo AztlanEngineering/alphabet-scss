@@ -1,4 +1,4 @@
-@use "../mixins/responsive";
+@use "../mixins" as mxn;
 @import "../vars/main";
 @import "../vars/responsive";
 @import "../vars/fonts";
@@ -15,7 +15,7 @@
 
 
   html {
-    @include responsive.media($from:$sm-md) {
+    @include mxn.media($from:$sm-md) {
       font-size: var(--emsize-sm);
     }
     font-size: var(--emsize);
@@ -38,31 +38,7 @@
 
 @mixin hidden {
   /* --- Hidden --- */
-  .h {
-    display: none;
-  }
-
-  @include responsive.media($to:$xs-sm) {
-    .h-xs {
-      display: none;
-    }
-  }
-
-  @include responsive.media($from:$xs-sm,$to:$sm-md) {
-    .h-sm {
-      display: none;
-    }
-  }
-
-  @include responsive.media($from:$sm-md,$to:$md-lg) {
-    .h-md {
-      display: none;
-    }
-  }
-
-  @include responsive.media($from:$md-lg) {
-    .h-lg {
-      display: none;
-    }
+  @include mxn.responsive-inner(#{$hidden-class}) {
+    display: none !important;
   }
 }

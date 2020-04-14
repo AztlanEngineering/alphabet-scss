@@ -280,6 +280,10 @@ Other
     white-space: -o-pre-wrap;
     word-wrap: break-word;
   }
+
+  .#{$pointer-class} {
+    cursor: pointer;
+  }
 }
 
 @mixin text-alignment {

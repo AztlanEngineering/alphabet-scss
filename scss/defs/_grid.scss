@@ -22,6 +22,24 @@
   }
 }
 
+@mixin grid-sidebar {
+  @include mxn.responsive(#{$columns-classgen-prefix}-sidebar) {
+    display: grid;
+    //grid-template-rows: auto;
+    //grid-template-columns:
+    //grid-auto-flow: column;
+
+    &.left {
+      grid-template-columns: [sidebar-start] var(--sidebar-width, $default-sidebar-width) [sidebar-end] repeat($num-columns, 1fr);
+    }
+
+    &.right {
+      grid-template-columns: repeat($num-columns, 1fr) [sidebar-start] var(--sidebar-width, $default-sidebar-width) [sidebar-end];
+    }
+  }
+}
+
+
 
 @mixin columns($suffix:false, $from:false) {
   @include mxn.media($from:$from) {

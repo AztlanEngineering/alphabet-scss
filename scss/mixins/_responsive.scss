@@ -26,7 +26,7 @@
   }
 
   @each $name, $breakpoint in $responsiveSizes {
-    @include media($to:$breakpoint) {
+    @include media($from:$breakpoint) {
       @if $suffix {
         .#{$baseName}-#{$name} {
           @content;
@@ -37,6 +37,38 @@
           @content;
         }
       }
+    }
+  }
+}
+
+@mixin responsive-inner($baseName, $base:true) {
+  @if $base {
+    .#{$baseName} {
+      @content;
+    }
+  }
+
+  @include media($to:$xs-sm) {
+    .xs-#{$baseName} {
+      @content;
+    }
+  }
+
+  @include media($from:$xs-sm, $to:$sm-md) {
+    .sm-#{$baseName} {
+      @content;
+    }
+  }
+
+  @include media($from:$sm-md, $to:$md-lg) {
+    .md-#{$baseName} {
+      @content;
+    }
+  }
+
+  @include media($from:$md-lg) {
+    .lg-#{$baseName} {
+      @content;
     }
   }
 }

@@ -54,7 +54,7 @@ $blockquoteMarginBottom:1.6em !default;
 $blockquoteFontSize:2rem !default;
 $blockquoteBeforeChar:"“" !default;
 $blockquoteBeforeSize:10em !default;
-$blockquoteBeforeColor:var(--z-light, var(--light-accent1)) !default;
+$blockquoteBeforeColor:var(--light-z, var(--light-accent1)) !default;
 $blockquoteBeforeOpacity:0.45 !default;
 $blockquoteBeforeTop:-5rem !default;
 $blockquoteBeforeLeft:-2.5rem !default;
@@ -66,5 +66,5 @@ $blockquoteAuthorBeforeMarginRight:1em !default;
 $blockquoteAuthorFontSize:1.2em !default;
 
 /* --- Extras --- */
-$pointer-class:'pointer'!default;
+$pointer-class:"pointer" !default;
 

@@ -54,7 +54,7 @@
 
 // Set Getters
 @mixin getterFactorySizes($prefix,$var-name,$properties, $unit) {
-  .#{$prefix}#{$var-name} {
+  .#{$prefix}-#{$var-name} {
     @each $property in $properties {
       #{$property}: calc(var(--#{$var-name}) * #{$unit});
     }
@@ -70,7 +70,7 @@
   );
 
   @each $side, $prefix-side in $rect {
-    .#{$prefix}#{$prefix-side}#{$var-name} {
+    .#{$prefix}#{$prefix-side}-#{$var-name} {
       #{$side}: calc(var(--#{$var-name}) * 1em);
     }
   }
@@ -132,7 +132,7 @@
 ) {
   @each $register in $prefixes-text {
     @include getterFactorySizes($getter-text-size-relative, $register, ("font-size"), "1em");
-    @include getterFactorySizes($getter-text-size-absolute, $register, ("font-size"), "1em");
+    @include getterFactorySizes($getter-text-size-absolute, $register, ("font-size"), "1rem");
   }
 
   @each $register in $prefixes-dimensions {

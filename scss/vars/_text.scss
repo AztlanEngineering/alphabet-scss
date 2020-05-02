@@ -1,10 +1,10 @@
 $emsize:16px !default;
-$h1:calc(var(--s6) * 1rem) !default;
-$h2:calc(var(--s4) * 1rem) !default;
-$h3:calc(var(--s3) * 1rem) !default;
-$h4:calc(var(--s2) * 1rem) !default;
-$h5:calc(var(--s1) * 1rem) !default;
-$textSizeParagraph:calc(var(--s1) * 1rem) !default;
+$h1:calc(var(--s6) * 1em) !default;
+$h2:calc(var(--s4) * 1em) !default;
+$h3:calc(var(--s3) * 1em) !default;
+$h4:calc(var(--s2) * 1em) !default;
+$h5:calc(var(--s1) * 1em) !default;
+$textSizeParagraph:calc(var(--s1) * 1em) !default;
 $smallClassName:"small" !default;
 
 /* --- Text Line, Margin --- */

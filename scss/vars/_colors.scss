@@ -414,19 +414,25 @@ $ui-colors:(
     "dark":$darker-grey,
     "on":$on-black,
   ),
-  "links":(
+  "navlink":(
+    "base":$off-black,
+    "light":$darker-grey,
+    "dark":$black,
+    "on":$on-black,
+  ),
+  "link":(
     "base":$blue,
     "light":$light-blue,
     "dark":$dark-blue,
     "on":$on-blue,
   ),
-  "headings":(
+  "heading":(
     "base":$black,
     "light":$off-black,
     "dark":$black,
     "on":$on-black,
   ),
-  "subtitles":(
+  "subtitle":(
     "base":$dark-grey,
     "light":$grey,
     "dark":$off-black,
@@ -452,19 +458,25 @@ $ui-colors-dark:(
     "dark":$lighter-grey,
     "on":$on-white,
   ),
-  "links":(
+  "navlink":(
+    "base":$off-white,
+    "light":$white,
+    "dark":$lighter-grey,
+    "on":$on-black,
+  ),
+  "link":(
     "base":$blue,
     "light":$light-blue,
     "dark":$dark-blue,
     "on":$on-blue,
   ),
-  "headings":(
+  "heading":(
     "base":$white,
     "light":$white,
     "dark":$off-white,
     "on":$on-white,
   ),
-  "subtitles":(
+  "subtitle":(
     "base":$light-grey,
     "light":$lighter-grey,//todo diff here
     "dark":$grey,
@@ -475,5 +487,95 @@ $ui-colors-dark:(
     "light":$grey,
     "dark":$darker-grey,
     "on":$black,
+  ),
+);
+
+$iceberg-black:#161821; /* black   */
+$iceberg-red:#e27878; /* red     */
+$iceberg-green:#b4be82; /* green   */
+$iceberg-yellow:#e2a478; /* yellow  */
+$iceberg-blue:#84a0c6; /* blue    */
+$iceberg-magenta:#a093c7; /* magenta */
+$iceberg-cyan:#89b8c2; /* cyan    */
+$iceberg-white:#c6c8d1; /* white   */
+
+/* 8;bright colors */
+$iceberg-light-black:#6b7089; /* black   */
+$iceberg-light-red:#e98989; /* red     */
+$iceberg-light-green:#c0ca8e; /* green   */
+$iceberg-light-yellow:#e9b189; /* yellow  */
+$iceberg-light-blue:#91acd1; /* blue    */
+$iceberg-light-magenta:#ada0d3; /* magenta */
+$iceberg-light-cyan:#95c4ce; /* cyan    */
+$iceberg-light-white:#d2d4de; /* white   */
+
+$iceberg-dark-black:dark-nuance($iceberg-black);
+$iceberg-dark-red:dark-nuance($iceberg-red);
+$iceberg-dark-green:dark-nuance($iceberg-green);
+$iceberg-dark-yellow:dark-nuance($iceberg-yellow);
+$iceberg-dark-blue:dark-nuance($iceberg-blue);
+$iceberg-dark-magenta:dark-nuance($iceberg-magenta);
+$iceberg-dark-cyan:dark-nuance($iceberg-cyan);
+$iceberg-dark-white:dark-nuance($iceberg-white);
+
+$ui-colors-iceberg:(
+  "background":(
+    "base":$iceberg-dark-black,
+    "light":$iceberg-black,
+    "dark":dark-nuance($iceberg-black),
+  ),
+  "paragraph":(
+    "base":$iceberg-white,
+    "light":$iceberg-light-white,
+    "dark":$iceberg-dark-white,
+    "on":$iceberg-black,
+  ),
+  "navlink":(
+    "base":$iceberg-cyan,
+    "light":$iceberg-light-cyan,
+    "dark":$iceberg-dark-cyan,
+    "on":$iceberg-white,
+  ),
+  "link":(
+    "base":$iceberg-cyan,
+    "light":$iceberg-light-cyan,
+    "dark":$iceberg-dark-cyan,
+    "on":$iceberg-white,
+  ),
+  "headings":(
+    "base":$iceberg-white,
+    "light":$iceberg-light-white,
+    "dark":$iceberg-dark-white,
+    "on":$iceberg-black,
+  ),
+  "subtitle":(
+    "base":$iceberg-dark-white,
+    "light":$iceberg-white,//todo diff here
+    "dark":dark-nuiance($iceberg-dark-white),
+    "on":$iceberg-black,
+  ),
+  "metadata":(
+    "base":$iceberg-blue,
+    "light":$iceberg-light-blue,
+    "dark":$iceberg-dark-blue,
+    "on":$iceberg-white,
+  ),
+  "success":(
+    "base":$iceberg-green,
+    "light":$iceberg-light-green,
+    "dark":$iceberg-dark-green,
+    "on":$iceberg-white,
+  ),
+  "error":(
+    "base":$iceberg-red,
+    "light":$iceberg-light-red,
+    "dark":$iceberg-dark-red,
+    "on":$iceberg-white,
+  ),
+  "warning":(
+    "base":$iceberg-yellow,
+    "light":$iceberg-light-yellow,
+    "dark":$iceberg-dark-yellow,
+    "on":$iceberg-white,
   ),
 );

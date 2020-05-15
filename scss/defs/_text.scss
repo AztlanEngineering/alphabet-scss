@@ -118,7 +118,7 @@ Other
     margin: $textMarginHeaders;
     padding: 0;
     line-height: $textLineHeightHeaders;
-    color: var(--headings);
+    color: var(--heading);
     font-family: var(--fh);
     font-weight: $fontWeightHeaders;
 
@@ -265,12 +265,12 @@ Other
 
   a {
     text-decoration: $linkUnderline;
-    color: var(--links);
+    color: var(--link);
   }
 
   a:hover {
     text-decoration: $linkHoverUnderline;
-    color: var(--links-dark);
+    color: var(--link-dark);
   }
 
   pre {

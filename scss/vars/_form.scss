@@ -4,13 +4,13 @@ $form-valid-class:"valid" !default;
 $form-compact-class:"compact" !default;
 $fc:$form-base-class; //shorter alias to the previous
 
-$form-variables-prefix:form!default;
+$form-variables-prefix:form !default;
 
 // Basic Style
 $simple:(
-  //"state-color":var(--light-subtitles), //Not in use
+  
   "state-color-light":var(--metadata),
-  //"state-color-dark":var(--subtitles), //Not in use
+  
 
   "border":2px solid var(--form-state-color-light),
   "border-radius":var(--r),
@@ -19,18 +19,18 @@ $simple:(
   "fieldset-padding":0,
   "fieldset-background":var(--metadata),
 
-  "label-color":var(--subtitles),
+  "label-color":var(--subtitle),
   "label-font-size": calc(var(--s, 1) * 1em),
-  "label-margin":0 0 .7em,
+  "label-margin":0 0 0.7em,
   "label-padding":0 1em,
-  "label-compact-padding":0 .65em,
+  "label-compact-padding":0 0.65em,
 
   "input-font-weight":normal,
   "input-background":transparent,
   "input-line-height":2em,
   "input-padding":1em 1em,
-  "input-compact-padding":.4em .65em,
-  "input-color":var(--x, var(--subtitles)),
+  "input-compact-padding":0.4em 0.65em,
+  "input-color":var(--x, var(--subtitle)),
   "input-caret-color":var(--y, var(--primary)),
   "input-placeholder-color":var(--dark-metadata),
   "input-font-size":calc(var(--s, 1) * var(--s1) * 1em),
@@ -39,8 +39,8 @@ $simple:(
   "input-disabled-border":var(--dark-metadata),
   "input-focus-color":var(--paragraph),
   "input-focus-border-color":var(--y, var(--primary)),
-  //"input-focus-background":var(--valid),//Not in use
-  //"input-hover-color":var(--),
+  
+  
   "input-hover-border-color":var(--light-y, var(--light-primary)),
 
   "textarea-resize":none,
@@ -48,12 +48,12 @@ $simple:(
   "error-icon":"!",
   "valid-icon":"v",
 
-  "description-color":var(--light-subtitles),
+  "description-color":var(--light-subtitle),
   "description-padding":0 1em,
-  "description-margin":.7em 0 0,
+  "description-margin":0.7em 0 0,
   "description-font-size":calc(var(--s, 1) * 1em),
 
-  "side-color":var(--z-on, var(--subtitles)),
+  "side-color":var(--z-on, var(--subtitle)),
   "side-background":var(--z-light, var(--background)),
 
   "popup-background":var(--z-light, var(--background)),

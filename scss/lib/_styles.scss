@@ -51,6 +51,38 @@
   }
 }
 
+.dash.dash {
+  background: transparent;
+  color: var(--dark-subtitle);
+  //font-weight: normal;
+
+  &::before {
+    display: inline-block;
+    margin-right: 0.6em;
+    background: var(--x, var(--primary));
+    width: 1.6em;
+    height: 0.1em;
+    overflow: hidden;
+    vertical-align: middle;
+    content: "\00a0";
+  }
+}
+
+.hdash.hdash {
+  &:hover {
+    &::before {
+      background: var(--dark-x);
+    }
+  }
+
+  &:focus,
+  &:active {
+    &::before {
+      background: var(--light--x);
+    }
+  }
+}
+
 
 // 3D style for buttons
 

@@ -30,6 +30,6 @@
     "stylelint-scss": "^3.16.0"
   },
   "dependencies": {
-    "@fwrlines/swatch": "^0.1.1"
+    "@fwrlines/swatch": "latest"
   }
 }

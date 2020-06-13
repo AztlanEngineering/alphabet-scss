@@ -5,6 +5,7 @@
   "main": "main.scss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "sass --load-path ./node_modules -c main.scss main.css && postcss main.css -o main.min.css",
     "pub": "npm version patch && npm publish"
   },
   "repository": {
@@ -18,10 +19,17 @@
   },
   "homepage": "https://github.com/fwrlines/alphabet-scss#readme",
   "devDependencies": {
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "cssnano-preset-advanced": "^4.0.7",
+    "postcss-cli": "^7.1.1",
+    "postcss-preset-env": "^6.7.0",
     "sass": "^1.26.3",
     "stylelint": "^13.2.1",
     "stylelint-config-palantir": "^4.0.1",
     "stylelint-scss": "^3.16.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@fwrlines/swatch": "^0.1.1"
+  }
 }

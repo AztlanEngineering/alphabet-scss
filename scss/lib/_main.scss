@@ -1,21 +1,14 @@
 @use "../vars" as *;
 @use "../defs/main";
-@use "../defs/colors";
 @use "../defs/fonts";
 //@use "../defs/responsive";
 @use "../defs/sizes";
 
 :root {
-  @include colors.define-variables($monochrome-colors);
-  @include colors.define-variables($modals-colors);
-  @include colors.define-variables($theme-colors);
-  @include colors.define-variables($wheel-colors);
-  @include colors.define-variables($ui-colors);
-  @include colors.define-variables($sm-colors);
   @include sizes.define-variables;// EMsize
   @include fonts.define-variables;// fh nd fp
   //@include responsive.define-variables;// breakpoints // TODO this feature does not work. we need to wait for css env level 1
 }
 
 @include main.html-body;
-@include main.hidden;
+@include main.hidden

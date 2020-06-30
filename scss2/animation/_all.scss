@@ -1,0 +1,8 @@
+@use "vars";
+@use "mixins";
+
+//
+@include mixins.keyframes-draw-stroke;
+@include mixins.keyframes-show;
+@include mixins.transition-main(vars.$transition-class, vars.$transition);
+@include mixins.transition-others(vars.$transition-class);

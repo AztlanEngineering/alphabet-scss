@@ -5,6 +5,7 @@
 
   //@include blocks.collapsible-border(var(--x, --primary), 1px);
   border: 2px solid var(--x, var(--black));
+  box-shadow: unset;
   background: transparent;
   color: var(--x, var(--black));
 }
@@ -32,6 +33,7 @@
 .simple.simple:disabled {
 
   //@include blocks.collapsible-border(var(--x, --primary), 1px);
+  box-shadow: unset;
   background: transparent;
   color: var(--x, var(--black));
 }
@@ -112,3 +114,6 @@
 
 // Text Styles
 
+.pointer {
+  cursor: pointer;
+}

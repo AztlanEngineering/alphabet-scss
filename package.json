@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "sass --load-path ./node_modules -c main.scss main.css && postcss main.css -o main.min.css",
+    "compile:v2": "sass --load-path ./node_modules -c v2.scss v2.css && postcss v2.css -o v2.min.css",
+    "compile:v2:watch": "sass --load-path ./node_modules -c v2.scss v2.css --watch",
+    "cw": "npm run compile:v2:watch",
     "pub": "npm version patch && npm publish"
   },
   "repository": {

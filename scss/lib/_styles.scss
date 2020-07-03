@@ -4,7 +4,7 @@
 .basic.basic {
 
   //@include blocks.collapsible-border(var(--x, --primary), 1px);
-  border: 2px solid var(--x, var(--black));
+  border: 2px solid var(--y, var(--x));
   box-shadow: unset;
   background: transparent;
   color: var(--x, var(--black));
@@ -117,3 +117,23 @@
 .pointer {
   cursor: pointer;
 }
+
+.cool-link {
+  display: inline-block;
+
+  &::after {
+    display: block;
+    background: var(--link);
+    width: 0;
+    height: 2px;
+    content: "";
+    transition: all 0.3s;
+  }
+
+  &:hover::after {
+    background: var(--dark-link);
+    width: 100%;
+    //transition: width .3s;
+  }
+}
+

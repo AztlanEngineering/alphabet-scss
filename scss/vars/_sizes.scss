@@ -40,7 +40,7 @@ $size-multipliers-map:(
   "5":fn.power($size-multiplier, 5),
   "6":fn.power($size-multiplier, 6),
 );
-$sizes-list:0,0.12,0.25,0.5,1,2,3,4,5,6 !default;
+$sizes-list:0,0.12,0.25,0.5,1,2,3,4,5,6,8,10 !default;
 
 /* --- border-radius set-up --- */
 $borderRadiusGeneral:0.25em;

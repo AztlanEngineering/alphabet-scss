@@ -12,7 +12,7 @@
   font-smooth: always;
 }
 
-@mixin font-icon($name:$font-icon, $filename:$font-icon-filename) {
+@mixin font-icon($name:$font-icon, $filename:$font-icon-filename, $prefix:$font-icon-prefix, $className:fi) {
   @font-face {
     font-family: $name;
     font-weight: normal;
@@ -21,15 +21,15 @@
   }
 
   /* --- 360 Rotate -- */
-  [data-icon]::before {
+  [data-#{$prefix}]::before {
     margin-right: 0.35em;
   }
 
-  [data-icon]::before,
-  [data-icon-left]::before,
-  [data-icon-right]::after,
-  .fi,
-  i.icon {
+  [data-#{$prefix}]::before,
+  [data-#{$prefix}-left]::before,
+  [data-#{$prefix}-right]::after,
+  .#{$className},
+  i.#{$prefix} {
     vertical-align: middle;
     text-transform: none !important;
     line-height: 1;
@@ -63,9 +63,9 @@
   }
 }
 
-@mixin define-variables {
-  --fh: #{$fontHeaders};
-  --fp: #{$fontDefault};
+@mixin define-variables($headings:$fontHeaders, $paragraph:$fontDefault) {
+  --fh: #{$headings};
+  --fp: #{$paragraph};
   //--fa: //a like alt
   //--fi
 }

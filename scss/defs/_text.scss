@@ -130,35 +130,35 @@ Other
   h1,
   .h1 {
     min-height: 1rem;
-    font-size: $h1;
+    font-size: calc(#{$heading-multiplier} * #{$h1});
   }
 
   h2,
   .h2,
   h1.#{$smallClassName},
   .h1.#{$smallClassName} {
-    font-size: $h2;
+    font-size: calc(#{$heading-multiplier} * #{$h2});
   }
 
   h3,
   .h3,
   h2.#{$smallClassName},
   .h2.#{$smallClassName} {
-    font-size: $h3;
+    font-size: calc(#{$heading-multiplier} * #{$h3});
   }
 
   h4,
   .h4,
   h3.#{$smallClassName},
   .h3.#{$smallClassName} {
-    font-size: $h4;
+    font-size: calc(#{$heading-multiplier} * #{$h4});
   }
 
   h5,
   .h5,
   h4.#{$smallClassName},
   .h4.#{$smallClassName} {
-    font-size: $h5;
+    font-size: calc(#{$heading-multiplier} * #{$h5});
   }
 
   small,
@@ -270,7 +270,8 @@ Other
 
   a:hover {
     text-decoration: $linkHoverUnderline;
-    color: var(--link-dark);
+    --helper:var(--dark-link);
+    color: var(--helper);
   }
 
   pre {

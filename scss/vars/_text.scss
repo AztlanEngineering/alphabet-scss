@@ -6,6 +6,7 @@ $h4:calc(var(--s2) * 1em) !default;
 $h5:calc(var(--s1) * 1em) !default;
 $textSizeParagraph:calc(var(--s1) * 1em) !default;
 $smallClassName:"small" !default;
+$heading-multiplier:var(--heading-mul, 1) !default;
 
 /* --- Text Line, Margin --- */
 $textLineHeightDefault:1.35 !default;

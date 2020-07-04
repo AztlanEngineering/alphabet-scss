@@ -92,3 +92,65 @@
   //@include grid-gap-code($current:.1, $name:'01');
 }
 
+@mixin grid-base-styles($padding:2em) {
+  .gt-center2 {
+    min-height: 100%;
+
+    > * {
+      display: flex;
+      top: 50%;
+
+      transform: translateY(-50%);
+    }
+  }
+
+  .gt-center {
+    display: grid;
+
+    @include mxn.media($to:$sm-md) {
+      grid-template-areas: "aside content aside2";
+      grid-template-columns: 0 100% 0;
+
+      --grid-total-columns: 3;
+    }
+
+    @include mxn.media($from:$sm-md) {
+      grid-template-areas: "aside content aside2";
+      grid-template-columns: auto 700px auto;
+
+      --grid-total-columns: 3;
+    }
+  }
+
+  .gt-grid {
+    display: grid;
+    grid-gap: var(--grid-gap);
+
+    @include mxn.media($to:$sm-md) {
+      grid-template-columns: 100%;
+
+      --grid-total-columns: 3;
+    }
+
+    @include mxn.media($from:$sm-md) {
+      grid-template-columns: repeat(auto-fill, minmax(var(--grid-item-width), 1fr));
+
+      --grid-total-columns: 3;
+    }
+  }
+
+  .gc-column {
+    grid-area: content;
+  }
+
+  .gc-wide {
+    grid-column: 1 / span var(--grid-total-columns);
+  }
+
+  .ft-fill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: safe center;
+  }
+}

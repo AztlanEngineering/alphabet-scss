@@ -42,13 +42,13 @@
 
   //@include blocks.collapsible-border(var(--x, --primary), 1px);
   &:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0);
     color: var(--dark-x, var(--black));
   }
 
   &:focus,
   &:active {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0);
     color: var(--light-x, var(--black));
   }
 }

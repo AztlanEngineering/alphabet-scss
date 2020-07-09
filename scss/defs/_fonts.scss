@@ -12,7 +12,7 @@
   font-smooth: always;
 }
 
-@mixin font-icon($name:$font-icon, $filename:$font-icon-filename, $prefix:$font-icon-prefix, $className:fi) {
+@mixin font-icon($name:$font-icon, $filename:$font-icon-filename, $prefix:$font-icon-prefix, $className:icon) {
   @font-face {
     font-family: $name;
     font-weight: normal;
@@ -23,6 +23,11 @@
   /* --- 360 Rotate -- */
   [data-#{$prefix}]::before {
     margin-right: 0.35em;
+  }
+  
+  .fi-#{$prefix} {
+    --fi:#{$name};
+
   }
 
   [data-#{$prefix}]::before,
@@ -60,6 +65,10 @@
 
   .fp {
     font-family: var(--fp);
+  }
+
+  .fi {
+    font-family:var(--fi, Helvetica)
   }
 }
 

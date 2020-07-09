@@ -116,7 +116,7 @@
 
     @include mxn.media($from:$sm-md) {
       grid-template-areas: "aside content aside2";
-      grid-template-columns: auto 700px auto;
+      grid-template-columns: auto var(--content-width, 700px) auto;
 
       --grid-total-columns: 3;
     }
@@ -139,8 +139,50 @@
     }
   }
 
-  .gc-column {
+  .gt-illustrated.right,
+  .gt-illustrated {
+    display:grid;
+    grid-auto-flow:dense;
+
+    @include mxn.media($to:$sm-md) {
+      grid-template-areas: 
+        "header"
+        "illustration"
+        "content"
+        ;
+
+      --grid-total-columns: 3;
+    }
+
+    @include mxn.media($from:$sm-md) {
+      grid-template-areas: 
+      "aside header aside2 illustration"
+      "aside content aside2 illustration"
+      ;
+      grid-template-columns: 3fr var(--content-width, 70%) 1fr 4fr;
+
+    }
+
+  }
+  .gt-illustration.left{
+
+  }
+
+  .gc-column,
+  .gc-content {
     grid-area: content;
+  }
+
+  .gc-header {
+    grid-area: header;
+  }
+
+  .gc-footer {
+    grid-area: footer;
+  }
+
+  .gc-illustration {
+    grid-area: illustration;
   }
 
   .gc-wide {
@@ -153,4 +195,13 @@
     align-items: center;
     justify-content: safe center;
   }
+}
+
+.paragraph{
+
+}
+
+.paragraph-wide{
+  line-height:1.5em;
+
 }

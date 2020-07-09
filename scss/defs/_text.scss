@@ -288,19 +288,31 @@ Other
 }
 
 @mixin text-alignment {
-  @include mxn.responsive(ul) {
+  .ul {
+    text-align:left;
+  }
+  .ur {
+    text-align:right;
+  }
+  .uc {
+    text-align:center;
+  }
+  .uj {
+    text-align:justify;
+  }
+  @include mxn.responsive(ul, $base:false) {
     text-align: left;
   }
 
-  @include mxn.responsive(ur) {
+  @include mxn.responsive(ur, $base:false) {
     text-align: right;
   }
 
-  @include mxn.responsive(uc) {
+  @include mxn.responsive(uc, $base:false) {
     text-align: center;
   }
 
-  @include mxn.responsive(uj) {
+  @include mxn.responsive(uj, $base:false) {
     text-align: justify;
   }
 }

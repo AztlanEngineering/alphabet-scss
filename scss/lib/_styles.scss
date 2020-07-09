@@ -137,3 +137,23 @@
   }
 }
 
+
+//List inline
+ul.inline,
+ol.inline {
+  display: inline-flex;
+
+  li {
+    margin: 0;
+  }
+
+  li + li {
+    &::before {
+      margin-right: 0.5em;
+      margin-left: 0.5em;
+      color: var(--z, var(--metadata));
+      content: var(--separator, "|");
+    }
+  }
+}
+

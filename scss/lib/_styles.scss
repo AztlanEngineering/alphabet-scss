@@ -4,7 +4,7 @@
 .basic.basic {
 
   //@include blocks.collapsible-border(var(--x, --primary), 1px);
-  border: 2px solid var(--y, var(--x));
+  border: 2px solid var(--x);
   box-shadow: unset;
   background: transparent;
   color: var(--x, var(--black));

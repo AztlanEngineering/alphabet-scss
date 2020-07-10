@@ -143,10 +143,20 @@
     display:grid;
     grid-gap: var(--grid-gap);
 
-    @include mxn.media($to:$sm-md) {
+    &.dense {
+      grid-auto-flow:dense;
+    }
+
+    @include mxn.media($to:$xs-sm) {
       grid-template-columns: repeat(var(--grid-columns-xs, 3), 1fr);
 
       --grid-total-columns: var(--grid-columns-xs, 3);
+    }
+
+    @include mxn.media($from:$xs-sm, $to:$sm-md) {
+      grid-template-columns: repeat(var(--grid-columns-xs, 3), 1fr);
+
+      --grid-total-columns: var(--grid-columns-sm, var(--grid-columns-xs, 3));
     }
 
     @include mxn.media($from:$sm-md) {
@@ -196,6 +206,10 @@
 
   .gc-footer {
     grid-area: footer;
+  }
+
+  .gc-extra {
+    grid-area: extra;
   }
 
   .gc-illustration {

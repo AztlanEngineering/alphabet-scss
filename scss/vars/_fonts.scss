@@ -1,24 +1,24 @@
-@import "../theme/default/fonts";
 
 /* --- Fonts --- */
-$fontParaName:"Gtcm" !default;
-$fontHeadersName:"Akzg" !default;
+$fontHeadersName:"headings" !default;
+$fontParagraphName:"paragraph" !default;
+
 $fontHeaders:$fontHeadersName, helvetica neue, "Helvetica", "Verdana", "Arial", sans-serif !default;
-$fontWeightHeaders:normal !default;
-$fontDefault:$fontParaName, "HK Grotesk Pro", "Garamond", "Baskerville", "Times", "Times New Roman", serif !default;
+$fontDefault:$fontParagraphName, "HK Grotesk Pro", "Garamond", "Baskerville", "Times", "Times New Roman", serif !default;
+
 $fontWireframe:"BLOKK" !default;
 
 $fontWeightHeaders:bold !default;
-$fontParagraphName:us !default;
-$fontDefault:$fontParagraphName, "HK Grotesk Pro", "Garamond", "Baskerville", "Times", "Times New Roman", serif !default;
-
-$fontPRegular:"us" !default;
-$fontPBold:"usm" !default;
 
 //$fontHLight:'PxLight'!default;
-$fontHRegular:"PxRegular" !default;
-$fontHBold:"PxBold" !default;
+$fontHRegular:"headings" !default;
+$fontHBold:"headings.bold" !default;
 
-$font-icon-name:"fi" !default;
-$font-icon-filename:"if" !default;
-$font-icon-prefix:"icon" !default;
+$fontPRegular:"paragraph" !default;
+$fontPBold:"paragarph.bold" !default;
+
+
+$font-icon:'icons' !default;
+$font-icon-name:"icons" !default;
+$font-icon-filename:"icons" !default;
+$font-icon-prefix:"icons" !default;

@@ -72,9 +72,10 @@
   }
 }
 
-@mixin define-variables($headings:$fontHeaders, $paragraph:$fontDefault) {
+@mixin define-variables($headings:$fontHeaders, $paragraph:$fontDefault, $icons:$font-icon) {
   --fh: #{$headings};
   --fp: #{$paragraph};
+  --fi: #{$font-icon};
   //--fa: //a like alt
   //--fi
 }

@@ -118,6 +118,17 @@
 
 // Text Styles
 
+.shadow {
+    box-shadow :var(--shadow);
+
+  &:hover,
+  &:focus {
+    box-shadow :var(--shadow-hover, var(--shadow));
+  }
+}
+
+
+
 .pointer {
   cursor: pointer;
 }

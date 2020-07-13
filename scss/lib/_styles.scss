@@ -1,5 +1,9 @@
 @use "../defs/blocks";
 
+@use "../mixins" as mxn;
+@import "../vars/grid";
+@import "../vars/responsive";
+
 //Basic style (Button, Label, Card)
 .basic.basic {
 
@@ -137,6 +141,40 @@
   }
 }
 
+.book {
+  @include mxn.media($from:$sm-md) {
+    font-size:calc(var(--s2, 1) * 1em);
+    
+  }   
+
+  p, li {
+    text-align:justify;
+    line-height:1.7em;
+  }
+
+  img.fit {
+    object-fit:contain;
+
+  }
+
+  //Big margin to separate content block
+  p + div,
+  div.row + div,
+  //p + img,
+  div.row + img,
+  img + div 
+  {
+    margin-top:6em;
+
+  }
+
+  //Small margins to ventilate inside a  block
+  img + p,
+  p + img {
+    margin-top:3em;
+  }
+  
+}
 
 //List inline
 ul.inline,
@@ -156,4 +194,5 @@ ol.inline {
     }
   }
 }
+
 

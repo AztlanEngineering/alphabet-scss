@@ -68,7 +68,8 @@
   }
 
   .fi {
-    font-family:var(--fi, Helvetica)
+    font-family:var(--fi, Helvetica);
+    font-style:unset;
   }
 }
 

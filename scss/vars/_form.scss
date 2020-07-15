@@ -20,10 +20,10 @@ $simple:(
   "fieldset-background":var(--metadata),
 
   "label-color":var(--subtitle),
-  "label-font-size": calc(var(--s, 1) * 1em),
+  "label-font-size": calc(var(--s2, 1) * var(--s, 1) * 1em),
   "label-margin":0 0 0.7em,
-  "label-padding":0 1em,
-  "label-compact-padding":0 0.65em,
+  "label-padding":0 0,
+  "label-compact-padding":0 0,
 
   "input-font-weight":normal,
   "input-background":transparent,

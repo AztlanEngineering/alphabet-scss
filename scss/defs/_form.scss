@@ -12,7 +12,7 @@
 
 @mixin form-style-general() {
   .#{$fc} {
-    font-size: calc(var(--t, 1) * 1em);
+    //font-size: calc(var(--t, 1) * 1em);
 
     .inside {
       border: var(--form-border);

@@ -154,9 +154,23 @@
 
 .book {
   @include mxn.media($from:$sm-md) {
-    font-size:calc(var(--s2, 1) * 1em);
+    font-size:calc(var(--s1, 1) * 1em);
     
   }   
+
+  ul {
+    padding-left: unset;
+
+    >li {
+      list-style:square;
+    }
+
+    > li,
+    ul,
+    ol {
+      margin-left: 2em;
+    }
+  }
 
   p, li {
     text-align:justify;

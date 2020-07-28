@@ -104,6 +104,7 @@
     }
   }
 
+  .l-center,
   .gt-center {
     display: grid;
 
@@ -122,6 +123,7 @@
     }
   }
 
+  .l-grid,
   .gt-grid {
     display: grid;
     grid-gap: var(--grid-gap);
@@ -139,12 +141,13 @@
     }
   }
 
+  .l-resgrid,
   .gt-resgrid {
-    display:grid;
+    display: grid;
     grid-gap: var(--grid-gap);
 
     &.dense {
-      grid-auto-flow:dense;
+      grid-auto-flow: dense;
     }
 
     @include mxn.media($to:$xs-sm) {
@@ -166,58 +169,81 @@
     }
   }
 
+  .l-illustrated,
   .gt-illustrated.right,
   .gt-illustrated {
-    display:grid;
-    grid-auto-flow:dense;
+    display: grid;
+    grid-auto-flow: dense;
 
     @include mxn.media($to:$sm-md) {
-      grid-template-areas: 
+      grid-template-areas:
         "header"
         "illustration"
-        "content"
-        ;
+        "content";
 
       --grid-total-columns: 3;
     }
 
     @include mxn.media($from:$sm-md) {
-      grid-template-areas: 
-      "aside header aside2 illustration"
-      "aside content aside2 illustration"
-      ;
+      grid-template-areas:
+        "aside header aside2 illustration"
+        "aside content aside2 illustration";
       grid-template-columns: 3fr var(--content-width, 70%) 1fr 4fr;
-
     }
-
   }
+
   .gt-illustration.left{
 
   }
 
+  .l-content-sidebar {
+    display: grid;
+
+    @include mxn.media($to:$sm-md) {
+      .i-aside {
+        display: none;
+      }
+    }
+
+    @include mxn.media($from:$sm-md) {
+      grid-template-areas: "space aside content space2";
+      grid-template-columns: 1fr minmax(200px, 320px) minmax(800px, 1fr) 1fr;
+    }
+  }
+
+  .i-content,
   .gc-column,
   .gc-content {
     grid-area: content;
   }
 
+  .i-header,
   .gc-header {
     grid-area: header;
   }
 
+  .i-footer,
   .gc-footer {
     grid-area: footer;
   }
 
+  .i-extra,
   .gc-extra {
     grid-area: extra;
   }
 
+  .i-illustration,
   .gc-illustration {
     grid-area: illustration;
   }
 
+  .i-wide,
   .gc-wide {
     grid-column: 1 / span var(--grid-total-columns);
+  }
+
+  .i-aside {
+    grid-area: aside;
   }
 
   .ft-fill {
@@ -232,7 +258,6 @@
 
 }
 
-.paragraph-wide{
-  line-height:1.5em;
-
+.paragraph-wide {
+  line-height: 1.5em;
 }

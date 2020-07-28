@@ -1,6 +1,6 @@
 {
   "name": "@fwrlines/alphabet-scss",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "fwrlines Design System SCSS Base",
   "main": "main.scss",
   "scripts": {
@@ -10,7 +10,7 @@
     "compile:v2:watch": "sass --load-path ./node_modules -c v2.scss v2.css --watch",
     "cw": "npm run compile:v2:watch",
     "pub": "npm version patch && npm publish",
-     "postinstall": "node ./scripts/postinstall.js"
+    "postinstall": "node ./scripts/postinstall.js"
   },
   "repository": {
     "type": "git",

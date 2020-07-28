@@ -9,7 +9,8 @@
     "compile:v2": "sass --load-path ./node_modules -c v2.scss v2.css && postcss v2.css -o v2.min.css",
     "compile:v2:watch": "sass --load-path ./node_modules -c v2.scss v2.css --watch",
     "cw": "npm run compile:v2:watch",
-    "pub": "npm version patch && npm publish"
+    "pub": "npm version patch && npm publish",
+     "postinstall": "node ./scripts/postinstall.js"
   },
   "repository": {
     "type": "git",

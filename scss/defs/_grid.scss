@@ -117,7 +117,7 @@
 
     @include mxn.media($from:$sm-md) {
       grid-template-areas: "aside content aside2";
-      grid-template-columns: auto var(--content-width, 700px) auto;
+      grid-template-columns: auto var(--content-width, minmax(800px, 1000px)) auto;
 
       --grid-total-columns: 3;
     }
@@ -157,7 +157,7 @@
     }
 
     @include mxn.media($from:$xs-sm, $to:$sm-md) {
-      grid-template-columns: repeat(var(--grid-columns-xs, 3), 1fr);
+      grid-template-columns: repeat(var(--grid-columns-sm, 3), 1fr);
 
       --grid-total-columns: var(--grid-columns-sm, var(--grid-columns-xs, 3));
     }
@@ -177,18 +177,21 @@
 
     @include mxn.media($to:$sm-md) {
       grid-template-areas:
-        "header"
-        "illustration"
-        "content";
+        "content"
+        "illustration";
 
       --grid-total-columns: 3;
     }
 
     @include mxn.media($from:$sm-md) {
-      grid-template-areas:
-        "aside header aside2 illustration"
-        "aside content aside2 illustration";
-      grid-template-columns: 3fr var(--content-width, 70%) 1fr 4fr;
+      grid-template-areas: "aside content illustration aside2";
+      grid-template-columns: 1fr var(--content-width, minmax(500px, 600px)) var(--content-width, minmax(300px, 500px)) 1fr;
+
+      .i-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
     }
   }
 
@@ -208,6 +211,26 @@
     @include mxn.media($from:$sm-md) {
       grid-template-areas: "space aside content space2";
       grid-template-columns: 1fr minmax(200px, 320px) minmax(800px, 1fr) 1fr;
+    }
+  }
+
+  .l-relaxed {
+    display: grid;
+    grid-auto-flow: dense;
+
+    @include mxn.media($to:$sm-md) {
+      grid-template-areas:
+        "header"
+        "content"
+        "illustration";
+    }
+
+    @include mxn.media($from:$sm-md) {
+      grid-template-areas:
+        "space header space2 illustration"
+        "space content space2 illustration";
+      grid-template-columns: 1fr minmax(320px, 620px) var(--spacing, 2em) minmax(400px, 3fr);
+      grid-template-rows:min-content auto;
     }
   }
 

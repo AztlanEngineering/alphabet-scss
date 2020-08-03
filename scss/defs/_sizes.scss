@@ -35,6 +35,24 @@
   }
 }
 
+@mixin setterTextSizesMedia(
+  $map:$size-multipliers-map,
+  $prefixes:$prefixes-setters-text-sizes,
+  $from:false,
+  $to:responsive.$sm-md,
+  $responsive-prefix:"sm"
+) {
+  @include mxn.media($to:$to, $from:$from) {
+    @each $size, $multiple in $map {
+      @each $prefix in $prefixes {
+        .#{$responsive-prefix}-#{$prefix}#{$size} {
+          --#{$prefix}: #{$multiple};
+        }
+      }
+    }
+  }
+}
+
 @mixin setterNormalSizes(
   $map:$sizes-list,
   $prefixes:$prefixes-setters-block-sizes
@@ -50,7 +68,6 @@
           --#{$prefix}: #{$size};
         }
       }
-
     }
   }
 }
@@ -60,7 +77,7 @@
   $prefixes:$prefixes-setters-block-sizes,
   $from:false,
   $to:responsive.$sm-md,
-  $responsive-prefix:'sm'
+  $responsive-prefix:"sm"
 ) {
   @include mxn.media($to:$to, $from:$from) {
     @each $size, $multiple in $map {

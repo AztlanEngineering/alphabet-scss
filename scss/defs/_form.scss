@@ -104,18 +104,25 @@
 
       &::placeholder {
         color: var(--form-input-disabled-color);
+        opacity:.6;
       }
     }
 
     &::-webkit-input-placeholder, /* Edge */
     &::placeholder {
       color: var(--form-input-placeholder-color);
+      opacity:.6;
     }
 
   }
 
   .#{$fc} textarea {
     resize: var(--form-textarea-resize);
+  }
+
+  .#{$fc} select option {
+    font-size:1em;
+    font-family:var(--fp);
   }
 
 }

@@ -214,6 +214,23 @@
     }
   }
 
+  .l-cheading {
+    display:grid;
+
+    @include mxn.media($to:$sm-md) {
+      grid-template-areas:
+        "header"
+        "content";
+    }
+
+    @include mxn.media($from:$sm-md) {
+      grid-template-areas:
+        "header content";
+      grid-template-rows:auto min-content;
+    }
+
+  }
+
   .l-relaxed {
     display: grid;
     grid-auto-flow: dense;
@@ -231,6 +248,20 @@
         "space content space2 illustration";
       grid-template-columns: 1fr minmax(320px, 620px) var(--spacing, 2em) minmax(400px, 3fr);
       grid-template-rows:min-content auto;
+    }
+  }
+
+  .l-modal {
+    display:grid;
+    @include mxn.media($to:$sm-md) {
+      grid-template-areas:
+        "content"
+    }
+
+    @include mxn.media($from:$sm-md) {
+      grid-template-areas:
+        "space content space2";
+      grid-template-columns: 1fr minmax(var(--content-width), 1fr) 1fr;
     }
   }
 

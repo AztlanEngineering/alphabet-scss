@@ -187,6 +187,11 @@
       grid-template-areas: "aside content illustration aside2";
       grid-template-columns: 1fr var(--content-width, minmax(500px, 600px)) var(--content-width, minmax(300px, 500px)) 1fr;
 
+      &.right {
+        grid-template-areas: "aside illustration content aside2";
+        grid-template-columns: 1fr var(--content-width, minmax(300px, 500px)) var(--conten-width, minmax(500px, 600px)) 1fr;
+      }
+
       .i-content {
         display: flex;
         flex-direction: column;

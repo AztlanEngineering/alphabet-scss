@@ -43,7 +43,7 @@
     font-style: normal !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    content: attr(data-icon);
+    content: attr(data-#{$prefix});
     font-variant: normal !important;
     speak: none;
   }
